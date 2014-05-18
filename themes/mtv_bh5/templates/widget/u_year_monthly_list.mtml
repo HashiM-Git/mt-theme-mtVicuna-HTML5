@@ -1,0 +1,49 @@
+
+          <section>
+            <h1>Archives</h1>
+            <div class="monthlyArchives">
+<MTSetVars>
+	<MTArchiveList archive_type="Individual" lastn="1">
+		endy=<$MTArchiveDate format="%Y"$>
+		eendm=<$MTArchiveDate format="%B"$>
+	</MTArchivelist>
+	<MTArchiveList archive_type="Individual" sort_order="ascend" lastn="1">
+		stay=<$MTArchiveDate format="%Y"$>
+		estam=<$MTArchiveDate format="%B"$>
+	</MTArchivelist>
+</MTSetVars>
+              <ul>
+<MTArchiveList archive_type="Yearly" lastn="3">
+	<$MTArchiveDate format="%Y" setvar="year"$>
+	<MTIfArchiveTypeEnabled archive_type="Yearly">
+                <li><a href="<$MTArchiveLink$>"><$MTGetVar name="year"$><__trans phrase="Year"></a> (<$MTArchiveCount$>)
+	<MTElse>
+                <li><$MTGetVar name="year"$><__trans phrase="Year"> (<$MTArchiveCount$>)
+	</MTIfArchiveTypeEnabled>
+	<MTArchiveList archive_type="Monthly">
+		<$MTArchiveDate format="%B" setvar="month"$>
+		<MTSetVarBlock name="count" index="$month"><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%Y<__trans phrase="Year">%B<__trans phrase="Month">"$>(<$MTArchiveCount$>)"><$MTArchiveDate format="%B"$><__trans phrase="Month"></a></MTSetVarBlock>
+	</MTArchiveList>
+	<MTSetVars>
+		<MTIf name="year" ne="$stay">stam=1
+		<MTElse>stam=<$MTGetVar name="estam"$>
+		</MTIf>
+		<MTIf name="year" ne="$endy">endm=12
+		<MTElse>endm=<$MTGetVar name="eendm"$>
+		</MTIf>
+	</MTSetVars>
+                  <ul class="mlist"><MTFor var="m" from="$stam" to="$endm">
+	<MTIf name="count" index="$m">
+                    <li><$MTGetVar name="count" index="$m"$></li>
+	<MTElse>
+                    <li><$MTGetVar name="m" sprintf="%d"$><__trans phrase="Month"></li>
+	</MTIf></MTFor>
+                  </ul>
+                </li><$MTSetVar name="count" function="undef"$>
+</MTArchiveList>
+<MTIf tag="Link" template="<__trans phrase="Archive Index">">
+                <li><a href="<$MTLink template="<__trans phrase="Archive Index">"$>">All</a></li>
+</MTIf>
+              </ul>
+            </div>
+          </section>

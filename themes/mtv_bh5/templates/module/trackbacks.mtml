@@ -1,0 +1,22 @@
+<MTIfPingsAccepted>
+          <section id="trackback">
+            <h1>Trackbacks:<span class="count"><$MTEntryTrackbackCount$></span></h1>
+            <ul class="info">
+              <li>TrackBack URL for this entry</li>
+              <li class="URL"><$MTEntryTrackbackLink$></li>
+              <li>Listed below are links to weblogs that reference</li>
+              <li><a href="<$MTEntryPermalink$>"><$MTEntryTitle encode_html="1"$></a> from <a href="<$MTBlogURL$>"><$MTBlogName encode_html="1"$></a></li>
+            </ul>
+	<MTIf tag="EntryTrackbackCount">
+            <div class="log">
+		<MTPings>
+              <article id="ping-<$MTPingID$>">
+                <p><span class="name"><a href="<$MTPingURL$>"><$MTPingTitle$> from <$MTPingBlogName$></a></span> <time class="date" datetime="<$MTPingDate format_name="iso8601"$>"><$MTPingDate format="%Y-%m-%d (%a) %H:%M"$></time></p>
+                <p><$MTPingExcerpt$></p>
+              </article>
+		</MTPings>
+            </div>
+	</MTIf>
+          </section>
+          <!-- end #trackback -->
+</MTIfPingsAccepted>

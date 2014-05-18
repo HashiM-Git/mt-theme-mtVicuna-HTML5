@@ -1,0 +1,257 @@
+label: 'mt.Vicuna Theme On HTML5'
+id: 'mtv_bh5'
+author_name: HashiM
+author_link: http://kita2.net/
+version: 1.0.0
+class: blog
+description: <__trans phrase="A MT5 Theme for Vicuna CMS.">
+l10n_lexicon:
+  ja: l10n_ja.yaml
+thumbnail_file: vicuna.png
+thumbnail_file_medium: vicuna-medium.png
+thumbnail_file_small: vicuna-small.png
+elements:
+  blog_static_files:
+    component: core
+    data:
+      - css
+    importer: blog_static_files
+    require: 1
+  template_set:
+    component: core
+    importer: template_set
+    name: template set
+    require: 1
+    data:
+      label: mtVicuna
+      base_path: templates
+      require: 1
+      base_css: 0
+      stylecatcher_libraries:
+        mtvicuna_h5base_skin:
+          url: '{{support}}theme_static/mtv_bh5/'
+          label: 'mt.Vicuna HTML5 skin'
+          description_label: 'Styles that are with the mt.Vicuna HTML5 Theme.'
+#        mtvicuna_legacy_skin:
+#          url: 'http://code.zelazny.mydns.jp/themes/mtvicuna-legacy/'
+#          label: mt.Vicuna Legacy skin
+#          description_label: Legacy Vicuna Styles covert to Recent version of the mt.Vicuna Theme.
+#        hashim_skin:
+#          url: 'http://kita2.net/stylelib/'
+#          label: mt.Vicuna HashiM Stylelib
+#          description_label: This is style library only for the mt.Vicuna theme.
+      templates:
+        index:
+          archive_index:
+            label: Archive Index
+            outfile: archives/index.html
+            rebuild_me: 1
+          atom:
+            label: Atom
+            outfile: atom.xml
+            rebuild_me: 1
+          javascript:
+            label: JavaScript
+            outfile: js/mt.js
+            rebuild_me: 1
+          user_jquery:
+            label: User JQuery
+            outfile: js/user_jquery.js
+            rebuild_me: 1
+          main_index:
+            label: Main Index
+            outfile: index.html
+            rebuild_me: 1
+          rsd:
+            label: RSD
+            outfile: rsd.xml
+            rebuild_me: 1
+          rss:
+            label: RSS
+            outfile: rss.xml
+            rebuild_me: 1
+          google_sitemap:
+            label: SiteMap 0.9
+            outfile: sitemap.xml
+            rebuild_me: 1
+          styles:
+            label: Stylesheet
+            outfile: css/styles.css
+            rebuild_me: 1
+        individual:
+          entry:
+            label: Entry
+            filename: archive/entry.mtml
+            mappings:
+              entry_archive:
+                archive_type: Individual
+                file_template: %y/%m/%-f
+        archive:
+          entry_listing_category:
+            label: Entry Listing Category
+            filename: archive/entry_listing_category.mtml
+            mappings:
+              category:
+                archive_type: Category
+                file_template: %-c/%i
+          entry_listing_datebased:
+            label: Entry Listing Datebased
+            filename: archive/entry_listing_datebased.mtml
+            mappings:
+              monthly:
+                archive_type: Monthly
+                file_template: %y/%m/%i
+        page:
+           page:
+            label: Page
+            filename: archive/page.mtml
+            mappings:
+              page_archive:
+                archive_type: Page
+                file_template: %-c/%-f
+        module:
+          header:
+            label: Header
+            filename: module/header.mtml
+          footer:
+            label: Footer
+            filename: module/footer.mtml
+          html_header:
+            label: HTML Header
+            filename: module/html_header.mtml
+          topic_path:
+            label: Topic Path
+            filename: module/topic_path.mtml
+          utilities:
+            label: Utilities
+            filename: module/utilities.mtml
+          archive_index_link:
+            label: Archive Index Link
+            filename: module/archive_index_link.mtml
+          entry_summary:
+            label: Entry Summary
+            filename: module/entry_summary.mtml
+          entry_metadata:
+            label: Entry Metadata
+            filename: module/entry_metadata.mtml
+          related_entries:
+            label: Related Entries
+            filename: module/related_entries.mtml
+          comments:
+            label: Comments
+            filename: module/comments.mtml
+          trackbacks:
+            label: TrackBacks
+            filename: module/trackbacks.mtml
+          next_entry_link:
+            label: Next Entry Link
+            filename: module/next_entry_link.mtml
+          headline:
+            label: Headline
+            filename: module/headline.mtml
+          global_navigation:
+            label: Global Navigation
+            filename: module/global_navigation.mtml
+          return:
+            label: Return to page top
+            filename: module/return.mtml
+        system:
+          comment_preview:
+            label: Comment Preview
+            filename: system/comment_preview.mtml
+          comment_response:
+            label: Comment Response
+            filename: system/comment_response.mtml
+          dynamic_error:
+            label: Dynamic Error
+            filename: system/dynamic_error.mtml
+          popup_image:
+            label: Popup Image
+            filename: system/popup_image.mtml
+          search_results:
+            label: Search Results
+            filename: system/search_results.mtml
+        widgetset:
+          Navigation Utilities:
+            order: 1000
+            label: Navigation Utilities
+            widgets:
+              - Recent Entries
+              - Category Archive List
+              - Monthly Archive List
+          Other Utilities:
+            order: 1000
+            label: Other Utilities
+            widgets:
+              - Search
+              - Feed
+        widget:
+          u_about:
+            label: About
+            filename: widget/u_about.mtml
+          u_monthly_list:
+            label: Monthly Archive List
+            filename: widget/u_monthly_list.mtml
+          u_monthly_dropdown:
+            label: Monthly Archive Dropdown
+            filename: widget/u_monthly_dropdown.mtml
+          u_year_monthly_list:
+            label: Year Monthly Archive List
+            filename: widget/u_year_monthly_list.mtml
+          u_category_list:
+            label: Category Archive List
+            filename: widget/u_category_list.mtml
+          u_calendar:
+            label: Calender
+            filename: widget/u_calendar.mtml
+          u_recent_comments:
+            label: Recent Comments
+            filename: widget/u_recent_comments.mtml
+          u_recent_trackbacks:
+            label: Recent Trackbacks
+            filename: widget/u_recent_trackbacks.mtml
+          u_recent_entries:
+            label: Recent Entries
+            filename: widget/u_recent_entries.mtml
+          u_recent_assets:
+            label: Recent Assets
+            filename: widget/u_recent_assets.mtml
+          u_feed:
+            label: Feed
+            filename: widget/u_feed.mtml
+          u_links:
+            label: Links
+            filename: widget/u_links.mtml
+          u_search:
+            label: Search
+            filename: widget/u_search.mtml
+          u_tag_cloud:
+            label: Tag Cloud
+            filename: widget/u_tag_cloud.mtml
+          u_creative_commons:
+            label: Creative Commons
+            filename: widget/u_creative_commons.mtml
+          u_openid:
+            label: OpenID
+            filename: widget/u_openid.mtml
+          u_pages_list:
+            label: Page Listing
+            filename: widget/u_pages_list.mtml
+          u_signin:
+            label: Sign in
+            filename: widget/u_signin.mtml
+          u_cond_widget_mainindex:
+            label: Conditional Widget - Main Index(Home)
+            filename: widget/u_cond_widget_mainindex.mtml
+          u_cond_widget_category:
+            label: Conditional Widget - Category
+            filename: widget/u_cond_widget_category.mtml
+          u_cond_widget_individual:
+            label: Conditional Widget - Individual
+            filename: widget/u_cond_widget_individual.mtml
+          u_cond_widget_webpage:
+            label: Conditional Widget - Web Page
+            filename: widget/u_cond_widget_webpage.mtml
+          u_cond_widget_datebased:
+            label: Conditional Widget - Datebased
+            filename: widget/u_cond_widget_datebased.mtml

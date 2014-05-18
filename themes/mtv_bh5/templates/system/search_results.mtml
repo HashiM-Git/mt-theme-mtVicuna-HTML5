@@ -1,0 +1,140 @@
+<MTSetVars>
+	tempName=system_search
+	page_column=single
+	page_title=<__trans phrase="Search Results">
+	__counter__=1
+	__odd__=1
+	blog_id=<$MTBlogID$>
+	<MTIfStraightSearch>
+		search_type=search
+	<MTElse>
+		search_type=tag
+	</MTIfStraightSearch>
+</MTSetVars>
+<!DOCTYPE html>
+<html lang="<$MTDefaultLanguage$>">
+  <head>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <link rel="alternate" type="application/atom+xml" title="<$MTBlogName encode_html="1"$>: <__trans phrase="Search Results">" href="<$MTCGIPath$><$MTSearchScript$>?<$MTGetVar name="search_type"$>=<$MTSearchString encode_url="1"$>&amp;Template=feed&amp;IncludeBlogs=<$MTSearchIncludeBlogs$>">
+    <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+  </head>
+  <body class="individual system <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+    <$MTInclude module="<__trans phrase="Header">"$>
+    <div id="content">
+      <div id="main">
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <h1><$MTGetVar name="page_title"$></h1>
+        <div class="entry">
+<MTSearchResults>
+	<$MTCurrentPage setvar="curpage"$><$MTTotalPages setvar="tpage"$>
+	<MTSearchResultsHeader>
+          <ul class="info">
+            <li>Search: <em><$MTSearchString$></em></li>
+            <li><em><span class="count"><$MTSearchResultCount$></span></em> Hits</li>
+		<MTIf name="tpage" ne="1">
+            <li>Pages: <em><$MTGetVar name="curpage"$></em> / <$MTGetVar name="tpage"$></li></MTIf>
+          </ul>
+	</MTSearchResultsHeader>
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+	<$MTSetVar name="__counter__" op="++"$>
+	<MTSetVars>
+		<MTIf name="__odd__">__odd__=0<MTElse>__odd__=1</MTIf>
+	</MTSetVars>
+	<MTSearchResultsFooter>
+		<MTIf name="tpage" ne="1">
+          <ul class="rpnavi">
+            <MTIfPreviousResults><li><a href="<$MTPreviousLink$>" title="Prev">&lt;&lt;</a></li></MTIfPreviousResults>
+			<$MTGetVar name="curpage" op="-" value="3" setvar="stapage"$>
+			<MTIf name="stapage" lt="0"><MTSetVar name="stapage" value="1"></MTIf>
+			<$MTGetVar name="stapage" op="+" value="9" setvar="dispage"$>
+			<MTPagerBlock>
+				<MTIf name="__counter__" eq="$dispage">
+            <li><a href="<$MTPagerLink$>">&#8230;</a></li>
+				<MTElseif name="__counter__" lt="$dispage">
+					<MTIf name="__counter__" ge="$stapage">
+						<MTIf name="__counter__" eq="$curpage">
+            <li><span class="current"><$MTGetVar name="__value__"$></span></li>
+						<MTElse>
+            <li><a href="<$MTPagerLink$>"><$MTGetVar name="__value__"$></a></li>
+						</MTIf>
+					</MTIf>
+				</MTIf>
+			</MTPagerBlock>
+            <MTIfMoreResults><li><a href="<$MTNextLink$>" title="Next">&gt;&gt;</a></li></MTIfMoreResults>
+          </ul>
+		</MTIf>
+	</MTSearchResultsFooter>
+</MTSearchResults>
+<MTNoSearch>
+          <ul class="info">
+            <li>Search: </li>
+            <li><em><span class="count">0</span></em> Hits</li>
+          </ul>
+          <section class="section">
+            <h1>Error</h1>
+            <div class="textBody">
+              <p><__trans phrase="You did not enter anything to search for. Please try again"></p>
+            </div>
+          </section>
+</MTNoSearch>
+<MTNoSearchResults>
+          <ul class="info">
+            <li>Search: <em><$MTSearchString$></em></li>
+            <li><em><span class="count">0</span></em> Hits</li>
+          </ul>
+          <section class="section">
+            <h1><__trans phrase="Search Result"></h1>
+            <div class="textBody">
+              <p><__trans phrase="Your search - <em><$MTSearchString$></em> -- did not match any documents."></p>
+              <p><__trans phrase="Suggestions"></p>
+              <ul>
+                <li><__trans phrase="Make sure all words are spelled correctly."></li>
+                <li><__trans phrase="Try different keywords."></li>
+                <li><__trans phrase="Try more general keywords."></li>
+                <li><__trans phrase="Try decreasing the number of keywords."></li>
+              </ul>
+            </div>
+          </section>
+</MTNoSearchResults>
+
+          <section class="section option">
+            <h1>Search</h1>
+            <form method="get" action="<$MTCGIPath$><$MTSearchScript$>">
+              <fieldset>
+                <legend><label for="searchKeyword2">Search</label></legend>
+                <input type="hidden" name="IncludeBlogs" value="<$MTBlogID$>">
+                <input type="hidden" name="limit" value="<$MTSearchMaxResults$>">
+                <input type="search" class="inputField" id="searchKeyword2" name="search" size="25" value="<$MTSearchString$>">
+                <input class="submit" type="submit" value="Search">
+<!--
+                <section class="section">
+                  <h2>Option</h2>
+                  <ul>
+                    <li><input type="checkbox" id="CaseSearch" name="CaseSearch"><label for="CaseSearch"><__trans phrase="Character Case"></label></li>
+                    <li><input type="checkbox" id="RegexSearch" name="RegexSearch"><label for="RegexSearch"><__trans phrase="Regex Search"></label></li>
+                  </ul>
+                </section>
+                <section class="section">
+                  <h2>Area</h2>
+                  <ul>
+                    <li><input type="radio" id="search-element-entries" name="SearchElement" value="entries"><label for="search-element-entries"><__trans phrase="Body text"></label></li>
+                    <li><input type="radio" id="search-element-comments" name="SearchElement" value="comments"><label for="search-element-comments"><__trans phrase="Comments"></label></li>
+                    <li><input type="radio" id="search-element-both" name="SearchElement" value="both"><label for="search-element-both"><__trans phrase="Both"></label></li>
+                  </ul>
+                </section>
+-->
+              </fieldset>
+            </form>
+          </section>
+          <!--end option -->
+        </div>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+      </div>
+      <!-- end div#main -->
+      <$MTInclude module="<__trans phrase="Utilities">"$>
+      <$MTInclude module="<__trans phrase="Return to page top">"$>
+    </div>
+    <!-- end div#content -->
+    <$MTInclude module="<__trans phrase="Footer">"$>
+  </body>
+</html>

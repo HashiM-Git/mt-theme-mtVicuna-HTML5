@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*
+
+name: Style5-Future
+designer: wu
+designer_url: http://3ping.org/
+developer: HashiM
+developer_url: http://kita2.net/
+layouts: single, double
+*/
+
+@import url(core.css);
+@import url(layouts.css);
+
+/*--------
+	Font size setting
+---------*/
+
+body {
+	font-size: 100%;
+}
+
+div#main {
+	font-size: 100%;
+}

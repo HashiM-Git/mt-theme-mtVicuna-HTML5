@@ -1,0 +1,37 @@
+<MTSetVars>
+	tempName=index_archive
+	page_column=single
+	page_title=Archives
+	blog_id=<$MTBlogID$>
+</MTSetVars>
+<!DOCTYPE html>
+<html lang="<$MTDefaultLanguage$>">
+  <head>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+  </head>
+  <body class="archives <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+    <$MTInclude module="<__trans phrase="Header">"$>
+    <div id="content">
+      <div id="main">
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <h1><$MTGetVar name="page_title"$></h1>
+        <div class="entry">
+          <ul class="info">
+            <li class="entry"><span class="count"><$MTBlogEntryCount$></span> Entries</li>
+            <li class="comment"><span class="count"><$MTBlogCommentCount$></span> Comments</li>
+          </ul>
+<MTEntries sort_order="descend" lastn="9999">
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+</MTEntries>
+        </div>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+      </div>
+      <!-- end div#main -->
+      <$MTInclude module="<__trans phrase="Utilities">"$>
+      <$MTInclude module="<__trans phrase="Return to page top">"$>
+    </div>
+    <!-- end div#content -->
+    <$MTInclude module="<__trans phrase="Footer">"$>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+Vicuna Credit: <a href="http://kita2.net/" title="mt.Vicuna HTML5 ver.1.0.0">Movable Type Template</a>
+A MT5 Theme for Vicuna CMS.: VICUNA CMSのMT5以降用テーマ(RSW対応)
+Entry: ブログ記事(個別エントリー)
+Entry Listing Category: ブログ記事リスト(カテゴリー)
+Entry Listing Datebased: ブログ記事リスト(年別・月別)
+Header: ヘッダー
+Footer: フッター
+HTML Header: 共通Head内要素
+Utilities: ユーティリティ
+Archive Index Link: アーカイブページへのリンク
+Entry Metadata: エントリーメタデータ
+Page Detail: ウェブページ詳細
+Entry Summary: エントリー概要
+Related Entries: 関連エントリー
+Global Navigation: グローバルナビゲーション
+Headline: ヘッドライン
+Next Entry Link: 前後の記事へのリンク
+Calender: カレンダー
+Return to page top: ページ上部へ戻る
+Category Archive List: カテゴリーリスト
+Links: リンク集
+Monthly Archive List: 月別リスト
+Year Monthly Archive List: 年毎の月別リスト
+Recent Assets: アイテム画像サムネイル
+Recent Comments: 最近届いたコメント
+Recent Trackbacks: 最近届いたトラックバック
+Topic Path: パンくずリスト
+Feed: フィード購読リンク
+Conditional Widget - Main Index(Home): 条件付 Widget - トップページのみ出現
+Conditional Widget - Category: 条件付 Widget - カテゴリページのみ出現
+Conditional Widget - Web Page: 条件付 Widget - ウェブページのみ出現
+Conditional Widget - Individual: 条件付 Widget - 個別エントリーのみ出現
+Conditional Widget - Datebased: 条件付 Widget - 時系列ページのみ出現
+Monthly Archive Dropdown: 月別ドロップダウン
+Navigation Utilities: サイドバー(ナビゲーション)
+Other Utilities: サイドバー(その他)
+A picture can be uploaded as an item and an original eye catch picture can be used by attaching and reconstructing the tag "@eyech.": 画像をアイテムとしてアップロードし、タグ「@eyech」をつけて再構築することで、オリジナルのアイキャッチ画像を使うことができます。
+Tagged with @globalNavi WebPages add the Global navigation Automatically.: @globalNavi タグの付いたウェブページを自動的に項目に追加します。
+This is a custom set of widgets that are conditioned to only appear on the Individual entry page.: 個別エントリーページだけに表示されるように設定されているウィジェットです。
+This is a custom set of widgets that are conditioned to only appear on the Category archive.: カテゴリーアーカイブページだけに表示されるように設定されているウィジェットです。
+This is a custom set of widgets that are conditioned to only appear on the Web page.: ウェブページだけに表示されるように設定されているウィジェットです。
+This is a custom set of widgets that are conditioned to only appear on the Datebased archive page.: 時系列アーカイブページだけに表示されるように設定されているウィジェットです。
+You can use some <abbr title="Hyper Text Markup Language">HTML</abbr> tags for decorating.: スタイル指定用の一部の <abbr title="Hyper Text Markup Language">HTML</abbr>タグが使えます。
+You cannot use <abbr title="Hyper Text Markup Language">HTML</abbr> tags.: <abbr title="Hyper Text Markup Language">HTML</abbr>タグは使用できません。
+Extended: 続きを読む
+Comments on <$MTEntryTitle encode_html="1"$>: <$MTEntryTitle encode_html="1"$> へのコメント
+Trackbacks to <$MTEntryTitle encode_html="1"$>: <$MTEntryTitle encode_html="1"$> へのトラックバック
+a newer entry: 1つ新しい記事
+an older entry: 1つ古い記事
+You did not enter anything to search for. Please try again: 検索キーワードが入力されていません。
+replied to <a href="[_1]" title="[_2]">[_3]</a>: から<a href="[_1]" title="[_2]">[_3]</a> への返信
+Remember personal info?: サインイン情報を記憶
+Preview of reply of reply origin: 上記コメントに対する返信のプレビュー
+Your comment has been received and held for review by a blog administrator.: コメントは現在承認されるまで公開を保留されています。
+Your comment submission failed for the following reasons.: コメントの投稿に失敗しました。
+Your search - <em><$MTSearchString$></em> -- did not match any documents.: <em><$MTSearchString$></em> というキーワードを含む記事は見つかりませんでした。
+Suggestions: 次項のヒントを参考にして、検索キーワードを変えてもう一度検索してみてください。
+Make sure all words are spelled correctly.: キーワードに誤字や脱字がありませんか ?
+Try different keywords.: キーワードの意味はそのままで、表現や言い回しを変えてみてください。
+Try more general keywords.: 専門的なキーワードだったり、長い文字列のキーワードだったりした場合は、より一般的で短いキーワードにしてください。
+Try decreasing the number of keywords.: キーワードを複数指定している場合は、キーワードの数を減らしてみてください。
+Character Case: 大文字・小文字を区別する
+Regex Search: 正規表現を使用する
+Body text: 本文内検索
+Comments: コメント
+Both: 両方
+Year: 年
+Month: 月
+http://www.sixapart.com/labs/openid/: https://www.sixapart.jp/about/openid.html
+<em>[_1]</em> [_2] <a href="[_3]" title="full comment on [_4]">read more</a>: <em>[_1]</em> [_2] <a href="[_3]" title="[_4]へのコメント">続きを読む</a>

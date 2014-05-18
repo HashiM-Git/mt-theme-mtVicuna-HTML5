@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MTIgnore><MTIf tag="GoogleSitemapsPing"><!--
+<$MTGoogleSitemapsPing template="SiteMap 0.9"$>
+--></MTIf></MTIgnore>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><$MTBlogURL encode_xml="1"$></loc>
+      <lastmod><$MTDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod>
+      <priority>0.5</priority>
+      <changefreq>daily</changefreq>
+  </url>
+<MTIfArchiveTypeEnabled archive_type="Individual"><MTEntries lastn="9999">
+  <url>
+      <loc><$MTEntryPermalink encode_xml="1"$></loc>
+      <lastmod><$MTEntryModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod>
+      <priority>1.0</priority>
+  </url>
+</MTEntries></MTIfArchiveTypeEnabled>
+<MTIfArchiveTypeEnabled archive_type="Page"><MTPages lastn="9999">
+  <url>
+    <loc><$MTPagePermalink encode_xml="1"$></loc>
+    <lastmod><$MTPageModifiedDate format="%Y-%m-%dT%H:%M:%S"$><$MTBlogTimezone$></lastmod>
+    <priority>1.0</priority>
+  </url>
+</MTPages></MTIfArchiveTypeEnabled>
+</urlset>

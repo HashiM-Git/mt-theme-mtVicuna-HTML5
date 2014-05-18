@@ -1,0 +1,39 @@
+        <p class="topicPath">
+          <a href="<$MTBlogURL$>" rel="nofollow">Home</a><MTIf name="tempName" ne="index_main"> &gt;</MTIf>
+          <MTIf name="tempName" eq="index_archive_datebased"><a href="<$MTLink template="<__trans phrase="Archive Index">"$>">Archives</a> &gt;
+		<MTIfArchiveTypeEnabled archive_type="Yearly"><MTUnless name="body">
+          <a href="<$MTBlogArchiveURL$><$MTArchiveDate format="%Y"$>/" title="<$MTArchiveDate format="%Y"$><__trans phrase="Year">"><$MTArchiveDate format="%Y"$><__trans phrase="Year"></a> &gt;
+		</MTUnless></MTIfArchiveTypeEnabled>
+</MTIf>
+<MTIf name="tempName" eq="index_archive_category">
+          <MTParentCategories glue=" | " exclude_current="1"><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a> &gt;</MTParentCategories>
+</MTIf>
+<MTIf name="tempName" eq="individual_webpage">
+          <MTParentFolders><$MTFolderLabel$> &gt; </MTParentFolders> 
+</MTIf>
+<MTIf name="tempName" like="entry|system_comment">
+	<MTIf tag="EntryCategory">
+          <MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a> &gt;</MTEntryCategories>
+	</MTIf>
+	<MTIf name="tempName" like="system_comment">
+          <a href="<MTEntryLink>"><$MTEntryTitle$></a> &gt;
+	</MTIf>
+</MTIf>
+<MTIf name="tempName" ne="index_main">
+          <span class="current">
+	<MTIf name="tempName" eq="index_archive_datebased">
+		<MTIfArchiveTypeEnabled archive_type="Yearly">
+			<MTIf name="body">
+            <$MTGetVar name="page_title"$>
+			<MTElse>
+            <$MTArchiveDate format="%B"$><__trans phrase="Month"> Archive
+			</MTIf>
+		<MTElse>
+            <$MTGetVar name="page_title"$>
+		</MTIfArchiveTypeEnabled>
+	<MTElse>
+            <$MTGetVar name="page_title"$>
+	</MTIf>
+          </span>
+</MTIf>
+        </p>

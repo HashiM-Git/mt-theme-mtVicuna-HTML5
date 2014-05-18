@@ -1,0 +1,39 @@
+<MTSetVars>
+	jquery=1
+	eyech=0
+</MTSetVars>
+<MTIgnore>
+	$eyech is eyecatch class Setting
+	0: none
+	1: eye-h  (Header)
+	2: eye-hb (Header Banner)
+	3: eye-c  (Content)
+	4: eye-m  (Main)
+	5: eye-u  (Utilities on the top - future double only)
+</MTIgnore>
+<$MTSetVar name="eyecatch" value=""$>
+<MTSetVars>
+	<MTIf name="eyech" eq="1">eyecatch= eye-h
+	<MTElseIf eq="2">eyecatch= eye-hb
+	<MTElseIf eq="3">eyecatch= eye-c
+	<MTElseIf eq="4">eyecatch= eye-m
+	<MTElseIf eq="5">eyecatch= eye-u
+	</MTIf>
+</MTSetVars>
+    <meta charset="<$MTPublishCharset$>">
+    <meta name="generator" content="<$MTProductName version="1"$>">
+    <meta name="author" content="<$MTBlogName encode_html="1"$>">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="<$MTLink template="<__trans phrase="Stylesheet">"$>">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<$MTLink template="RSS"$>">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTLink template="Atom"$>">
+    <link rel="alternate" type="application/rsd+xml" title="RSD" href="<$MTLink template="rsd"$>">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+    <![endif]-->
+    <script src="<$MTLink template="javascript"$>"></script>
+<MTIf name="jquery">    <link rel="stylesheet" href="<$MTBlogURL$>css/sp_gnavi.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="<$MTLink template="user_jquery"$>"></script>
+</MTIf><$MTCCLicenseRDF$>

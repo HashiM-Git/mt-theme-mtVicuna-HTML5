@@ -1,0 +1,45 @@
+<$MTSetVar name="calender_title_format" value="%Y %b"$>
+<MTSetVarTemplate name="calendartemp">
+          <section>
+            <h1>Calendar</h1>
+            <div class="calendar">
+              <p class="summary">Monthly calendar</p>
+              <table class="calendar">
+                <caption>
+                  <MTArchivePrevious archive_type="Monthly"><a href="<$MTArchiveLink archive_type="Monthly"$>" title="Older" rel="nofollow">&laquo;</a></MTArchivePrevious>
+                </caption>
+                  <$MTGetVar name="calender_title"$>
+                  <MTArchiveNext archive_type="Monthly"><a href="<$MTArchiveLink archive_type="Monthly"$>" title="Newer" rel="nofollow">&raquo;</a></MTArchiveNext>
+                <tr>
+                  <th class="sun" title="Sunday">S</th>
+                  <th title="Monday">M</th>
+                  <th title="Tuesday">T</th>
+                  <th title="Wednesday">W</th>
+                  <th title="Thursday">T</th>
+                  <th title="Friday">F</th>
+                  <th class="sat" title="Saturday">S</th>
+                </tr>
+	<MTCalendar month="this">
+                <MTCalendarWeekHeader><tr></MTCalendarWeekHeader>
+                  <td<MTCalendarIfToday> class="today"</MTCalendarIfToday>><MTCalendarIfEntries><MTEntries sort_order="ascend"><MTDateHeader><a href="<$MTEntryLink archive_type="Individual"$>" rel="nofollow"><$MTCalendarDay$></a><MTElse><a href="<$MTEntryLink archive_type="Individual"$>" rel="nofollow">*</a></MTElse></MTDateHeader></MTEntries></MTCalendarIfEntries><MTCalendarIfNoEntries><$MTCalendarDay$></MTCalendarIfNoEntries><MTCalendarIfBlank>&nbsp;</MTCalendarIfBlank></td>
+                <MTCalendarWeekFooter></tr></MTCalendarWeekFooter>
+	</MTCalendar>
+              </table>
+            </div>
+          </section>
+</MTSetVarTemplate>
+<MTIf name="tempName" eq="index_main">
+	<MTArchiveList archive_type="Monthly" lastn="1">
+		<$MTArchiveDate format="$calender_title_format" setvar="calender_title"$>
+		<$MTGetVar name="calendartemp"$>
+	</MTArchiveList>
+<MTElse name="archive_class" like="monthly|daily|weekly">
+	<$MTArchiveDate format="$calender_title_format" setvar="calender_title"$>
+		<$MTGetVar name="calendartemp"$>
+<MTElse name="archive_class" eq="entry-archive">
+	<$MTEntryID setvar="entry_id"$>
+	<MTEntries id="$entry_id">
+		<$MTEntryDate format="$calender_title_format" setvar="calender_title"$>
+		<$MTGetVar name="calendartemp"$>
+	</MTEntries>
+</MTIf>

@@ -1,0 +1,15 @@
+
+          <section>
+            <h1>Search</h1>
+            <div class="search">
+              <form class="searchForm" method="get" action="<$MTCGIPath$><$MTSearchScript$>">
+                <fieldset>
+                  <legend><label for="searchKeyword"><$MTBlogName encode_html="1"$> - <__trans phrase="Search"></label></legend>
+                  <input type="hidden" name="IncludeBlogs" value="<$MTBlogID$>">
+                  <input type="hidden" name="limit" value="<$MTSearchMaxResults$>">
+                  <input type="search" class="inputField" id="searchKeyword"  name="search" size="10" onfocus="if (this.value == 'Keyword(s)') this.value = '';" onblur="if (this.value == '') this.value = 'Keyword(s)';" value="Keyword(s)">
+                  <input type="submit" class="submit" id="submit" value="Search">
+                </fieldset>
+              </form>
+            </div>
+          </section>

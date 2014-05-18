@@ -1,0 +1,38 @@
+<MTSetVars>
+	system_template=1
+	page_column=single
+	page_title=Page Not Found
+	blog_id=<$MTBlogID$>
+</MTSetVars>
+<!DOCTYPE html>
+<html lang="<$MTDefaultLanguage$>">
+  <head>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <title><$MTGetVar name="page_title"$></title>
+  </head>
+  <body class="individual system error <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+    <$MTInclude module="<__trans phrase="Header">"$>
+    <div id="content">
+      <div id="main">
+        <p class="topicPath"><a href="<$MTBlogURL$>" rel="nofollow">Home</a> &gt; <span class="current">Error</span></p>
+        <h1><$MTGetVar name="page_title"$></h1>
+        <div class="entry">
+          <ul class="info">
+            <li>Error</li>
+          </ul>
+          <div class="textBody">
+            <p>Page is Not Found</p>
+            <p><strong><$MTErrorMessage$></strong></p>
+            <p><a href="<$MTBlogURL$>" rel="nofollow">Return to index</a></p>
+          </div>
+        </div>
+        <p class="topicPath"><a href="<$MTBlogURL$>" rel="nofollow">Home</a> &gt; <span class="current">Error</span></p>
+      </div>
+      <!-- end div#main -->
+      <$MTInclude module="<__trans phrase="Utilities">"$>
+      <$MTInclude module="<__trans phrase="Return to page top">"$>
+    </div>
+    <!-- end div#content -->
+    <$MTInclude module="<__trans phrase="Footer">"$>
+  </body>
+</html>

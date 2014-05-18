@@ -1,0 +1,45 @@
+<MTSetVars>
+	tempName=system_comment_response
+	page_column=single
+	blog_id=<$MTBlogID$>
+	<MTIf name="comment_confirmation">
+		page_title=Confirmation
+		message=<p><__trans phrase="Your comment has been submitted!"></p>
+	<MTElse name="comment_pending">
+		page_title=Pending
+		message=<p><__trans phrase="Your comment has been received and held for review by a blog administrator."></p>
+	<MTElse name="comment_error">
+		page_title=Error
+		message=<p><__trans phrase="Your comment submission failed for the following reasons."></p><p><$MTErrorMessage encode_html="1"$></p>
+	</MTIf>
+</MTSetVars>
+<!DOCTYPE html>
+<html lang="<$MTDefaultLanguage$>">
+  <head>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <title><$MTGetVar name="page_title"$></title>
+  </head>
+  <body class="mainIndex <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+    <$MTInclude module="<__trans phrase="Header">"$>
+    <div id="content">
+      <div id="main">
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <h1><$MTGetVar name="page_title"$></h1>
+        <div class="entry">
+          <ul class="info">
+            <li class="author">Name: <$MTCommentPreviewAuthorLink spam_protect="1"$></li>
+            <li class="date"><time datetime="<$MTCommentDate format_name="iso8601"$>"><$MTCommentDate$></time></li>
+          </ul>
+          <div class="textBody">
+            <$MTGetVar name="message"$>
+            <p><a href="<MTEntryLink>">Back</a></p>
+          </div>
+        </div>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+      </div>
+      <!-- end div#main -->
+    </div>
+    <!-- end div#content -->
+    <$MTInclude module="<__trans phrase="Footer">"$>
+  </body>
+</html>

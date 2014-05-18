@@ -1,0 +1,16 @@
+<MTIgnore>
+	<__trans phrase="Tagged with @globalNavi WebPages add the Global navigation Automatically.">
+</MTIgnore>
+      <nav id="globalNavi">
+<MTIf name="jquery">        <div id="toggle"><a href="#">MENU</a></div>
+        <ul id="menu">
+<MTElse>        <ul></MTIf>
+          <li<MTIf name="tempName" eq="index_main"> class="current"</MTIf>><a href="<$MTBlogURL$>" rel="nofollow">Home</a></li>
+          <li<MTIf name="tempName" like="index_archive|individual_entry"> class="current"</MTIf>><a href="<$MTLink template="<__trans phrase="Archive Index">"$>">Archives</a></li>
+<MTPages tag="@globalNavi" sort_by="created_on">
+	<$MTPageID setvar="page_id"$>
+          <li<MTIf name="current_page" eq="$page_id"> class="current"</MTIf>><a href="<$MTPagePermalink$>" title="<$MTPageTitle encode_html="1"$>"><$MTPageTitle encode_html="1"$></a></li>
+</MTPages>
+          <li><a href="<$MTLink template="RSS"$>">RSS</a></li>
+        </ul>
+      </nav>

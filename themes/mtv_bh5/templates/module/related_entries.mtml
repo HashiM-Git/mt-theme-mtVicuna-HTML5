@@ -1,0 +1,31 @@
+<MTSetVars>
+	eid=<MTEntryNext><$MTEntryID pad="1"$>,</MTEntryNext><$MTEntryID pad="1"$>,<MTEntryPrevious><$MTEntryID pad="1"$></MTEntryPrevious>
+	entry=<$MTEntryID$>
+	ent=1
+</MTSetVars>
+<MTSetVarTemplate name="rentrylmaked">
+	<$MTEntryID pad="1" setvar="cur"$><$MTEntryID setvar="centry"$>
+	<MTIf name="centry" lt="$entry"><MTUnless name="eid" like="$cur"><MTIf name="ent" le="5">
+		<MTSetVarBlock name="rte" index="$ent"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></MTSetVarBlock>
+		<$MTSetVar name="ent" value="1" op="+"$>
+	</MTIf></MTUnless></MTIf>
+</MTSetVarTemplate>
+<MTEntryIfTagged>
+	<MTSetVarBlock name="etag"><MTEntryTags glue=" OR "><$MTTagName$></MTEntryTags></MTSetVarBlock>
+	<MTEntries tags="$etag"><$MTGetVar name="rentrylmaked"$></MTEntries>
+<MTElse>
+	<MTSetVarBlock name="ecat"><MTEntryCategories glue=" OR "><$MTCategoryLabel$></MTEntryCategories></MTSetVarBlock>
+	<MTEntries category="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+</MTEntryIfTagged>
+<$MTGetVar name="rte" function="count" setvar="rtecount"$>
+<MTIf name="rtecount">
+          <aside class="relatedEntries">
+            <h2><__trans phrase="Related Entries"></h2>
+            <ul><MTFor var="x" from="1" to="$rtecount">
+		<MTIf name="rte" index="$x">
+              <li<MTIf name="__odd__"> class="odd"</MTIf>><$MTGetVar name="rte" index="$x"$></li>
+		</MTIf>
+	</MTFor>
+            </ul>
+          </aside>
+</MTIf>
