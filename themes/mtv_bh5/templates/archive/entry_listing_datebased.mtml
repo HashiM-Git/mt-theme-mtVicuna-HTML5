@@ -3,14 +3,14 @@
 	page_title=<$MTArchiveTitle$> Archive
 	blog_id=<$MTBlogID$>
 	<MTIf name="archive_class" like="yearly-arc">
-		body=1
-		entry=ascend
 		page_column=single
+		entry=ascend
+		body=1
 		ms=0
 	<MTElse>
-		body=0
-		entry=descend
 		page_column=double
+		entry=descend
+		body=0
 	</MTIf>
 </MTSetVars>
 <!DOCTYPE html>
@@ -32,14 +32,11 @@
         <h1><$MTGetVar name="page_title"$></h1>
         <div class="entry">
 <MTEntries sort_order="$entry">
-	<MTUnless name="body">
-          <$MTInclude module="<__trans phrase="Entry Summary">"$>
-	<MTElse>
-		<$MTSetVar name="month2" value="0"$>
+	<MTIf name="body"><$MTSetVar name="month2" value="0"$>
 		<MTUnless name="ms">
 			<$MTEntryDate format="%m" setvar="month"$>
           <section class="section">
-            <h1><a href="./<$MtEntryDate format="%m"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h1><$MTSetVar name="ms" value="1"$>
+            <h1><a href="./<$MTGetVar name="month"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h1><$MTSetVar name="ms" value="1"$>
 		</MTUnless>
             <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
 		<$MTSetVar name="ms" op="+" value="1"$>
@@ -47,7 +44,9 @@
 		<MTIf name="month" ne="$month2">
           </section><$MTSetVar name="ms" value="0"$>
 		</MTIf>
-	</MTUnless>
+	<MTElse>
+          <$MTInclude module="<__trans phrase="Entry Summary">"$>
+	</MTIf>
 </MTEntries>
           <$MTInclude module="<__trans phrase="Next Entry Link">" sim="0"$>
         </div>

@@ -1,23 +1,21 @@
-<MTIfCommentsActive>
-	<MTSetVarTemplate name="commentlog">
-              <article<MTIfArchiveTypeEnabled archive_type="Individual"> id="comment-<$MTCommentID$>"</MTIfArchiveTypeEnabled>>
+<MTSetVarTemplate name="commentlog">
                 <p><span class="name">
               <$MTCommentAuthorLink default_name="Anonymous" show_email="0" spam_protect="1"$>
-		<MTIf tag="CommentAuthorIdentity">
+	<MTIf tag="CommentAuthorIdentity">
                   <MTCommentAuthorIdentity>
-		</MTIf>
+	</MTIf>
                   </span>
                   <MTIfCommentParent><MTCommentParent><__trans phrase='replied to <a href="[_1]" title="[_2]">[_3]</a>' params='<$MTCommentLink$>%%<$MTCommentAuthor$>:<$MTCommentBody words="20"$>%%<$MTCommentAuthor$>'></MTCommentParent></MTIfCommentParent>
                   <time class="date" datetime="<$MTCommentDate format_name="iso8601"$>"><$MTCommentDate$></time>
-		<MTIfCommentsAccepted>
+	<MTIfCommentsAccepted>
                   <span class="separator">|</span> <$MTCommentReplyToLink$>
-		</MTIfCommentsAccepted>
+	</MTIfCommentsAccepted>
                 </p>
                 <div>
 <$MTCommentBody$>
                 </div>
-	</MTSetVarTemplate>
-
+</MTSetVarTemplate>
+<MTIfCommentsActive>
 	<MTUnless name="comment_preview">
 		<MTIgnore>### Comment Logs ###</MTIgnore>
           <section id="comments">
@@ -27,8 +25,10 @@
 			<MTComments>
 				<MTIfCommentParent>
 				<MTElse>
+              <article<MTIfArchiveTypeEnabled archive_type="Individual"> id="comment-<$MTCommentID$>"</MTIfArchiveTypeEnabled>>
 					<$MTGetVar name="commentlog"$>
 					<MTCommentReplies>
+                <article<MTIfArchiveTypeEnabled archive_type="Individual"> id="comment-<$MTCommentID$>"</MTIfArchiveTypeEnabled>>
 						  <$MTGetVar name="commentlog"$>
 						<$MTCommentRepliesRecurse$>
                 </article>

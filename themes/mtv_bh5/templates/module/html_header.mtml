@@ -2,8 +2,7 @@
 	jquery=1
 	eyech=0
 </MTSetVars>
-<MTIgnore>
-	$eyech is eyecatch class Setting
+<MTIgnore>$eyech is eyecatch class Setting
 	0: none
 	1: eye-h  (Header)
 	2: eye-hb (Header Banner)
@@ -12,14 +11,12 @@
 	5: eye-u  (Utilities on the top - future double only)
 </MTIgnore>
 <$MTSetVar name="eyecatch" value=""$>
-<MTSetVars>
-	<MTIf name="eyech" eq="1">eyecatch= eye-h
+<MTSetVars><MTIf name="eyech" eq="1">eyecatch= eye-h
 	<MTElseIf eq="2">eyecatch= eye-hb
 	<MTElseIf eq="3">eyecatch= eye-c
 	<MTElseIf eq="4">eyecatch= eye-m
 	<MTElseIf eq="5">eyecatch= eye-u
-	</MTIf>
-</MTSetVars>
+	</MTIf></MTSetVars>
     <meta charset="<$MTPublishCharset$>">
     <meta name="generator" content="<$MTProductName version="1"$>">
     <meta name="author" content="<$MTBlogName encode_html="1"$>">
