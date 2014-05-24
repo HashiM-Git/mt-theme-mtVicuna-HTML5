@@ -24,36 +24,14 @@ body {
 /* Header - <body class="eye-h">
 ---------------*/
 
-body.eye-h #header,
-body.eye-h #content,
-body.eye-h #footer {
-	width: 800px;
-}
-
-body.eye-h #globalNavi {
-	position: absolute;
-	top: 75px;
-	left: 30px;
-	background-image:  none;
-	border-left: 1px solid #ddd;
-}
-
-body.eye-h #globalNavi a {
-	border-right: 1px solid #ddd;
-	color: #666;
-	background-image:  none;
-}
-
-body.eye-h #globalNavi a:hover,
-body.eye-h #globalNavi li.current a {
-	color: #000;
-}
-
 body.eye-h #header {
 	padding: 0;
-	height: 122px;
-	background-image: url(images/eyeCatch/header.png);
+	height: 180px;
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
+	margin-bottom: 0.3%;
+	border-radius: 0 0 8px 8px;
+	-webkit-border-radius: 0 0 8px 8px;
 }
 
 body.eye-h #header h1.siteName {
@@ -75,14 +53,31 @@ body.eye-h #header p.description {
 	color: #333;
 }
 
+body.eye-h #globalNavi {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+}
+
+body.eye-h #globalNavi ul {
+	background-image: none;
+	border-left: 1px solid #ddd;
+}
+
+body.eye-h #globalNavi ul li a {
+	border-right: 1px solid #ddd;
+	color: #666;
+	background-image: none;
+}
+
+body.eye-h #globalNavi a:hover,
+body.eye-h #globalNavi li.current a {
+	color: #000;
+}
+
 /* Header Banner - <body class="eye-hb">
 ---------------*/
-
-body.eye-hb #header,
-body.eye-hb #content,
-body.eye-hb #footer {
-	width: 800px;
-}
 
 body.eye-hb #header {
 	padding: 0;
@@ -93,10 +88,12 @@ body.eye-hb #header h1.siteName {
 }
 
 body.eye-hb #header h1.siteName a {
-	height: 122px;
+	height: 180px;
 	display: block;
-	background-image: url(images/eyeCatch/header.png);
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
+	border-radius: 0 0 8px 8px;
+	-webkit-border-radius: 0 0 8px 8px;
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -113,30 +110,21 @@ body.eye-hb #globalNavi {
 /* Content - <body class="double eye-c">
 ---------------*/
 
-body.eye-c #header,
-body.eye-c #content,
-body.eye-c #footer {
-	width: 800px;
-}
-
-body.eye-c #content {
-	padding-top: 228px;
-	background-image: url(images/eyeCatch/content.png);
+body.eye-c #globalNavi {
+	padding-bottom: 182px;
+	background-image: url(images/eyeCatch/image1.png);
+	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
 body.eye-c ul#flip1 {
 	position: absolute;
-	top: 230px;
+	top: 183px;
 	right: 0;
 }
 
 body.eye-c #content p.topicPath {
-	margin-right: 12.5em;	
-}
-
-body.eye-c #utilities {
-	top: 230px;
+	margin-right: 12.5em;
 }
 
 @media screen and (max-width:480px) {
@@ -650,14 +638,9 @@ body.eye-c #utilities {
   body.double #utilities div.navi section > div ul {
 	margin: 0 3px 0 17px;
 	padding: 1px 0;
-	background: #f6f6f6 url(images/interface/bg_dl-navi_ul.png) left bottom no-repeat;
-
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
-	-webkit-border-top-left-radius: 6px;
-	-webkit-border-top-right-radius: 6px;
-	-moz-border-top-left-radius: 6px;
-	-moz-border-top-right-radius: 6px;
+	background-color: #f6f6f6;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
   }
 
   body.double #utilities div.navi section > div ul li a {
@@ -712,9 +695,7 @@ body.eye-c #utilities {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #ddd #fff #fff #ddd;
-
 	border-radius: 6px;
-	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
   }
 

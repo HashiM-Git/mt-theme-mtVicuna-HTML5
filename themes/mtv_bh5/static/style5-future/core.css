@@ -122,9 +122,8 @@ http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 
 body {
 	color: #333;
-	background-color: #d4d4d4;
-	background-image: url(images/interface/bg_body.png);
-	background-repeat: repeat-x;
+	background: linear-gradient(#9d9d9d, #d4d4d4);
+	background: -webkit-gradient(#9d9d9d, #d4d4d4);
 }
 
 /* Link
@@ -432,9 +431,8 @@ hr {
 #content {
 	position: relative;
 	background-color: #fff;
-	background-image: url(images/interface/bg_white_corner01.png);
-	background-repeat: no-repeat;
-	background-position: left top;
+	border-radius: 8px 8px 0 0;
+	-webkit-border-radius: 8px 8px 0 0;
 }
 
 p.topicPath {
@@ -481,9 +479,6 @@ p.topicPath span.current {
 
 #main {
 	padding: 1px 0;
-	background-image: url(images/interface/bg_white_corner02.png);
-	background-repeat: no-repeat;
-	background-position: right top;
 	_height: 800px;
 }
 
