@@ -310,6 +310,14 @@ hr {
 	border-top: 1px dotted #ccc;
 }
 
+select#entry-category,
+input#entry-title {
+	width: 26em;
+	margin: 0.5em 10px;
+	padding: 1px 0.2em;
+	font-size: 100%;
+}
+
 /*========================================
 
   div#header
@@ -508,6 +516,10 @@ article.section > div.textBody h5,
 	font-size: 84%;
 }
 
+div.entry div#profile-comment-threads {
+	border: none transparent;
+}
+
 /* ul.info
 ---------------*/
 
@@ -670,6 +682,21 @@ ul#flip2 {
 	list-style-position: inside;
 }
 
+ul#flip1 li.create-entry {
+	width: 9.8em;
+	padding-right: 10px;
+	float: none;
+	clear: both;
+	font-size: 92%;
+	text-align: center;
+	line-height: 1;
+}
+
+ul#flip1 li.create-entry a {
+	padding-left: 25px;
+	padding-right: 10px;
+}
+
 /*=========================
   div#Comments, 
   div#Trackbacks
@@ -690,6 +717,28 @@ ul#flip2 {
 	border-bottom: 1px dotted #CCCCCC;
 	border-left: 5px solid #666666;
 	margin-bottom: 1em;
+}
+
+#comments h1 span.separator {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	font-size: 85%;
+}
+
+#comments h1 a.entrep {
+	font-size: 85%;
+}
+
+#comments a.entrep:link {
+	color: #fff;
+}
+
+#comments a.entrep:visited {
+	color: #fee;
+}
+
+#comments a.entrep:hover {
+	color: #eff;
 }
 
 #comments div.log article,
@@ -834,6 +883,21 @@ ul#flip2 {
 	text-decoration: none;
 }
 
+#utilities section > .members ul,
+#utilities section > div .user-listing {
+	list-style: none;
+}
+
+#utilities section > .recentComments li.rc-user ul,
+#utilities section > .categoryArchives .forum ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+#utilities section > .members li {
+	display: inline;
+}
+
 /* Feeds
 ---------------*/
 
@@ -854,14 +918,6 @@ ul#flip2 {
 
 /* div#utilities dl dd >  
 ---------------*/
-
-#utilities section > div ul ul {
-	margin-left: 15px;
-}
-
-#utilities section > div dl dt {
-	background-color: #ddd!important;
-}
 
 #utilities section > div form {
 	margin: 0;
@@ -963,6 +1019,47 @@ article.headline > ul li {
 article.headline > ul li.textBody {
 	display: block;
 	font-size: 100%;
+}
+
+div.entry article.headlbox {
+	margin: 0;
+	padding: 0;
+	display: table;
+	width: 100%;
+	font-size: 95%;
+	border-bottom: 1px solid #ddd;
+}
+
+div.entry article.headlbox:first-child {
+	margin-top: 1.8em;
+}
+
+article.headlbox ul {
+	margin: 0.5em 0.3em;
+	list-style: none;
+}
+
+div.entry-sect, p.ccount, div.lcomment {
+	margin: 0;
+	padding: 0.2em;
+	display: table-cell;
+	border-right: 1px solid #ddd;
+}
+
+.headlbox > div.entry-sect {
+}
+
+.headlbox > p.ccount {
+	text-align: center;
+	width: 50px;
+	vertical-align: middle;
+}
+
+.headlbox > div.lcomment {
+	width: 40%;
+	padding-left: 0.5em;
+	border-right: 0;
+	vertical-align: middle;
 }
 
 /* ul.thumb
@@ -1169,6 +1266,75 @@ body.multi2-l div#utilities:after {
 	clear: both;
 }
 
+.create-entry a {
+	padding-left: 30px;
+	background-image: url(images/forum/start-topic-icon.png);
+	background-repeat: no-repeat;
+	background-position: 10px 3px;
+}
+
+.icon-comment {
+	background: url(images/forum/reply-icon.gif) no-repeat 0 30%;
+	padding-left: 15px;
+}
+
+.icon-entry {
+	background: url(images/forum/topic-icon.gif) no-repeat 2px 50%;
+	padding-left: 15px;
+}
+
+.icon-score {
+	background: url(images/forum/score-icon.gif) no-repeat 0 50%;
+	padding-left: 15px;
+}
+
+.entry-asset .asset-meta .byline,
+.entry-asset .asset-meta .entry-meta-comments,
+.entry-asset .asset-meta .entry-meta-trackbacks {
+	margin-right: 10px;
+}
+
+.entry-meta-comments {
+	background: url(images/forum/comment-icon.gif) no-repeat 0px 50%;
+	padding: 0 0 3px 18px;
+}
+
+a.scoring {
+	white-space: nowrap;
+	background: url(images/forum/scoring-stars.gif) no-repeat 0 -120px;
+	padding: 0 0 3px 18px;
+	line-height: 22px;
+	text-decoration: none;
+	cursor: default;
+}
+
+a.scoring-scorable {
+	background-position: 0 0;
+	text-decoration: default;
+	cursor: pointer;
+}
+
+a:hover.scoring-scorable {
+	background-position: 0 -40px;
+	text-decoration: underline;
+}
+
+a.scoring-pending,
+a:hover.scoring-pending {
+	background: url(images/forum/scoring-pending.gif) no-repeat;
+	cursor: wait;
+}
+
+a.scoring-scored,
+a:hover.scoring-scored {
+	background-position: 0 -80px;
+}
+
+.scoring-vote,
+#mt-community-blog .scoring-score-label {
+	display: none;
+}
+
 .img_L {
 	margin-right: 2%!important;
 	margin-top: 2%!important;
@@ -1184,6 +1350,68 @@ body.multi2-l div#utilities:after {
 .clear {
 	display: block;
 	clear: both;
+}
+
+.hidden {
+	display: none;
+}
+
+/* member-list
+---------------*/
+body.member div.entry {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+body.member .entry > .member {
+	margin: 1.5em 0 0.5em 0.5em;
+	float: left;
+	width: 45%;
+	height: 64px;
+	padding: 0 1px;
+}
+
+body.member .entry > .member p {
+	float: left;
+	width: 55px;
+	margin: 0 2px 2px 0;
+}
+
+body.member .entry > .member ul {
+	margin: 0 0.3em;
+	float: left;
+	list-style-type: none;
+}
+
+body.member p.topicPath {
+	clear: both;
+}
+
+/* profile-view
+---------------*/
+body.profile h1 img {
+	vertical-align: top;
+}
+
+body.profile div.inline {
+	margin: 0;
+	position: relative;
+	left: 130px;
+	bottom: 40px;
+}
+
+body.profile div.inline p {
+	display: inline;
+}
+
+body.profile div.entry {
+	margin-top: -22px;
+}
+
+body.profile article.headline > h2.icon-comment,
+body.profile article.headline > h2.icon-entry,
+body.profile article.headline > h2.icon-score {
+	padding-left: 15px;
 }
 
 /* IE6 - なにがあってもカラム落ちを防ぐ

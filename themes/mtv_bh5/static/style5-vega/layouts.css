@@ -140,31 +140,63 @@ body.al #footer {
   #content {
 	text-align: left;
   }
+
   div.entry,
   article.entry {
 	margin: 0em 15px;
   }
+
   article.entry ul.info,
   .archives div.entry ul.info,
   .system div.entry ul.info {
 	margin: 0 -15px 1.5em;
 	padding: 0.3em 15px;
   }
-  article.section .textBody,
-  article.section footer {
-	display: none;
-  }
+
   .entry > .section h1 {
 	margin-right: 0;
 	padding-right: 0;
   }
+
   .entry > .section h1 a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
+
   .entry > .section h1 a:hover {
 	text-decoration: none;
+  }
+
+  .headlbox > div.entry-sect {
+	border: 0;
+  }
+
+  article.section .textBody,
+  article.section footer,
+  .headlbox > p.ccount,
+  .headlbox > div.lcomment {
+	display: none;
+  }
+
+  body.member .entry > .member {
+	margin: 1.5em 1em;
+	width: auto;
+	height: 64px;
+	float: none;
+	clear: both;
+  }
+
+  body.member .entry > .member p {
+	float: left;
+	width: 55px;
+	margin: 0 2px 2px 0;
+  }
+
+  body.member .entry > .member ul {
+	margin: 0 0.5em;
+	float: left;
+	list-style-type: none;
   }
 }
 
