@@ -156,10 +156,6 @@ body.eye-c #content p.topicPath {
   article.entry {
 	margin: 0 10px;
   }
-  article.section .textBody,
-  article.section footer {
-	display: none;
-  }
   .entry > .section h1 {
 	margin-right: 0;
 	padding-right: 0;
@@ -218,6 +214,36 @@ body.eye-c #content p.topicPath {
   .archives #main .entry ul.info {
 	margin: 0 -10px;
 	border-left: none;
+  }
+  .headlbox > div.entry-sect {
+	border: 0;
+  }
+
+  article.section .textBody,
+  article.section footer,
+  .headlbox > p.ccount,
+  .headlbox > div.lcomment {
+	display: none;
+  }
+
+  body.member .entry > .member {
+	margin: 1.5em 1em;
+	width: auto;
+	height: 64px;
+	float: none;
+	clear: both;
+  }
+
+  body.member .entry > .member p {
+	float: left;
+	width: 55px;
+	margin: 0 2px 2px 0;
+  }
+
+  body.member .entry > .member ul {
+	margin: 0 0.5em;
+	float: left;
+	list-style-type: none;
   }
 }
 
