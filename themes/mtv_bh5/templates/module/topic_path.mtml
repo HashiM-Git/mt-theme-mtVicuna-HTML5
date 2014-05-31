@@ -1,9 +1,9 @@
         <p class="topicPath">
           <a href="<$MTBlogURL$>" rel="nofollow">Home</a><MTIf name="tempName" ne="index_main"> &gt;</MTIf>
           <MTIf name="tempName" eq="index_archive_datebased"><a href="<$MTLink template="<__trans phrase="Archive Index">"$>">Archives</a> &gt;
-		<MTIfArchiveTypeEnabled archive_type="Yearly"><MTUnless name="body">
+	<MTIfArchiveTypeEnabled archive_type="Yearly"><MTUnless name="body">
           <a href="<$MTBlogArchiveURL$><$MTArchiveDate format="%Y"$>/" title="<$MTArchiveDate format="%Y"$><__trans phrase="Year">"><$MTArchiveDate format="%Y"$><__trans phrase="Year"></a> &gt;
-		</MTUnless></MTIfArchiveTypeEnabled>
+	</MTUnless></MTIfArchiveTypeEnabled>
 </MTIf>
 <MTIf name="tempName" eq="index_archive_category">
           <MTParentCategories glue=" | " exclude_current="1"><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a> &gt;</MTParentCategories>

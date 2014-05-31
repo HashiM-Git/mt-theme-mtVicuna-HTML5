@@ -1,49 +1,37 @@
 <MTSetVars><MTIf name="sim">fid=flip1<MTElse>fid=flip2</MTIf></MTSetVars>
 <MTIf name="datebased_archive">
 	<MTArchivePrevious>
-		<MTIf name="sim">
-			<MTSetVarBlock name="prnx">
+		<MTSetVarBlock name="prnx">
+<MTIf name="sim">
           <li class="older"><a href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>" rel="nofollow">Older</a></li>
-</MTSetVarBlock>
-		<MTElse>
-			<MTSetVarBlock name="prnx">
+<MTElse>
           <li class="older">Older: <a href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"><$MTArchiveTitle$></a></li>
-</MTSetVarBlock>
-		</MTif>
+</MTif></MTSetVarBlock>
 	</MTArchivePrevious>
 	<MTArchiveNext>
-		<MTIf name="sim">
-			<MTSetVarBlock name="prnx" append="1">
+		<MTSetVarBlock name="prnx" append="1">
+<MTIf name="sim">
           <li class="newer"><a href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>" rel="nofollow">Newer</a></li>
-</MTSetVarBlock>
-		<MTElse>
-			<MTSetVarBlock name="prnx" append="1">
+<MTElse>
           <li class="newer">Newer: <a href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"><$MTArchiveTitle$></a></li>
-</MTSetVarBlock>
-		</MTIf>
+</MTIf></MTSetVarBlock>
 	</MTArchiveNext>
 <MTElse>
 	<MTEntryPrevious>
-		<MTIf name="sim">
-			<MTSetVarBlock name="prnx">
+		<MTSetVarBlock name="prnx">
+<MTIf name="sim">
           <li class="older"><a href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" rel="nofollow">Older</a></li>
-</MTSetVarBlock>
-		<MTElse>
-			<MTSetVarBlock name="prnx">
+<MTElse>
           <li class="older">Older: <a href="<$MTEntryPermalink$>" title="<__trans phrase="an older entry">"><$MTEntryTitle encode_html="1"$></a></li>
-</MTSetVarBlock>
-		</MTIf>
+</MTIf></MTSetVarBlock>
 	</MTEntryPrevious>
 	<MTEntryNext>
-		<MTIf name="sim">
-			<MTSetVarBlock name="prnx" append="1">
+		<MTSetVarBlock name="prnx" append="1">
+<MTIf name="sim">
           <li class="newer"><a href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>" rel="nofollow">Newer</a></li>
-</MTSetVarBlock>
-		<MTElse>
-			<MTSetVarBlock name="prnx" append="1">
+<MTElse>
           <li class="newer">Newer: <a href="<$MTEntryPermalink$>" title="<__trans phrase="a newer entry">"><$MTEntryTitle encode_html="1"$></a></li>
-</MTSetVarBlock>
-		</MTIf>
+</MTIf></MTSetVarBlock>
 	</MTEntryNext>
 </MTIf>
 <MTIf name="prnx">

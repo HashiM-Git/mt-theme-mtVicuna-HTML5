@@ -105,19 +105,16 @@
 
                   <div id="comments-open-footer" class="actions-bar">
                     <div id="comments-open-captcha"><$MTCaptchaFields$></div>
+                    <input type="submit" accesskey="s" name="post" id="comment-submit" class="primary button" value="<__trans phrase="Submit">">
+                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" class="button" value="<__trans phrase="Preview">" onclick="this.form.preview.value='1';">
 		<MTIf name="comment_preview">
-                    <input type="submit" accesskey="s" name="post" id="comment-submit" class="primary button" value="<__trans phrase="Submit">">
-                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" class="button" value="<__trans phrase="Preview">" onclick="this.form.preview.value='1';">
                     <input type="button" name="cancel" id="comment-cancel" class="button" value="<__trans phrase="Cancel">" onclick="window.location='<$MTEntryPermalink abs2rel="1"$>#comments-form'">
-		<MTElse>
-                    <input type="submit" accesskey="s" name="post" id="comment-submit" class="primary button" value="<__trans phrase="Submit">">
-                    <input type="submit" accesskey="v" name="preview_button" id="comment-preview" class="button" value="<__trans phrase="Preview">" onclick="this.form.preview.value='1';">
 		</MTIf>
                   </div>
                 </fieldset>
               </form>
 
-              <script type="text/javascript">
+              <script>
     mtAttachEvent("load", mtEntryOnLoad);
     mtAttachEvent("unload", mtEntryOnUnload);
               </script>
