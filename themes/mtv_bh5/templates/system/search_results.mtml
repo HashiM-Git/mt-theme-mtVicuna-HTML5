@@ -53,7 +53,7 @@
 				<MTElseif name="__counter__" lt="$dispage">
 					<MTIf name="__counter__" ge="$stapage">
 						<MTIf name="__counter__" eq="$curpage">
-            <li><span class="current"><$MTGetVar name="__value__"$></span></li>
+            <li class="current"><$MTGetVar name="__value__"$></li>
 						<MTElse>
             <li><a href="<$MTPagerLink$>"><$MTGetVar name="__value__"$></a></li>
 						</MTIf>

@@ -240,7 +240,9 @@ body.al #footer {
 
   #utilities div.navi > *,
   #utilities div.navi section > h1,
-  #utilities div.navi section > div {
+  #utilities div.navi section > div,
+  #utilities div.navi aside > h1,
+  #utilities div.navi aside > div {
 	margin-right: 15px;
   }
 
@@ -311,7 +313,9 @@ body.al #footer {
 
   body.single #utilities div.navi > *,
   body.single #utilities div.navi section > h1,
-  body.single #utilities div.navi section > div {
+  body.single #utilities div.navi section > div,
+  body.single #utilities div.navi aside > h1,
+  body.single #utilities div.navi aside > div {
 	margin-right: 15px;
   }
 
@@ -531,7 +535,9 @@ body.al #footer {
 
   body.multi #utilities div.navi > *,
   body.multi #utilities div.navi section > h1,
-  body.multi #utilities div.navi section > div {
+  body.multi #utilities div.navi section > div,
+  body.multi #utilities div.navi aside > h1,
+  body.multi #utilities div.navi aside > div {
 	margin-right: 10px;
   }
 
@@ -547,7 +553,9 @@ body.al #footer {
 
   body.multi #utilities div.others > *,
   body.multi #utilities div.others section > h1,
-  body.multi #utilities div.others section > div {
+  body.multi #utilities div.others section > div,
+  body.multi #utilities div.others aside > h1,
+  body.multi #utilities div.others aside > div {
 	margin-left: 10px;
   }
 
@@ -610,7 +618,9 @@ body.al #footer {
 
   body.multi2 #utilities div.navi > *,
   body.multi2 #utilities div.navi section > h1,
-  body.multi2 #utilities div.navi section > div {
+  body.multi2 #utilities div.navi section > div,
+  body.multi2 #utilities div.navi aside > h1,
+  body.multi2 #utilities div.navi aside > div {
 	margin-left: 15px;
 	margin-right: 15px;
   }
@@ -627,12 +637,10 @@ body.al #footer {
 
   body.multi2 #utilities div.others > *,
   body.multi2 #utilities div.others section > h1,
-  body.multi2 #utilities div.others section > div {
+  body.multi2 #utilities div.others section > div,
+  body.multi2 #utilities div.others aside > h1,
+  body.multi2 #utilities div.others aside > div {
 	margin-left: 15px;
-  }
-
-  body.multi2 #utilities section > div dl {
-	padding: 0.3em 0;
   }
 
 /*========================================
@@ -697,7 +705,9 @@ body.al #footer {
 
   body.multi2-l #utilities div.navi > *,
   body.multi2-l #utilities div.navi section > h1,
-  body.multi2-l #utilities div.navi section > div {
+  body.multi2-l #utilities div.navi section > div,
+  body.multi2-l #utilities div.navi aside > h1,
+  body.multi2-l #utilities div.navi aside > div {
 	margin-right: 15px;
   }
 
@@ -713,14 +723,13 @@ body.al #footer {
 
   body.multi2-l #utilities div.others > *,
   body.multi2-l #utilities div.others section > h1,
-  body.multi2-l #utilities div.others section > div {
+  body.multi2-l #utilities div.others section > div,
+  body.multi2-l #utilities div.others aside > h1,
+  body.multi2-l #utilities div.others aside > div {
 	margin-left: 15px;
 	margin-right: 15px;
   }
 
-  body.multi2-l #utilities section > div dl {
-	padding: 0.3em 0;
-  }
 /*========================================
 
 	Special Layout set
@@ -760,7 +769,9 @@ body.al #footer {
 
   body.set2 #utilities div.navi > *,
   body.set2 #utilities div.navi section > h1,
-  body.set2 #utilities div.navi section > div {
+  body.set2 #utilities div.navi section > div,
+  body.set2 #utilities div.navi aside > h1,
+  body.set2 #utilities div.navi aside > div {
 	margin-right: 0!important;
   }
 
@@ -774,7 +785,9 @@ body.al #footer {
 
   body.set2 #utilities div.others > *,
   body.set2 #utilities div.others section > h1,
-  body.set2 #utilities div.others section > div {
+  body.set2 #utilities div.others section > div,
+  body.set2 #utilities div.others aside > h1,
+  body.set2 #utilities div.others aside > div {
 	margin-right: 15px!important;
   }
 /* Fixed 800px - <body class="f800">

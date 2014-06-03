@@ -14,8 +14,15 @@
 	<MTSetVarBlock name="etag"><MTEntryTags glue=" OR "><$MTTagName$></MTEntryTags></MTSetVarBlock>
 	<MTEntries tags="$etag"><$MTGetVar name="rentrylmaked"$></MTEntries>
 <MTElse>
-	<MTSetVarBlock name="ecat"><MTEntryCategories glue=" OR "><$MTCategoryLabel$></MTEntryCategories></MTSetVarBlock>
-	<MTEntries category="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+	<MTIf tag="EntryCategory">
+		<MTSetVarBlock name="ecat"><MTEntryCategories glue=" OR "><$MTCategoryLabel$></MTEntryCategories></MTSetVarBlock>
+		<MTEntries category="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+	<MTElse>
+		<MTSetVarBlock name="ecat">NOT (<MTCategories glue=" OR "><$MTCategoryLabel$></MTCategories>)</MTSetVarBlock>
+		<MTUnless name="ecat" eq="NOT ()">
+			<MTEntries categories="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+		</MTUnless>
+	</MTIf>
 </MTEntryIfTagged>
 <$MTGetVar name="rte" function="count" setvar="rtecount"$>
 <MTIf name="rtecount">

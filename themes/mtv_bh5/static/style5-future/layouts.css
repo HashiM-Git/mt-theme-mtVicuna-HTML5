@@ -196,13 +196,15 @@ body.eye-c #content p.topicPath {
 	border-left: 4px solid #f5f5f5;
   }
 
-  #utilities div section > h1 {
+  #utilities div section > h1,
+  #utilities div aside > h1 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
   }
 
-  #utilities div section > div {
+  #utilities div section > div,
+  #utilities div aside > div {
 	margin: 0 10px 1em;
 	padding: 5px 0;
 	border-left: 5px solid #ddd;
@@ -315,13 +317,15 @@ body.eye-c #content p.topicPath {
 	border-bottom: 1px solid #eaeaea;
   }
 
-  #utilities div section > h1 {
+  #utilities div section > h1,
+  #utilities div aside > h1 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
   }
 
-  #utilities div section > div {
+  #utilities div section > div,
+  #utilities div aside > div {
 	margin: 0 10px 1em;
 	padding: 5px 0;
 	border-left: 5px solid #ddd;
@@ -330,21 +334,9 @@ body.eye-c #content p.topicPath {
 	background: #f7f7f7;
   }
 
-  #utilities div section > div ul {
+  #utilities div section > div ul,
+  #utilities div aside > div ul {
 	margin: 0.5em 10px 0.5em 25px;
-  }
-
-  #utilities div section > div dt {
-	margn: 0;
-	padding: 0.3em 0;
-	color: #333;
-	border: none;
-	background-color: transparent;
-  }
-
-  #utilities div section > div dd {
-	border: none;
-	background-image: none;
   }
 
   #utilities {
@@ -456,13 +448,15 @@ body.eye-c #content p.topicPath {
 	border-bottom: 1px solid #eaeaea;
   }
 
-  body.single #utilities div section > h1 {
+  body.single #utilities div section > h1,
+  body.single #utilities div aside > h1 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
   }
 
-  body.single #utilities div section > div {
+  body.single #utilities div section > div,
+  body.single #utilities div aside > div {
 	margin: 0 10px 1em;
 	padding: 5px 0;
 	border-left: 5px solid #ddd;
@@ -471,21 +465,9 @@ body.eye-c #content p.topicPath {
 	background: #f7f7f7 url(images/common/bg_line-dot.gif) left top repeat-x;
   }
 
-  body.single #utilities div section > div ul {
+  body.single #utilities div section > div ul,
+  body.single #utilities div aside > div ul {
 	margin: 0.5em 10px 0.5em 25px;
-  }
-
-  body.single #utilities div section > div dt {
-	margn: 0;
-	padding: 0.3em 0;
-	color: #333;
-	border: none;
-	background-color: transparent;
-  }
-
-  body.single #utilities div section > div dd {
-	border: none;
-	background-image: none;
   }
 
   body.single #utilities {
@@ -614,17 +596,20 @@ body.eye-c #content p.topicPath {
 	margin: 0;
   }
 
-  body.double #utilities div section > h1 {
+  body.double #utilities div section > h1,
+  body.double #utilities div aside > h1 {
 	margin: 0 5px 0 17px;
 	line-height: 1;
   }
 
-  body.double #utilities div section > div {
+  body.double #utilities div section > div,
+  body.double #utilities div aside > div {
 	margin: 0;
 	_height: 1px; /* for IE */
   }
 
-  body.double #utilities div section ul li {
+  body.double #utilities div section ul li,
+  body.double #utilities div aside ul li {
 	margin-left: 25px;
 	margin-right: 5px;
 }
@@ -656,12 +641,14 @@ body.eye-c #content p.topicPath {
 	padding-bottom: 6px;
   }
 
-  body.double #utilities div.navi section > div {
+  body.double #utilities div.navi section > div,
+  body.double #utilities div.navi aside > div {
 	padding-bottom: 38px;
 	background: url(images/interface/bg_dl-navi_dd.png) left bottom no-repeat;
   }
 
-  body.double #utilities div.navi section > div ul {
+  body.double #utilities div.navi section > div ul,
+  body.double #utilities div.navi aside > div ul {
 	margin: 0 3px 0 17px;
 	padding: 1px 0;
 	background-color: #f6f6f6;
@@ -669,7 +656,8 @@ body.eye-c #content p.topicPath {
 	-webkit-border-radius: 6px;
   }
 
-  body.double #utilities div.navi section > div ul li a {
+  body.double #utilities div.navi section > div ul li a,
+  body.double #utilities div.navi aside > div ul li a {
 	text-decoration: none;
   }
 
@@ -699,16 +687,14 @@ body.eye-c #content p.topicPath {
 	border-bottom: none;
   }
 
-  body.double #utilities div.others section > div {
+  body.double #utilities div.others section > div,
+  body.double #utilities div.others aside > div {
 	margin: 12px 0;
 	padding: 0;
   }
 
-  body.double #utilities div.others section > div dl dd {
-	margin: 0.2em 10px 0.2em 10px;
-  }
-
-  body.double #utilities div.others section > div ul {
+  body.double #utilities div.others section > div ul,
+  body.double #utilities div.others aside > div ul {
 	margin: 0 0 0 5px;
   }
 
@@ -756,28 +742,12 @@ body.eye-c #content p.topicPath {
 /*	dd > p
 -----------------------------*/
 
-  body.double #utilities div section p {
+  body.double #utilities div section p,
+  body.double #utilities div aside p {
 	margin: 0.6em 13px 0.4em 18px;
 	line-height: 1.4;
 	color: #999;
 	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
-  }
-
-/*	dd > list
------------------------------*/
-
-  body.double #utilities div section dl dt {
-	margin: 0.3em 0;
-	background-color: #eee;
-  }
-
-  body.double #utilities div section dl dt a {
-	text-decoration: none;
-  }
-
-  body.double #utilities div section dl dd {
-	margin: 0.1em 5px;
-	font-size: 12px;
   }
 
 /* Utilities - <body class="double eye-u">

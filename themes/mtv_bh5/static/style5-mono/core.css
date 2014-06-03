@@ -860,12 +860,14 @@ ul#flip1 li.create-entry a {
 	padding-bottom: 5px;
 }
 
-#utilities section > div {
+#utilities section > div,
+#utilities aside > div {
 	margin: 0 10px;
 	padding: 1px 0;
 }
 
-#utilities section > h1 {
+#utilities div > section h1,
+#utilities div > aside h1 {
 	margin: 5px 10px;
 	padding: 4px 0;
 	border-top: 0;
@@ -875,20 +877,33 @@ ul#flip1 li.create-entry a {
 	color: #000;
 }
 
-#utilities section > div p {
+#utilities section > div p,
+#utilities aside > div p {
 	margin: 0.3em 0;
 }
 
-#utilities section > div ul {
+#utilities section > div ul,
+#utilities aside > div ul {
 	margin: 5px 10px 5px 20px;
 }
 
-#utilities section > div ul li {
+#utilities section > div ul li,
+#utilities aside > div ul li {
 	margin: 0.5em 0;
 }
 
-#utilities section > div ul li a {
+#utilities section > div ul li a,
+#utilities aside > div ul li a {
 	text-decoration: none;
+}
+
+#utilities section > .monthlyArchives ul.mlist {
+	list-style: none;
+	margin-left: 0;
+}
+
+#utilities section > .monthlyArchives ul.mlist > li {
+	display: inline;
 }
 
 #utilities section > .members ul,
@@ -1220,6 +1235,20 @@ table.calendar td a:visited {
 table.calendar td a:hover {
 	color: #000;
 	background-color: #eee;
+}
+
+/* Rpnavi
+---------------*/
+.entry ul.rpnavi {
+	list-style: none;
+}
+
+.entry ul.rpnavi > li {
+	display: inline;
+}
+
+.entry ul.rpnavi > li.current {
+	font-weight: bold;
 }
 
 /* Option

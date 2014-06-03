@@ -851,30 +851,44 @@ ul#flip1 li.create-entry a {
 	padding-bottom: 5px;
 }
 
-#utilities div > section h1 {
+#utilities div > section h1,
+#utilities div > aside h1 {
 	margin: 8px 5px 5px;
 	padding: 0 10px 1px;
 	color: #fff;
 	font-weight: bold;
 }
 
-#utilities section > div {
+#utilities section > div,
+#utilities aside > div {
 	margin: 0 5px;
 	padding: 1px 0;
 	border-top: 3px solid #1e1e1e;
 	background-color: #272727;
 }
 
-#utilities section > div ul {
+#utilities section > div ul,
+#utilities aside > div ul {
 	margin: 5px 10px 5px 25px;
 }
 
-#utilities section > div ul li {
+#utilities section > div ul li,
+#utilities aside > div ul li {
 	margin: 0.5em 0;
 }
 
-#utilities section > div ul li a {
+#utilities section > div ul li a,
+#utilities aside > div ul li a {
 	text-decoration: none;
+}
+
+#utilities section > .monthlyArchives ul.mlist {
+	list-style: none;
+	margin-left: 0;
+}
+
+#utilities section > .monthlyArchives ul.mlist > li {
+	display: inline;
 }
 
 #utilities section > .members ul,
@@ -1215,6 +1229,20 @@ table.calendar td a:hover {
 	border-color: #84dafe;
 	color: #fff;
 	background-color: #b1c722;
+}
+
+/* Rpnavi
+---------------*/
+.entry ul.rpnavi {
+	list-style: none;
+}
+
+.entry ul.rpnavi > li {
+	display: inline;
+}
+
+.entry ul.rpnavi > li.current {
+	font-weight: bold;
 }
 
 /* Option
