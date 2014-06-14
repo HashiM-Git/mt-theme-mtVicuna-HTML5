@@ -33,30 +33,24 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-
 body {
     line-height:1;
 }
-
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
 	display:block;
 }
-
 nav ul {
     list-style:none;
 }
-
 blockquote, q {
     quotes:none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
 }
-
 a {
     margin:0;
     padding:0;
@@ -64,14 +58,12 @@ a {
     vertical-align:baseline;
     background:transparent;
 }
-
 /* change colours to suit your needs */
 ins {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
-
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
@@ -79,21 +71,17 @@ mark {
     font-style:italic;
     font-weight:bold;
 }
-
 del {
     text-decoration: line-through;
 }
-
 abbr[title], dfn[title] {
     border-bottom:1px dotted;
     cursor:help;
 }
-
 table {
     border-collapse:collapse;
     border-spacing:0;
 }
-
 /* change border colour to suit your needs */
 hr {
     display:block;
@@ -103,7 +91,6 @@ hr {
     margin:1em 0;
     padding:0;
 }
-
 input, select {
     vertical-align:middle;
 }
@@ -115,9 +102,7 @@ http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 /*========================================
-
   Elements
-
 ========================================*/
 
 body {
@@ -190,7 +175,6 @@ blockquote {
 	background-image: url(images/icon/quote.gif);
 	background-repeat: no-repeat;
 	background-position: 5px 5px;
-
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -205,7 +189,6 @@ pre {
 	overflow: auto;
 	width: 90%;
 	_width: 95%; /* for IE6 */
-	
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -304,7 +287,6 @@ input.radio {
 	border: none;
 }
 
-
 /* Table
 ---------------*/
 
@@ -356,9 +338,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#header
-
+  #header
 ========================================*/
 
 #header {
@@ -391,7 +371,7 @@ input#entry-title {
 }
 
 /* #globalNavi ul
----------------*/
+-------------------*/
 
 #globalNavi ul {
 	margin: 10px 4px 0;
@@ -431,9 +411,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#content
-
+  #content
 ========================================*/
 
 #content {
@@ -482,7 +460,7 @@ p.topicPath span.current {
 }
 
 /*=========================
- > div#main
+ #main
 =========================*/
 
 #main {
@@ -810,7 +788,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*=========================
-  div#Comments
+  #Comments
 =========================*/
 
 #comments {
@@ -964,7 +942,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*=========================
-  div#trackback 
+  #trackback 
 =========================*/
 
 #trackback {
@@ -1007,16 +985,19 @@ ul#flip1 li.create-entry a {
 }
 
 #trackback ul.info li {
-	display: block;
+	display: list-item;
 	float: none;
 	clear: both;
-	margin: 5px 0;
-	padding-left: 13px;
+	margin: 6px 10px;
 	color: #000;
 	border: 0;
-	background-image: url(images/icon/llist01.gif);
-	background-repeat: no-repeat;
-	background-position: 0 center;
+	list-style: none;
+	background: transparent;
+}
+
+#trackback > ul.info li:first-child,
+#trackback > ul.info li:nth-child(3) {
+	list-style-image: url(images/icon/llist01.gif);
 }
 
 #trackback ul.info li.URL {
@@ -1026,10 +1007,13 @@ ul#flip1 li.create-entry a {
 	border-left: 1px solid #eee;
 	color: #ad1c5d;
 	background-color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*=========================
-  div#utilities
+  #utilities
 =========================*/
 
 #utilities div {
@@ -1099,9 +1083,6 @@ ul#flip1 li.create-entry a {
 	margin-left: 0;
 }
 
-/* div#utilities dl dd >  
----------------*/
-
 #utilities section p,
 #utilities aside p {
 	margin: 5px 10px;
@@ -1149,9 +1130,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
-  div#footer
-
+  #footer
 ========================================*/
 
 #footer {
@@ -1193,9 +1172,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
   Class
-
 ========================================*/
 
 .count {
@@ -1481,6 +1458,7 @@ p.summary { display: none; }
 
 /* Rpnavi
 ---------------*/
+
 .entry ul.rpnavi {
 	list-style: none;
 }
@@ -1626,6 +1604,7 @@ a:hover.scoring-scored {
 
 /* member-list
 ---------------*/
+
 body.member div.entry {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -1657,6 +1636,7 @@ body.member p.topicPath {
 
 /* profile-view
 ---------------*/
+
 body.profile h1 img {
 	vertical-align: top;
 }
@@ -1681,4 +1661,3 @@ body.profile article.headline > h2.icon-entry,
 body.profile article.headline > h2.icon-score {
 	padding-left: 15px;
 }
-

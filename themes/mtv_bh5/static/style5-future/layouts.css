@@ -16,11 +16,8 @@ body {
 }
 
 /*========================================
-
 	Eye Catch
-
 ========================================*/
-
 /* Header - <body class="eye-h">
 ---------------*/
 
@@ -57,7 +54,7 @@ body.eye-h #globalNavi {
 	width: 100%;
 	position: absolute;
 	bottom: 10px;
-	left: 20px;
+	left: -4px;
 }
 
 body.eye-h #globalNavi ul {
@@ -107,40 +104,25 @@ body.eye-hb #globalNavi {
 	margin: 5px 0 8px;
 }
 
-/* Content - <body class="double eye-c">
----------------*/
-
-body.eye-c #globalNavi {
-	padding-bottom: 182px;
-	background-image: url(images/eyeCatch/image1.png);
-	background-position: bottom;
-	background-repeat: no-repeat;
-}
-
-body.eye-c ul#flip1 {
-	position: absolute;
-	top: 183px;
-	right: 0;
-}
-
-body.eye-c #content p.topicPath {
-	margin-right: 12.5em;
-}
-
 @media screen and (max-width:480px) {
+
   body {
 	margin: 0 4px;
+	font-size: 150%;
+	line-height: 1.8;
   }
-  #header,
-  #content,
+
+  #header, #content,
   #footer {
 	width: 98%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
 	margin: 0 auto;
 	position: relative;
   }
+
   #content {
 	text-align: left;
   }
+
   #content p.topicPath,
   #content ul.flip {
 	margin-right: 0;
@@ -148,32 +130,96 @@ body.eye-c #content p.topicPath {
 	top: 0
 	left: 0;
   }
-  #content ul#flip1 {
-	margin-left: 0;
+
+  ul#flip1 {
+	margin: 0 1% 2%;
+	width: 98%;
 	text-align: center;
   }
+
+  ul#flip1 li {
+	margin: 0;
+	width: 50%;
+	float: left;
+	font-size: 102%;
+	line-height: 1.2;
+  }
+
+  ul#flip1 li a {
+	display: block;
+	position: relative;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+  }
+
+  ul#flip1 li.older a,
+  ul#flip1 li.newer a,
+  ul#flip1 li.older a:hover,
+  ul#flip1 li.newer a:hover {
+	background-image: none;
+  }
+
+  ul#flip1 li a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	width: 8px;
+	height: 8px;
+	margin: -6px 0 0;
+	border-top: solid 2px #011;
+	border-right: solid 2px #011;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+
+  ul#flip1 li.older a:after {
+	right: 0px;
+	left: 10px;
+	border-left: solid 2px #011;
+	border-right: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+
+  ul#flip1 li.create-entry {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-size: 102%;
+  }
+
+  ul#flip1 li.create-entry a {
+	background-image: none;
+  }
+
   div.entry,
   article.entry {
 	margin: 0 10px;
   }
+
   .entry > .section h1 {
 	margin-right: 0;
 	padding-right: 0;
   }
+
   .entry > .section h1 a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
+
   .entry > .section h1 a:hover {
 	text-decoration: none;
   }
+
   ul#flip2 {
 	margin: 1em 10px;
 	padding: 0.8em 15px;
   }
-  #comments,
-  #trackback {
+
+  #comments, #trackback {
 	margin: 2em -10px 0;
   }
 
@@ -188,6 +234,7 @@ body.eye-c #content p.topicPath {
 	padding: 5px 0;
 	background: #f5f5f5;
   }
+
   #utilities div {
 	margin: 0;
 	padding: 1px 0;
@@ -212,11 +259,13 @@ body.eye-c #content p.topicPath {
 	border-right: 1px solid #eee;
 	background: #f7f7f7;
   }
+
   .individual #main .entry ul.info,
   .archives #main .entry ul.info {
 	margin: 0 -10px;
 	border-left: none;
   }
+
   .headlbox > div.entry-sect {
 	border: 0;
   }
@@ -247,14 +296,34 @@ body.eye-c #content p.topicPath {
 	float: left;
 	list-style-type: none;
   }
+
+  body.eye-h #header {
+	position: static;
+	height: auto;
+	margin: 0;
+  }
+
+  body.eye-h #header h1.siteName,
+  body.eye-h #header p.description,
+  body.eye-h #globalNavi {
+	position: static;
+  }
+
+  body.eye-h #header h1.siteName {
+	padding-top: 1.5em;
+	margin-bottom: 0.5em;
+  }
+
+  body.eye-h #header p.description {
+	margin-bottom: 1em;
+  }
 }
 
 @media screen and (min-width:481px) {
-  #header,
-  #content,
+
+  #header, #content,
   #footer {
 	width: 95%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
-/*	min-width: 600px; */
 	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
@@ -263,6 +332,20 @@ body.eye-c #content p.topicPath {
 }
 
 @media screen and (min-width:481px) and (max-width:839px) {
+
+  #globalNavi ul {
+	width: 100%;
+	background-image: none;
+  }
+
+  #globalNavi ul li {
+	width: 33.33%;
+  }
+
+  #globalNavi ul li a {
+	background-image: none;
+  }
+
   #main {
 	_height: 1px; /* for IE peekaboo */
   }
@@ -275,12 +358,6 @@ body.eye-c #content p.topicPath {
 	margin-left: -20px;
 	margin-right: -20px;
   }
-
-/*========================================
-
-	Archive Type
-
-========================================*/
 
   .mainIndex p.topicPath,
   .category p.topicPath {
@@ -300,8 +377,6 @@ body.eye-c #content p.topicPath {
 	padding-left: 30px;
 	border-left: none;
   }
-  /* div#utilities
----------------*/
 
   #utilities {
 	margin-top: 1em;
@@ -356,18 +431,12 @@ body.eye-c #content p.topicPath {
 	clear: both;
   }
 
-/* dl.navi
-------------------------*/
-
   #utilities div.navi {
 	margin-left: 10px;
 	display: inline; /* for WinIE */
 	float: left;
 	width: 220px;
   }
-
-/* dl.others
-------------------------*/
 
   #utilities div.others {
 	margin: 0 10px 0 240px;
@@ -383,11 +452,26 @@ body.eye-c #content p.topicPath {
 }
 
 @media screen and (min-width:840px) {
-/*========================================
 
-	Archive Type
+/* Content - <body class="double eye-c">
+---------------*/
 
-========================================*/
+body.eye-c #globalNavi {
+	padding-bottom: 182px;
+	background-image: url(images/eyeCatch/image1.png);
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+body.eye-c ul#flip1 {
+	position: absolute;
+	top: 183px;
+	right: 0;
+}
+
+body.eye-c #content p.topicPath {
+	margin-right: 12.5em;
+}
 
   .mainIndex p.topicPath,
   .category p.topicPath {
@@ -395,16 +479,12 @@ body.eye-c #content p.topicPath {
   }
 
 /*========================================
-
 	Single Column Layout
-	
 	<body class="single">
-
 	┏━━━┓
 	┃━━━┃
 	┣━┳━┫
 	┗━┻━┛
-
 ========================================*/
 
   body.single #main {
@@ -430,9 +510,6 @@ body.eye-c #content p.topicPath {
 	padding-left: 30px;
 	border-left: none;
   }
-
-  /* div#utilities
----------------*/
 
   body.single #utilities {
 	margin-top: 1em;
@@ -487,18 +564,12 @@ body.eye-c #content p.topicPath {
 	clear: both;
   }
 
-/* dl.navi
-------------------------*/
-
   body.single #utilities div.navi {
 	margin-left: 10px;
 	display: inline; /* for WinIE */
 	float: left;
 	width: 340px;
   }
-
-/* dl.others
-------------------------*/
 
   body.single #utilities div.others {
 	margin: 0 10px 0 360px;
@@ -513,15 +584,11 @@ body.eye-c #content p.topicPath {
   }
 
 /*========================================
-
-	Double Column Layout - Sidebar on left
-
+	Double Column Layout
 	<body class="double">
-
 	┏┓┏━━━┓
 	┃┃┃━━━┃
 	┗┛┗━━━┛
-
 ========================================*/
 
   body.double #content {
@@ -534,10 +601,6 @@ body.eye-c #content p.topicPath {
 	margin: 0 0 0 20px;
 	border-left: 1px solid #eee;
   }
-
-/*--------------------------------------
-	div#main
----------------------------------------*/
 
   body.double #main {
 	margin-left: 228px;
@@ -577,10 +640,6 @@ body.eye-c #content p.topicPath {
   body.double #content p.return {
 	margin-left: 228px;
   }
-
-/*--------------------------------------
-	div#utilities
----------------------------------------*/
 
   body.double #utilities {
 	margin-top: 15px;
@@ -628,10 +687,6 @@ body.eye-c #content p.topicPath {
 	background: #eee url(images/common/bg_caption.gif) no-repeat;
   }
 
-/*--------------------------------------
-	dl.navi
----------------------------------------*/
-
   body.double #utilities div.navi {
 	padding: 1px 0;
 	background: url(images/interface/bg_dl-navi.png) repeat-y;
@@ -661,8 +716,6 @@ body.eye-c #content p.topicPath {
 	text-decoration: none;
   }
 
-/* Sub Category */
-
   body.double #utilities div.navi section > div ul li ul {
 	margin: 0;
 	padding: 0;
@@ -671,10 +724,6 @@ body.eye-c #content p.topicPath {
   body.double #utilities div.navi section > div ul li li {
 	margin: 0.3em 0 0 10px;
   }
-
-/*--------------------------------------
-	dl.others
----------------------------------------*/
 
   body.double #utilities div.others {
 	padding-top: 0;
@@ -697,9 +746,6 @@ body.eye-c #content p.topicPath {
   body.double #utilities div.others aside > div ul {
 	margin: 0 0 0 5px;
   }
-
-/*	Search
----------------------------------------*/
 
   body.double #utilities div section form {
 	margin: 0 6px;
@@ -727,20 +773,10 @@ body.eye-c #content p.topicPath {
 
   }
 
-/*	Feeds
----------------------------------------*/
-
   body.double #utilities li.atom,
   body.double #utilities li.rss {
 	margin-left: 0;
   }
-
-/*--------------------------------------
-	div#utilities dl > dd > *
----------------------------------------*/
-
-/*	dd > p
------------------------------*/
 
   body.double #utilities div section p,
   body.double #utilities div aside p {
@@ -753,47 +789,19 @@ body.eye-c #content p.topicPath {
 /* Utilities - <body class="double eye-u">
 ---------------*/
 
-  body.eye-u #content {
+  body.double.eye-u #content {
 	background-color: transparent;
 	background-image: url(images/eyeCatch/mini.png);
 	background-repeat: no-repeat;
   }
 
-  body.eye-u #utilities {
+  body.double.eye-u #utilities {
 	margin-top: 289px;
   }
 
 /*========================================
-
-	Special Layout set
-
-========================================*/
-
-/* <body class="double eye-u set1">
----------------*/
-
-  body.set1 {
-	
-  }
-
-/* <body class="double eye-u set1">
----------------*/
-
-  body.set2 #main {
-	padding-top: 1px;
-	background-image: none;
-  }
-
-  body.set2 #content {
-	padding-top: 200px;
-  }
-
-/*========================================
-
 	Others
-
 ========================================*/
-
 /* Fixed 800px - <body class="f800">
 ---------------*/
 
@@ -839,4 +847,3 @@ body.eye-c #content p.topicPath {
 	width: 1000px;
   }
 }
-

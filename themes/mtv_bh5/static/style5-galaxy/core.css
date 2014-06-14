@@ -34,30 +34,24 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-
 body {
     line-height:1;
 }
-
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
-	display:block;
+    display:block;
 }
-
 nav ul {
     list-style:none;
 }
-
 blockquote, q {
     quotes:none;
 }
-
 blockquote:before, blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
 }
-
 a {
     margin:0;
     padding:0;
@@ -65,14 +59,12 @@ a {
     vertical-align:baseline;
     background:transparent;
 }
-
 /* change colours to suit your needs */
 ins {
     background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
-
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
@@ -80,21 +72,17 @@ mark {
     font-style:italic;
     font-weight:bold;
 }
-
 del {
     text-decoration: line-through;
 }
-
 abbr[title], dfn[title] {
     border-bottom:1px dotted;
     cursor:help;
 }
-
 table {
     border-collapse:collapse;
     border-spacing:0;
 }
-
 /* change border colour to suit your needs */
 hr {
     display:block;
@@ -104,7 +92,6 @@ hr {
     margin:1em 0;
     padding:0;
 }
-
 input, select {
     vertical-align:middle;
 }
@@ -116,9 +103,7 @@ http://developer.yahoo.net/yui/license.txt
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 /*========================================
-
   Elements
-
 ========================================*/
 
 body {
@@ -327,9 +312,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#header
-
+  #header
 ========================================*/
 
 #header {
@@ -404,9 +387,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#content
-
+  #content
 ========================================*/
 
 #content {
@@ -432,10 +413,9 @@ p.topicPath span.current {
 }
 
 /*=========================
- > div#main
+ #main
 =========================*/
-
-/* > div.entry
+/* div.entry
 ---------------*/
 
 div.entry,
@@ -452,8 +432,6 @@ entry > article.section,
 	margin: 0;
 	border: 0;
 }
-
-/* body.archives */
 
 #main > h1 {
 	margin: 0;
@@ -700,8 +678,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*=========================
-  div#Comments, 
-  div#Trackbacks
+  #Comments, 
+  #Trackbacks
 =========================*/
 
 #comments,
@@ -836,10 +814,13 @@ ul#flip1 li.create-entry a {
 	border-color: #171717 #333 #333 #171717;
 	background-color: #222;
 	color: #b1c722;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*=========================
-  div#utilities
+  #utilities
 =========================*/
 
 #utilities p {
@@ -924,9 +905,6 @@ ul#flip1 li.create-entry a {
 	background: url(images/icon/icon_feed.gif) no-repeat;
 }
 
-/* div#utilities dl dd >  
----------------*/
-
 #utilities section > div form {
 	margin: 0;
 	padding: 1px 5px;
@@ -947,9 +925,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
-  div#footer
-
+  #footer
 ========================================*/
 
 #footer {
@@ -985,11 +961,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
   Class
-
 ========================================*/
-
 /* Headline
 ---------------*/
 
@@ -1391,6 +1364,7 @@ a:hover.scoring-scored {
 
 /* member-list
 ---------------*/
+
 body.member div.entry {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -1422,6 +1396,7 @@ body.member p.topicPath {
 
 /* profile-view
 ---------------*/
+
 body.profile h1 img {
 	vertical-align: top;
 }

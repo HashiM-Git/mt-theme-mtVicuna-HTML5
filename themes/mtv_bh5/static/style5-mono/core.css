@@ -99,9 +99,7 @@ http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 /*========================================
-
   Elements
-
 ========================================*/
 
 body {
@@ -310,9 +308,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#header
-
+  #header
 ========================================*/
 
 #header {
@@ -385,9 +381,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#content
-
+  #content
 ========================================*/
 
 #content {
@@ -414,9 +408,8 @@ p.topicPath span.current {
 }
 
 /*=========================
- > div#main
+ #main
 =========================*/
-
 /* > div.entry
 ---------------*/
 
@@ -434,8 +427,6 @@ article.entry {
 	margin: 0 0 16px;
 	border: 0;
 }
-
-/* body.archives */
 
 #main > h1 {
 	margin: 0;
@@ -620,7 +611,6 @@ footer > p.continue a:hover {
 	background-color: #555;
 }
 
-
 /* ul.reaction
 ---------------*/
 
@@ -706,8 +696,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*=========================
-  div#Comments, 
-  div#Trackbacks
+  #Comments, 
+  #Trackbacks
 =========================*/
 
 #comments,
@@ -784,7 +774,6 @@ ul#flip1 li.create-entry a {
 	font-weight: normal;
 }
 
-
 /* Comment form
 ---------------*/
 
@@ -849,10 +838,13 @@ ul#flip1 li.create-entry a {
 	border-left: 1px solid #eee;
 	background-color: #fff;
 	color: #000;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*=========================
-  div#utilities
+  #utilities
 =========================*/
 
 #utilities div {
@@ -939,9 +931,6 @@ ul#flip1 li.create-entry a {
 	background: url(images/icon/icon_feed.gif) no-repeat;
 }
 
-/* div#utilities dl dd >  
----------------*/
-
 #utilities section > div form {
 	margin: 0;
 	padding: 1px 5px;
@@ -962,9 +951,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
-  div#footer
-
+  #footer
 ========================================*/
 
 #footer {
@@ -1000,11 +987,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
   Class
-
 ========================================*/
-
 /* Headline
 ---------------*/
 
@@ -1392,6 +1376,7 @@ a:hover.scoring-scored {
 
 /* member-list
 ---------------*/
+
 body.member div.entry {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -1423,6 +1408,7 @@ body.member p.topicPath {
 
 /* profile-view
 ---------------*/
+
 body.profile h1 img {
 	vertical-align: top;
 }

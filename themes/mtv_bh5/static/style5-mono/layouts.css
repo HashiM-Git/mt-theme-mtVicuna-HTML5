@@ -17,11 +17,8 @@ body {
 }
 
 /*========================================
-
 	Eye Catch
-
 ========================================*/
-
 /* Header - <body class="eye-h">
 ---------------*/
 
@@ -115,12 +112,14 @@ body.al #footer {
 }
 
 @media screen and (max-width:480px) {
+
   body {
 	margin: 0 5px;
+	font-size: 150%;
+	line-height: 1.8;
   }
 
-  #header,
-  #content,
+  #header, #content,
   #footer {
 	width: 98%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
 	margin: 0 auto;
@@ -130,33 +129,91 @@ body.al #footer {
   #content {
 	text-align: left;
   }
+
+  ul#flip1 {
+	margin: 0 1%;
+	width: 98%;
+  }
+
+  ul#flip1 li {
+	margin:0;
+	width: 50%;
+	font-size: 102%;
+  }
+
+  ul#flip1 li a {
+	display: block;
+	position: relative;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+  }
+
+  ul#flip1 li a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	width: 8px;
+	height: 8px;
+	margin: -6px 0 0;
+	border-top: solid 2px #000;
+	border-right: solid 2px #000;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+
+  ul#flip1 li.older a:after {
+	right: 0px;
+	left: 10px;
+	border-left: solid 2px #000;
+	border-right: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+
+  ul#flip1 li.create-entry {
+	width: 100%;
+	font-size: 102%;
+  }
+
+  ul#flip1 li.create-entry a {
+	padding-left: 0;
+	background-image: none;
+  }
+
   div.entry,
   article.entry {
 	margin: 0 15px;
 	padding: 1px 0;
   }
+
   article.entry ul.info,
   .archives article.entry ul.info,
   .system div.entry ul.info {
 	margin: 0 -15px 1em;
 	padding: 0.3em 15px;
   }
+
   article.entry ul.info li,
   .archives div.entry ul.info li,
   .system div.entry ul.info li {
 	float: none;
 	display: inline;
   }
+
   #trackback ul li { display: block; }
   ,entry > .section h1 {
 	margin-right: 0;
 	padding-right: 0;
   }
+
   .entry > .section h1 a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
+
   .entry > .section h1 a:hover {
 	text-decoration: none;
   }
@@ -193,28 +250,37 @@ body.al #footer {
   }
 
   #utilities { border-top: 1px solid #eee; }
+
+  body.eye-h #header {
+	height: auto;
+  }
+
+  body.eye-h #header h1.siteName,
+  body.eye-h #header p.description,
+  body.eye-h #globalNavi {
+	position: static;
+  }
+
+  body.eye-h #header h1.siteName {
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+  }
+
+  body.eye-h #header p.description {
+	margin-bottom: 2.5em;
+  }
 }
 
 @media screen and (min-width:481px) {
-  #header,
-  #content,
+
+  #header, #content,
   #footer {
 	width: 95%; /*(60%‾ | 600px‾ | 60em‾) etc.*/
-/*	min-width: 600px; */
 	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
 	text-align: left;
   }
-
-/*========================================
-
-	Others
-
-========================================*/
-
-/* Navi on top <body class="gt">
----------------*/
 
   body.gt #header {
 	padding-top: 30px;
@@ -235,9 +301,6 @@ body.al #footer {
   #globalNavi ul li {
 	width: 33.33%;
   }
-
-/* Utilities
----------------*/
 
   #utilities section,
   #utilities aside {
@@ -272,8 +335,6 @@ body.al #footer {
 	width: 20%;
   }
 
-/* clearfix */
-
   #utilities {
 	_height: 1px;
 	min-height: 1px;
@@ -294,18 +355,13 @@ body.al #footer {
 
 @media screen and (min-width:840px) {
 /*========================================
-
 	Single Column Layout
-	
 	<body class="single">
-
 	┏━━━┓
 	┃━━━┃
 	┣━┳━┫
 	┗━┻━┛
-
 ========================================*/
-
 /* Utilities
 ---------------*/
 
@@ -342,8 +398,6 @@ body.al #footer {
 	width: 20%;
   }
 
-/* clearfix */
-
   body.single #utilities {
 	_height: 1px;
 	min-height: 1px;
@@ -362,15 +416,11 @@ body.al #footer {
   }
 
 /*========================================
-
 	Double Column Layout - Sidebar on right
-
 	<body class="double">
-
 	┏━━━┓┏┓
 	┃━━━┃┃┃
 	┗━━━┛┗┛
-
 ========================================*/
 
   body.double #main {
@@ -381,9 +431,6 @@ body.al #footer {
 	border-bottom: 1px solid #eee;
   }
 
-/* Utilities
----------------*/
-
   body.double #utilities {
 	width: 25%;
 	float: left;
@@ -391,15 +438,11 @@ body.al #footer {
   }
 
 /*========================================
-
 	Double Column Layout - Sidebar on left
-
 	<body class="double-l">
-
 	┏┓┏━━━┓
 	┃┃┃━━━┃
 	┗┛┗━━━┛
-
 ========================================*/
 
   body.double-l #main {
@@ -410,9 +453,6 @@ body.al #footer {
 	border-bottom: 1px solid #eee;
   }
 
-/* Utilities
----------------*/
-
   body.double-l #utilities {
 	width: 25%;
 	float: right;
@@ -420,16 +460,12 @@ body.al #footer {
   }
 
 /*========================================
-
 	Multi Column Layout - Wing
 	! Negative Margin Layout
-
 	<body class="multi">
-
 	┏┓┏━━┓┏┓
 	┃┃┃━━┃┃┃
 	┗┛┗━━┛┗┛
-
 ========================================*/
 
   body.multi #main {
@@ -466,10 +502,6 @@ body.al #footer {
 	margin-right: 0;
   }
 
-
-/* Utilities
----------------*/
-
   body.multi #utilities {
 	float: right;
 	clear: right;
@@ -496,15 +528,11 @@ body.al #footer {
   }
 
 /*========================================
-
 	Multi Column Layout - Double sidebar R
-
 	<body class="multi2">
-
 	┏━━┓┏┓┏┓
 	┃━━┃┃┃┃┃
 	┗━━┛┗┛┗┛
-
 ========================================*/
 
   body.multi2 #main {
@@ -514,9 +542,6 @@ body.al #footer {
 	float: left;
 	width: 55%;
   }
-
-/* Utilities
----------------*/
 
   body.multi2 #utilities {
 	float: right;
@@ -548,15 +573,11 @@ body.al #footer {
   }
 
 /*========================================
-
 	Multi Column Layout - Double sidebar L
-
 	<body class="multi2-l">
-
 	┏┓┏┓┏━━┓
 	┃┃┃┃┃━━┃
 	┗┛┗┛┗━━┛
-
 ========================================*/
 
   body.multi2-l #main {
@@ -566,9 +587,6 @@ body.al #footer {
 	float: right;
 	width: 55%;
   }
-
-/* Utilities
----------------*/
 
   body.multi2-l #utilities {
 	float: left;
@@ -601,11 +619,8 @@ body.al #footer {
   }
 
 /*========================================
-
 	Special Layout set
-
 ========================================*/
-
 /* <body class="multi eye-c set1">
 ---------------*/
 

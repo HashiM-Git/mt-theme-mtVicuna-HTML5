@@ -99,9 +99,7 @@ http://developer.yahoo.net/yui/license.txt
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 /*========================================
-
   Elements
-
 ========================================*/
 
 body {
@@ -319,9 +317,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#header
-
+  #header
 ========================================*/
 
 #header {
@@ -394,9 +390,7 @@ input#entry-title {
 }
 
 /*========================================
-
-  div#content
-
+  #content
 ========================================*/
 
 #content {
@@ -423,9 +417,8 @@ p.topicPath span.current {
 }
 
 /*=========================
- > div#main
+ #main
 =========================*/
-
 /* > div.entry
 ---------------*/
 
@@ -443,8 +436,6 @@ article.entry {
 	margin: 0;
 	border: 0;
 }
-
-/* body.archives */
 
 #main > h1 {
 	margin: 0;
@@ -698,8 +689,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*=========================
-  div#Comments, 
-  div#Trackbacks
+  #Comments, 
+  #Trackbacks
 =========================*/
 
 #comments,
@@ -838,10 +829,13 @@ ul#flip1 li.create-entry a {
 	color: #01b0f0;
 	margin: 0.5em 0.8em;
 	padding: 0.5em 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /*=========================
-  div#utilities
+  #utilities
 =========================*/
 #utilities p {
 	margin: 0.2em 10px;
@@ -931,9 +925,6 @@ ul#flip1 li.create-entry a {
 	background: url(images/icon/icon_feed.gif) no-repeat;
 }
 
-/* div#utilities dl dd >  
----------------*/
-
 #utilities section > div form {
 	margin: 0;
 	padding: 1px 5px;
@@ -954,9 +945,7 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
-  div#footer
-
+  #footer
 ========================================*/
 
 #footer {
@@ -992,11 +981,8 @@ ul#flip1 li.create-entry a {
 }
 
 /*========================================
-
   Class
-
 ========================================*/
-
 /* Headline
 ---------------*/
 

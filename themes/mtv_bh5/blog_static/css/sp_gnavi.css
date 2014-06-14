@@ -9,6 +9,7 @@
   body.eye-h #header {
 	height: auto;
   }
+
   body.eye-h #header h1.siteName,
   body.eye-h #header p.description,
   body.eye-h #globalNavi {
@@ -20,15 +21,19 @@
 	padding-top: 1em;
 	margin-bottom: 0.5em;
   }
+
   body.eye-h #header p.description {
 	margin-bottom: 2.5em;
   }
+
   #menu {
 	display: none;
   }
+
   #globalNavi ul {
 	margin: 0;
   }
+
   body.eye-h #header #globalNavi ul li,
   #globalNavi ul li {
 	width: 100%;
@@ -39,6 +44,7 @@
 	border: 0;
 	border-top: 2px solid #fff;
   }
+
   body.eye-h #header #globalNavi ul li a,
   #globalNavi ul li a {
 	padding: 12px 0 10px;
@@ -48,12 +54,14 @@
 	background-image: none;
 	color: #fff;
   }
+
   #toggle {
 	display: block;
 	position: relative;
 	width: 100%;
 	background-color: #888;
   }
+
   #toggle a {
 	display: block;
 	position: relative;
@@ -63,6 +71,7 @@
 	text-align: center;
 	text-decoration: none;
   }
+
   #toggle:before {
 	display: block;
 	content: "";
@@ -74,10 +83,12 @@
 	margin-top: -11px;
 	background: #fff;
   }
+
   body.eye-h #toggle:before,
   body.eye-hb #toggle:before {
 	margin-top: -10px;
   }
+
   #toggle a:before, #toggle a:after {
 	display: block;
 	content: "";
@@ -88,9 +99,11 @@
 	height: 4px;
 	background: #888;
   }
+
   #toggle a:before {
 	margin-top: -6px;
   }
+
   #toggle a:after {
 	margin-top: 2px;
   }
