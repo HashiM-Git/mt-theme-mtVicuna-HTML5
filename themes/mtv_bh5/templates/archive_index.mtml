@@ -2,13 +2,17 @@
 	tempName=index_archive
 	page_column=single
 	page_title=Archives
-	blog_id=<$MTBlogID$>
 </MTSetVars>
+<$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
+    <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <$MTCanonicalLINK$>
+<$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <$MTInclude module="<__trans phrase="Google Analitics">"$>
   </head>
   <body class="archives <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

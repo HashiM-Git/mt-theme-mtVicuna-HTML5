@@ -1,7 +1,6 @@
 <MTSetVars>
 	tempName=index_archive_datebased
 	page_title=<$MTArchiveTitle$> Archive
-	blog_id=<$MTBlogID$>
 	<MTIf name="archive_class" like="yearly-arc">
 		page_column=single
 		entry=ascend
@@ -13,15 +12,20 @@
 		body=0
 	</MTIf>
 </MTSetVars>
+<$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
+    <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTIf name="datebased_archive">
 <MTArchivePrevious>    <link rel="prev" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchivePrevious>
 <MTArchiveNext>    <link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchiveNext>
 </MTIf>
+    <$MTCanonicalLINK$>
+<$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <$MTInclude module="<__trans phrase="Google Analitics">"$>
   </head>
   <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

@@ -4,19 +4,22 @@
 	page_title=<__trans phrase="Search Results">
 	__counter__=1
 	__odd__=1
-	blog_id=<$MTBlogID$>
 	<MTIfStraightSearch>
 		search_type=search
 	<MTElse>
 		search_type=tag
 	</MTIfStraightSearch>
 </MTSetVars>
+<$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
+    <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
     <link rel="alternate" type="application/atom+xml" title="<$MTBlogName encode_html="1"$>: <__trans phrase="Search Results">" href="<$MTCGIPath$><$MTSearchScript$>?<$MTGetVar name="search_type"$>=<$MTSearchString encode_url="1"$>&amp;Template=feed&amp;IncludeBlogs=<$MTSearchIncludeBlogs$>">
+<$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <$MTInclude module="<__trans phrase="Google Analitics">"$>
   </head>
   <body class="individual system <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

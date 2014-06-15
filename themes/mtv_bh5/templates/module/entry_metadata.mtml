@@ -6,4 +6,18 @@
 <MTIf tag="EntryCategory">
                 <li class="category"><MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<MTCategoryLabel> Index"><MTCategoryLabel></a></MTEntryCategories></li>
 </MTIf>
+<MTIf name="tempName" eq="individual_entry"><MTIf name="snsb">
+                <li class="snsb">
+	<MTif name="bfbap">
+                  <div class="fb-like" data-href="<$MTEntryPermalink$>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false"></div></MTif>
+	<MTif name="bgpls">
+                  <div class="g-plusone" data-size="medium" data-href="<$MTEntryPermalink$>"></div></MTif>
+	<MTif name="btwit">
+                  <a href="http://twitter.com/share" class="twitter-share-button" data-lang="ja" data-url="<$MTEntryPermalink$>" data-text="<$MTEntryTitle$> on Tweet" data-via="<$MTGetVar name="btwit"$>">Tweet</a></MTif>
+	<MTif name="bhatb">
+                  <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" data-hatena-bookmark-url="<$MTEntryPermalink$>" data-hatena-bookmark-title="<$MTEntryTitle$>"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="<__trans phrase="This entry is added to the Hatena bookmark">" width="20" height="20" style="border: none"></a></MTif>
+	<MTif name="bmixi">
+                  <div data-plugins-type="mixi-favorite" data-service-key="<$MTGetVar name="bmixi"$>" data-size="medium" data-href="<$MTEntryPermalink$>" data-show-count="true" data-show-comment="true" data-width="120"></div></MTif>
+                </li>
+</MTIf></MTIf>
               </ul>

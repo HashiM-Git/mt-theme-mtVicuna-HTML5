@@ -2,20 +2,20 @@
 	tempName=system_comment_preview
 	page_column=single
 	page_title=Confirmation
-	blog_id=<$MTBlogID$>
 </MTSetVars>
+<$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
+    <meta charset="<$MTPublishCharset$>">
     <script>
-	/* <![CDATA[ */
 	var user = <$MTUserSessionState$>;
 	var is_preview = true;
-	/* ]]> */
     </script>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
 <MTIfCommentsAccepted>    <script src="<$MTLink template="javascript"$>"></script></MTIfCommentsAccepted>
+<$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$></title>
   </head>
   <body class="individual system <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>" onload="mtEntryOnLoad()" onload="mtEntryOnLoad()" onunload="mtEntryOnUnload()">

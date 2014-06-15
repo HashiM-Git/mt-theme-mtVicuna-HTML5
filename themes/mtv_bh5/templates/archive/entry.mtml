@@ -2,18 +2,35 @@
 	tempName=individual_entry
 	page_column=single
 	page_title=<$MTEntryTitle remove_html="1"$>
-	blog_id=<$MTBlogID$>
 </MTSetVars>
+<$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
-  <head>
+  <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
+    <meta charset="<$MTPublishCharset$>">
+<MTIf name="fbadmin">
+    <meta property="og:title" content="<$MTGetVar name="page_title"$>">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<$MTEntryPermalink$>">
+<MTIgnore>
+    <meta property="og:image" content="ページのアイキャッチ画像"></MTIgnore>
+    <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
+    <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
+	<MTIf name="bfbap">
+    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf>
+</MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTEntryPrevious>    <link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryPrevious>
 <MTEntryNext>    <link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryNext>
     <meta name="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
+    <link rel="canonical" href="<$MTEntryPermalink$>">
+<$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <$MTInclude module="<__trans phrase="Google Analitics">"$>
   </head>
   <body class="individual <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>" id="entry<$MTEntryID pad="1"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
@@ -50,5 +67,29 @@
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
+<MTIf name="snsb">    <div id="fb-root"></div>
+    <script>
+(function(w, d, s) {
+  function go(){
+    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.src = url; js.id = id; js.async = true;
+      fjs.parentNode.insertBefore(js, fjs);
+    };
+	<MTif name="bfbap">
+    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTGetVar name="bfbap"$>&xfbml=1', 'fbjssdk');</MTif>
+	<MTif name="bgpls">
+    load('https://apis.google.com/js/plusone.js', 'gplus1js');</MTif>
+	<MTif name="btwit">
+    load('//platform.twitter.com/widgets.js', 'tweetjs');</MTif>
+	<MTif name="bhatb">
+    load('//b.st-hatena.com/js/bookmark_button.js');</MTif>
+	<MTif name="bmixi">
+    load('//static.mixi.jp/js/plugins.js#lang=ja');</MTif>
+  }
+  if (w.addEventListener) { w.addEventListener("load", go, false); }
+  else if (w.attachEvent) { w.attachEvent("onload",go); }
+}(window, document, 'script'));
+    </script></MTIf>
   </body>
 </html>
