@@ -110,6 +110,9 @@ elements:
                 archive_type: Page
                 file_template: %-c/%-f
         module:
+          asset_insertion:
+            label: Asset Insertion
+            filename: module/asset_insertion.mtml
           all_setting:
             label: All Setting
             filename: module/all_setting.mtml

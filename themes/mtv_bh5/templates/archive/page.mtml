@@ -8,24 +8,21 @@
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
-    <meta charset="<$MTPublishCharset$>">
-<MTIf name="fbadmin">
+    <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTBlogName encode_html="1"$>: <$MTGetVar name="page_title"$>">
     <meta property="og:type" content="article">
     <meta property="og:url" content="<$MTPagePermalink$>">
-<MTIgnore>
-    <meta property="og:image" content="ページのアイキャッチ画像"></MTIgnore>
+<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bfbap">
-    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf>
-</MTIf>
-    <$MTInclude module="<__trans phrase="HTML Header">"$>
-<MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
+    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf></MTIf>
     <meta name="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="PageKeywords">    <meta name="keywords" content="<$MTPageKeywords remove_html="1"$>"></MTIf>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
+<MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>

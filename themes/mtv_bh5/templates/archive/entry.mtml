@@ -7,25 +7,22 @@
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
-    <meta charset="<$MTPublishCharset$>">
-<MTIf name="fbadmin">
+    <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTGetVar name="page_title"$>">
     <meta property="og:type" content="article">
     <meta property="og:url" content="<$MTEntryPermalink$>">
-<MTIgnore>
-    <meta property="og:image" content="ページのアイキャッチ画像"></MTIgnore>
+<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bfbap">
-    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf>
-</MTIf>
+    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf></MTIf>
+    <meta name="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
+<MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTEntryPrevious>    <link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryPrevious>
 <MTEntryNext>    <link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryNext>
-    <meta name="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
-<MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
     <link rel="canonical" href="<$MTEntryPermalink$>">
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
@@ -67,7 +64,9 @@
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
-<MTIf name="snsb">    <div id="fb-root"></div>
+<MTIf name="snsb">
+	<MTif name="bfbap">
+    <div id="fb-root"></div></MTif>
     <script>
 (function(w, d, s) {
   function go(){

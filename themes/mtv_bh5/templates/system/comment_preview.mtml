@@ -12,8 +12,8 @@
 	var user = <$MTUserSessionState$>;
 	var is_preview = true;
     </script>
-    <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
 <MTIfCommentsAccepted>    <script src="<$MTLink template="javascript"$>"></script></MTIfCommentsAccepted>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$></title>

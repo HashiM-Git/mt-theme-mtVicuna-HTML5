@@ -7,21 +7,18 @@
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"</MTIf>>
-    <meta charset="<$MTPublishCharset$>">
-<MTIf name="fbadmin">
+    <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTGetVar name="page_title"$>">
     <meta property="og:type" content="blog">
     <meta property="og:url" content="<$MTBlogURL$>">
-<MTIgnore>
-    <meta property="og:image" content="ページのアイキャッチ画像"></MTIgnore>
+<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTBlogDescription encode_html="1"$>">
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bfbap">
-    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf>
-</MTIf>
-    <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf></MTIf>
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
+    <$MTInclude module="<__trans phrase="HTML Header">"$>
     <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$></title>

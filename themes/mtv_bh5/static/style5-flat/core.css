@@ -539,6 +539,27 @@ article.entry ul.info > li,
 	border-left: 1px solid #ccc;
 }
 
+#snsb {
+	margin: 0.3em 0 0;
+	border: 0;
+}
+
+#snsb > ul {
+	margin: 0;
+	list-style: none;
+}
+
+#snsb > ul > li {
+	display: inline-block;
+	font-size: 82%;
+	margin: 0;
+	width: 110px;
+}
+
+#snsb > ul > li.mark {
+	width: 80px;
+}
+
 /* Text Style
 ---------------*/
 

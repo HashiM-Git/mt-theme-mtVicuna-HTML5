@@ -1,0 +1,25 @@
+<$mt:AssetType setvar="item_type"$>
+<mt:If name="align" eq="left">
+  <mt:SetVarBlock name="item_class"> class="img_L"</mt:SetVarBlock>
+<mt:ElseIf name="align" eq="right">
+  <mt:SetVarBlock name="item_class"> class="img_R"</mt:SetVarBlock>
+<mt:Else>
+  <$mt:SetVar name="item_class" value=""$>
+</mt:If>
+<mt:SetVarTemplate name="image_html">
+<img src="<$mt:GetVar name="img_src"$>" width="<$mt:GetVar name="img_width"$>" height="<$mt:GetVar name="img_height"$>" alt="<$mt:GetVar name="caption"$>(<$mt:AssetProperty property="file_size"$>)"<$mt:GetVar name="item_class"$>>
+</mt:SetVarTemplate>
+
+<mt:If name="item_type" eq="<__trans phrase="image">">
+  <mt:If name="include">
+    <mt:if name="thumb">
+      <a href="<$mt:GetVar name="a_href"$>" class="highslide" onclick="return hs.expand(this)" onkeypress="return hs.expand(this)"><$mt:GetVar name="image_html"$></a>
+    <mt:Else>
+      <$mt:GetVar name="image_html"$>
+    </mt:If>
+  <mt:Else>
+    <a href="<$mt:GetVar name="a_href"$>"><$mt:GetVar name="description"$></a>
+  </mt:If>
+<mt:Else>
+  <a href="<$mt:GetVar name="a_href"$>"><$mt:GetVar name="description"$></a>
+</mt:If>
