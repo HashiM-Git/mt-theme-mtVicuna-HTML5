@@ -6,26 +6,6 @@
 
 @media screen and (max-width:480px) {
 
-  body.eye-h #header {
-	height: auto;
-  }
-
-  body.eye-h #header h1.siteName,
-  body.eye-h #header p.description,
-  body.eye-h #globalNavi {
-	position: static;
-  }
-
-  body.eye-h #header h1.siteName {
-	margin-top: 0;
-	padding-top: 1em;
-	margin-bottom: 0.5em;
-  }
-
-  body.eye-h #header p.description {
-	margin-bottom: 2.5em;
-  }
-
   #menu {
 	display: none;
   }
@@ -34,7 +14,6 @@
 	margin: 0;
   }
 
-  body.eye-h #header #globalNavi ul li,
   #globalNavi ul li {
 	width: 100%;
 	margin: 0;
@@ -45,9 +24,9 @@
 	border-top: 2px solid #fff;
   }
 
-  body.eye-h #header #globalNavi ul li a,
   #globalNavi ul li a {
-	padding: 12px 0 10px;
+	height: 40px;
+	padding: 30px 0 10px;
 	display: block;
 	text-decoration: none;
 	background-color: #888;
@@ -65,7 +44,8 @@
   #toggle a {
 	display: block;
 	position: relative;
-	padding: 12px 0 10px;
+	height: 40px;
+	padding: 25px 0 10px;
 	border-bottom: 1px solid #444;
 	color: #fff;
 	text-align: center;
@@ -76,35 +56,28 @@
 	display: block;
 	content: "";
 	position: absolute;
-	top: 50%;
+	top: 22px;
 	left: 10px;
-	width: 20px;
-	height: 20px;
-	margin-top: -11px;
+	width: 30px;
+	height: 30px;
 	background: #fff;
-  }
-
-  body.eye-h #toggle:before,
-  body.eye-hb #toggle:before {
-	margin-top: -10px;
   }
 
   #toggle a:before, #toggle a:after {
 	display: block;
 	content: "";
 	position: absolute;
-	top: 50%;
 	left: 10px;
-	width: 20px;
-	height: 4px;
-	background: #888;
+	width: 30px;
+	height: 6px;
+	background: #888
   }
 
   #toggle a:before {
-	margin-top: -6px;
+	top: 28px;
   }
 
   #toggle a:after {
-	margin-top: 2px;
+	top: 40px;
   }
 }
