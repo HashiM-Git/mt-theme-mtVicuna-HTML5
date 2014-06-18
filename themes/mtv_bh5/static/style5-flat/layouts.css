@@ -145,8 +145,9 @@ body.al #footer {
   ul#flip1 li a {
 	display: block;
 	position: relative;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	padding-top: 1.2em;
+	padding-bottom: 0;
+	height: 40px;
   }
 
   ul#flip1 li a:after {
@@ -206,8 +207,63 @@ body.al #footer {
   article.section .textBody,
   article.section footer,
   .headlbox > p.ccount,
-  .headlbox > div.lcomment {
+  .headlbox > div.lcomment,
+  #utilities .categoryArchives .icon-entry,
+  #utilities .categoryArchives .icon-comment {
 	display: none;
+  }
+
+  #utilities .recentEntries ul,
+  #utilities .categoryArchives ul,
+  #utilities .monthlyArchives ul,
+  #utilities aside .links ul {
+	margin-left: 5px!important;
+	list-style: none;
+  }
+
+  #utilities .recentEntries ul li a,
+  #utilities .categoryArchives ul li a,
+  #utilities .monthlyArchives ul li a,
+  #utilities aside .links ul li a {
+	position: relative;
+	display: block;
+	border-bottom: solid 1px;
+	padding: 5px 1em 0 4px;
+	height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+
+  #utilities aside .links ul li a {
+	padding-left: 20px;
+  }
+
+  #utilities .categoryArchives ul li.create-entry a {
+	padding-left: 30px;
+  }
+
+  #utilities .recentEntries ul li a:after,
+  #utilities .categoryArchives ul li a:after,
+  #utilities .monthlyArchives ul li a:after,
+  #utilities aside .links ul li a:after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	width: 0;
+	height: 0;
+	margin: -8px 0 0;
+	border-top: solid 10px #000;
+	border-left: solid 10px transparent;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
+
+  #utilities aside .links ul li a:after {
+	left: 0;
+	border-top: solid 10px #800;
   }
 
   body.member .entry > .member {
