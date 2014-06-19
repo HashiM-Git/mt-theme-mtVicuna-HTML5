@@ -238,14 +238,21 @@ body.al #footer {
   #utilities .recentEntries ul,
   #utilities .categoryArchives ul,
   #utilities .monthlyArchives ul,
+  #utilities .y-mArchives ul,
   #utilities aside .links ul {
-	margin-left: 5px!important;
+	margin: 3px 5px!important;
 	list-style: none;
+  }
+
+  #utilities .y-mArchives ul.mlist li {
+	display: block!important;
   }
 
   #utilities .recentEntries ul li a,
   #utilities .categoryArchives ul li a,
   #utilities .monthlyArchives ul li a,
+  #utilities .y-mArchives ul li:last-child a,
+  #utilities .y-mArchives ul.mlist li a,
   #utilities aside .links ul li a {
 	position: relative;
 	display: block;
@@ -268,6 +275,8 @@ body.al #footer {
   #utilities .recentEntries ul li a:after,
   #utilities .categoryArchives ul li a:after,
   #utilities .monthlyArchives ul li a:after,
+  #utilities .y-mArchives ul li:last-child a:after,
+  #utilities .y-mArchives ul.mlist li a:after,
   #utilities aside .links ul li a:after {
 	display: block;
 	content: "";

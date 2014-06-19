@@ -886,12 +886,12 @@ ul#flip1 li.create-entry a {
 	text-decoration: none;
 }
 
-#utilities section > .monthlyArchives ul.mlist {
+#utilities section > .y-mArchives ul.mlist {
 	list-style: none;
 	margin-left: 0;
 }
 
-#utilities section > .monthlyArchives ul.mlist > li {
+#utilities section > .y-mArchives ul.mlist > li {
 	display: inline;
 }
 

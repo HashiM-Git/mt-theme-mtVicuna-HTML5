@@ -19,6 +19,7 @@
 	margin: 0;
 	float: none;
 	list-style: none;
+	background-image: none;
 	background-color: #888;
 	border: 0;
 	border-top: 2px solid #fff;
@@ -31,7 +32,7 @@
 	text-decoration: none;
 	background-color: #888;
 	background-image: none;
-	color: #fff;
+	color: #fff!important;
   }
 
   #toggle {
