@@ -1,7 +1,7 @@
 <MTSetVars>
-	tempName=index_main
 	page_column=double
 	page_title=<$MTBlogName encode_html="1"$>
+	tempName=index_main
 </MTSetVars>
 <$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
     <meta property="og:url" content="<$MTBlogURL$>">
 <MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:description" content="<$MTBlogDescription encode_html="1"$>">
+<MTIf tag="BlogDescription">    <meta property="og:description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bfbap">
     <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf></MTIf>
@@ -22,7 +22,7 @@
     <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$></title>
-    <$MTInclude module="<__trans phrase="Google Analitics">"$>
+    <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="mainIndex <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
@@ -40,7 +40,6 @@
       </div>
       <!-- end div#main -->
       <$MTInclude module="<__trans phrase="Utilities">"$>
-      <$MTInclude module="<__trans phrase="Return to page top">"$>
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>

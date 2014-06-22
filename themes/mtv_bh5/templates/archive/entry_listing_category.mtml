@@ -1,7 +1,7 @@
 <MTSetVars>
-	tempName=index_archive_category
 	page_column=double
 	page_title=<$MTArchiveTitle$> Archive
+	tempName=index_archive_category
 </MTSetVars>
 <$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
-    <$MTInclude module="<__trans phrase="Google Analitics">"$>
+    <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="category <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
@@ -27,7 +27,11 @@
         <h1><$MTGetVar name="page_title"$></h1>
         <div class="entry"><$MTCategoryCount setvar="limit"$>
 <MTEntries sort_order="descend" limit="$limit">
+	<MTIf name="CA_entry">
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+	<MTElse>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>
+	</MTIf>
 </MTEntries>
           <$MTInclude module="<__trans phrase="Archive Index Link">"$>
         </div>
@@ -35,7 +39,6 @@
       </div>
       <!-- end div#main -->
       <$MTInclude module="<__trans phrase="Utilities">"$>
-      <$MTInclude module="<__trans phrase="Return to page top">"$>
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>

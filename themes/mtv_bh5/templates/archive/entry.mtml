@@ -1,7 +1,7 @@
 <MTSetVars>
-	tempName=individual_entry
 	page_column=single
 	page_title=<$MTEntryTitle remove_html="1"$>
+	tempName=individual_entry
 </MTSetVars>
 <$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
-    <$MTInclude module="<__trans phrase="Google Analitics">"$>
+    <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="individual <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>" id="entry<$MTEntryID pad="1"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
@@ -60,7 +60,6 @@
       </div>
       <!-- end div#main -->
       <$MTInclude module="<__trans phrase="Utilities">"$>
-      <$MTInclude module="<__trans phrase="Return to page top">"$>
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>

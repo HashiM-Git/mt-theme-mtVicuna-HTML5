@@ -108,7 +108,7 @@ http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 body {
 	color: #333;
 	background: linear-gradient(#9d9d9d, #d4d4d4);
-	background: -webkit-gradient(#9d9d9d, #d4d4d4);
+	background: -webkit-gradient(linear, left top, left bottom, from(#9d9d9d), to(#d4d4d4));
 }
 
 /* Link

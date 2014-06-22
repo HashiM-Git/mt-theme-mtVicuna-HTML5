@@ -125,9 +125,9 @@ elements:
           html_header:
             label: HTML Header
             filename: module/html_header.mtml
-          google_analitics:
-            label: Google Analitics
-            filename: module/google_analitics.mtml
+          google_analytics:
+            label: Google Analytics
+            filename: module/google_analytics.mtml
           topic_path:
             label: Topic Path
             filename: module/topic_path.mtml
@@ -161,9 +161,6 @@ elements:
           global_navigation:
             label: Global Navigation
             filename: module/global_navigation.mtml
-          return:
-            label: Return to page top
-            filename: module/return.mtml
         system:
           comment_preview:
             label: Comment Preview

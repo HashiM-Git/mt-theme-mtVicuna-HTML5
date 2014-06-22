@@ -1,16 +1,15 @@
 <MTSetVars>
-	tempName=index_archive_datebased
 	page_title=<$MTArchiveTitle$> Archive
+	page_column=double
+	entry=descend
+	body=0
 	<MTIf name="archive_class" like="yearly-arc">
 		page_column=single
 		entry=ascend
 		body=1
 		ms=0
-	<MTElse>
-		page_column=double
-		entry=descend
-		body=0
 	</MTIf>
+	tempName=index_archive_datebased
 </MTSetVars>
 <$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
@@ -25,7 +24,7 @@
     <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
     <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
-    <$MTInclude module="<__trans phrase="Google Analitics">"$>
+    <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
@@ -44,12 +43,20 @@
 		</MTUnless>
             <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
 		<$MTSetVar name="ms" op="+" value="1"$>
-		<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
+		<MTIf name="entry" eq="ascend">
+			<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
+		<MTElse>
+			<MTEntryPrevious><$MTEntryDate format="%m" setvar="month2"$></MTEntryPrevious>
+		</MTIf>
 		<MTIf name="month" ne="$month2">
           </section><$MTSetVar name="ms" value="0"$>
 		</MTIf>
 	<MTElse>
+		<MTIf name="DA_entry">
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+		<MTElse>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>
+		</MTIf>
 	</MTIf>
 </MTEntries>
           <$MTInclude module="<__trans phrase="Next Entry Link">" sim="0"$>
@@ -58,7 +65,6 @@
       </div>
       <!-- end div#main -->
       <$MTInclude module="<__trans phrase="Utilities">"$>
-      <$MTInclude module="<__trans phrase="Return to page top">"$>
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>

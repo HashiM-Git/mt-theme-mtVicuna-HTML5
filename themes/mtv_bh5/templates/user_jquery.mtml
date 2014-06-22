@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  window.onload = function(){
+    setTimeout("scrollTo(0,1)", 100);
+  }
+
   $("#toggle").click(function(){
     $("#menu").slideToggle();
     return false;

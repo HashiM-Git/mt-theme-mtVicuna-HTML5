@@ -3,6 +3,9 @@
 	eyech=0
 	GA_trackid=0
 
+	CA_entry=0
+	DA_entry=0
+
 	snsb=0
 	fbadmin=0
 	bfbap=0
@@ -22,9 +25,14 @@
 	3: eye-c  (Content)
 	4: eye-m  (Main)
 	5: eye-u  (Utilities on the top - future/Bazooka double only)
-  $Ga_trackid is Google Analitics TrackID set
+  $GA_trackid is Google Analitics TrackID set
 	0: none
 	String("UA-XXXXXXXX-X"): Analitics analyze Start
+
+  $CA_entry and $DA_entry is ArchiveEntry display of entry-summary or entry-headline switch set($CA_entry: Category / $DA_entry: MonthlyDateBased )
+	0: entry-summary(default)
+	1: entry-headline
+
   $snsb is SNS Button at entry page
 	0: no Use
 	1: Use
@@ -34,13 +42,13 @@
   $bgpls: 1 eqall google +1 button (0: none)
   $bhatb: 1 eqall Hatena Bookmark button (0: none)
   $bmixi: mixi Like Developer ID (0: none)
-</MTIgnore>
-<$MTSetVar name="eyecatch" value=""$>
+
+</MTIgnore><$MTSetVar name="eyecatch" value=""$>
 <MTSetVars><MTIf name="eyech" eq="1">eyecatch= eye-h
-	<MTElseIf eq="2">eyecatch= eye-hb
-	<MTElseIf eq="3">eyecatch= eye-c
-	<MTElseIf eq="4">eyecatch= eye-m
-	<MTElseIf eq="5">eyecatch= eye-u
+	<MTElseIf eq="2">eyecatch=' eye-hb'
+	<MTElseIf eq="3">eyecatch=' eye-c'
+	<MTElseIf eq="4">eyecatch=' eye-m'
+	<MTElseIf eq="5">eyecatch=' eye-u'
 	</MTIf>
 	blog_id=<$MTBlogID$>
 </MTSetVars>
