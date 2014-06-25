@@ -1449,3 +1449,7 @@ body.profile article.headline > h2.icon-score {
 #utilities div.others {
 	_overflow: hidden;
 }
+
+div.debug-panel { display: none; }
+
+
