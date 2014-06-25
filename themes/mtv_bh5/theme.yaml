@@ -36,10 +36,10 @@ elements:
 #          url: 'http://code.zelazny.mydns.jp/themes/mtvicuna-legacy/'
 #          label: mt.Vicuna Legacy skin
 #          description_label: Legacy Vicuna Styles covert to Recent version of the mt.Vicuna Theme.
-#        hashim_skin:
-#          url: 'http://kita2.net/stylelib/'
-#          label: mt.Vicuna HashiM Stylelib
-#          description_label: This is style library only for the mt.Vicuna theme.
+#        mtvicuna_html5_skin:
+#          url: 'http://kita2.net/stylelib/html5.php'
+#          label: mt.Vicuna HTML5 Stylelib
+#          description_label: This is style library only for the mt.Vicuna HTML5 theme.
       templates:
         index:
           archive_index:

@@ -480,7 +480,8 @@ article.entry {
 }
 
 article.section > div.textBody h2,
-.individual article.entry h3 {
+.individual article.entry h3,
+.webPage article.entry h3 {
 	margin: 2em 0 1em;
 	padding-bottom: 0.4em;
 	border-bottom: 4px solid #eee;
@@ -488,7 +489,8 @@ article.section > div.textBody h2,
 }
 
 article.section > div.textBody h3,
-.individual article.entry h4 {
+.individual article.entry h4,
+.webPage article.entry h4 {
 	margin-top: 1em;
 	padding-bottom: 0.2em;
 	border-bottom: 0;
@@ -496,13 +498,15 @@ article.section > div.textBody h3,
 }
 
 article.section > div.textBody h4,
-.individual article.entry h5 {
+.individual article.entry h5,
+.webPage article.entry h5 {
 	margin-top: 1em;
 	font-size: 92%;
 }
 
 article.section > div.textBody h5,
-.individual article.entry h6 {
+.individual article.entry h6,
+.webPage article.entry h6 {
 	margin-top: 1em;
 	font-size: 84%;
 }
@@ -580,7 +584,8 @@ article.entry ul.info > li,
 /* Text Style
 ---------------*/
 
-.individual article.entry h2 {
+.individual article.entry h2,
+.webPage article.entry h2 {
 	margin: 2em 0 0.8em;
 	font-size: 116%;
 	line-height: normal;

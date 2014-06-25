@@ -468,13 +468,15 @@ article.entry {
 }
 
 article.section > div.textBody h2,
-.individual article.entry h3 {
+.individual article.entry h3,
+.webPage article.entry h3 {
 	margin-top: 2em;
 	font-size: 116%;
 }
 
 article.section > div.textBody h3,
-.individual article.entry h4 {
+.individual article.entry h4,
+.webPage article.entry h4 {
 	margin-top: 1em;
 	padding-bottom: 0.2em;
 	border-bottom: 0;
@@ -482,13 +484,15 @@ article.section > div.textBody h3,
 }
 
 article.section > div.textBody h4,
-.individual article.entry h5 {
+.individual article.entry h5,
+.webPage article.entry h5 {
 	margin-top: 1em;
 	font-size: 92%;
 }
 
 article.section > div.textBody h5,
-.individual article.entry h6 {
+.individual article.entry h6,
+.webPage article.entry h6 {
 	margin-top: 1em;
 	font-size: 84%;
 }
@@ -572,7 +576,8 @@ div.textBody p {
 	line-height: 1.7;
 }
 
-.individual article.entry h2 {
+.individual article.entry h2,
+.webPage article.entry h2 {
 	margin: 1.5em 0 0;
 	padding: 0.3em 0;
 	font-size: 131%;

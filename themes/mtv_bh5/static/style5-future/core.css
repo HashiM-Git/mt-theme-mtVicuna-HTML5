@@ -523,7 +523,8 @@ article.entry {
 }
 
 article.section > div.textBody h2,
-.individual article.entry h3 {
+.individual article.entry h3,
+.webPage article.entry h3 {
 	margin: 1em 0;
 	padding-left: 0;
 	border-bottom: 3px solid #eee;
@@ -533,7 +534,8 @@ article.section > div.textBody h2,
 }
 
 article.section > div.textBody h3,
-.individual article.entry h4 {
+.individual article.entry h4,
+.webPage article.entry h4 {
 	margin: 1em 0;
 	padding-bottom: 0.2em;
 	padding-left: 14px;
@@ -605,7 +607,8 @@ article.entry ul.info > li,
 /* Text Style
 ---------------*/
 
-.individual article.entry h2 {
+.individual article.entry h2,
+.webPage article.entry h2 {
 	margin: 2em 0 0;
 	font-size: 123.1%;
 	font-weight: bold;
