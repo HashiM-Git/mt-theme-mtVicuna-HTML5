@@ -1,29 +1,26 @@
 <MTSetVars>
-	page_title=<$MTArchiveTitle$> Archive
 	page_column=double
-	entry=descend
+	page_title=<$MTArchiveTitle$> Archive
 	body=0
 	<MTIf name="archive_class" like="yearly-arc">
 		page_column=single
-		entry=ascend
 		body=1
 		ms=0
 	</MTIf>
 	tempName=index_archive_datebased
-</MTSetVars>
-<$MTInclude module="<__trans phrase="All Setting">"$>
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
     <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
+    <link rel="canonical" href="<$ArchiveLink$>">
 <MTIf name="datebased_archive">
 <MTArchivePrevious>    <link rel="prev" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchivePrevious>
 <MTArchiveNext>    <link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchiveNext>
 </MTIf>
-    <$MTCanonicalLINK$>
 <$MTCCLicenseRDF$>
-    <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
@@ -35,24 +32,29 @@
         <h1><$MTGetVar name="page_title"$></h1>
         <div class="entry">
 <MTEntries sort_order="$entry">
-	<MTIf name="body"><$MTSetVar name="month2" value="0"$>
-		<MTUnless name="ms">
-			<$MTEntryDate format="%m" setvar="month"$>
+	<MTIf name="body">
+		<MTIf name="M_groop">
+			<$MTSetVar name="month2" value="0"$>
+			<MTUnless name="ms">
+				<$MTEntryDate format="%m" setvar="month"$>
           <section class="section">
             <h1><a href="./<$MTGetVar name="month"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h1><$MTSetVar name="ms" value="1"$>
-		</MTUnless>
+			</MTUnless>
             <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
-		<$MTSetVar name="ms" op="+" value="1"$>
-		<MTIf name="entry" eq="ascend">
-			<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
-		<MTElse>
-			<MTEntryPrevious><$MTEntryDate format="%m" setvar="month2"$></MTEntryPrevious>
-		</MTIf>
-		<MTIf name="month" ne="$month2">
+			<$MTSetVar name="ms" op="+" value="1"$>
+			<MTIf name="entry" eq="ascend">
+				<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
+			<MTElse>
+				<MTEntryPrevious><$MTEntryDate format="%m" setvar="month2"$></MTEntryPrevious>
+			</MTIf>
+			<MTIf name="month" ne="$month2">
           </section><$MTSetVar name="ms" value="0"$>
+			</MTIf>
+		<MTElse>
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
 		</MTIf>
 	<MTElse>
-		<MTIf name="DA_entry">
+		<MTIf name="entry_sh">
           <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
 		<MTElse>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>

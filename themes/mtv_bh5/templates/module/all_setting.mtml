@@ -1,18 +1,17 @@
 <MTSetVars>
 	jquery=1
 	eyech=0
+	PostName=1
+	GLNavi=1
+	Others=0
+	CA_entry=0,0
+	DM_entry=0,0
+
+	DY_entry=1,1
+
 	GA_trackid=0
-
-	CA_entry=0
-	DA_entry=0
-
-	snsb=0
 	fbadmin=0
-	bfbap=0
-	btwit=0
-	bgpls=0
-	bhatb=0
-	bmixi=0
+	button=0,0,0,0,0
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
   $Jquery is Jquery(JavaScript) and SmartPhone Only GlobalNavigation
@@ -25,30 +24,92 @@
 	3: eye-c  (Content)
 	4: eye-m  (Main)
 	5: eye-u  (Utilities on the top - future/Bazooka double only)
-  $GA_trackid is Google Analitics TrackID set
-	0: none
-	String("UA-XXXXXXXX-X"): Analitics analyze Start
+  $PostName is Entry infomation on PostName Setting
+	0: No Name display
+	1: On Name display(default)
+  $GLNavi is GlobalNavigation Setting
+	0: No Use
+	1: Use(default)
+	2: Navigation On Top
+  $Others is Option body class Settings(set1,set2,al,f800‾f1000,etc...).
+  It can use to put in original class setting. " "(space) of delimiter
+	0: No Use
+	String Sample: 'set2 f1000 al only'
+	...details on "http://kita2.net/stylelib/sub/layouts.php"
+  $CA_entry and $DM_entry is ArchiveEntry display of
+  entry-summary or entry-headline switch
+  and entry sort-order switch set. "," or "/" of delimiter
+  ($CA_entry: Category / $DM_entry: MonthlyDateBased )
+	Sample: 'm,l'
+	m: 0: entry-summary(default) 1: entry-headline
+	l: 0: descend(default) 1: ascend
 
-  $CA_entry and $DA_entry is ArchiveEntry display of entry-summary or entry-headline switch set($CA_entry: Category / $DA_entry: MonthlyDateBased )
-	0: entry-summary(default)
-	1: entry-headline
+  $DY_entry is Year-ArchiveEntry Use Only Setting.
+  Month Grouping List or Normal List switch
+  and entry sort-order switch set. "," or "/" of delimiter
+	Sample: 'y,l'
+	y: 0: Normal List  1: Month Grouping List(default)
+	l: 0: descend  1: ascend(default)
 
-  $snsb is SNS Button at entry page
-	0: no Use
-	1: Use
-  $fbadmin: Facebook Admins (0: none)
-  $bfbap: Facebook App_id (0: none)
-  $btwit: Twitter Account (0: none)
-  $bgpls: 1 eqall google +1 button (0: none)
-  $bhatb: 1 eqall Hatena Bookmark button (0: none)
-  $bmixi: mixi Like Developer ID (0: none)
+  $GA_trackid is Google Analitics TrackID (0: none)
+  $fbadmin is Facebook Admins (0: none)
+  $button is SNS Button at entry page. "," or "/" of delimiter
+	Sample: 'aaa,bbb,ccc,d,e'
+	aaa: Facebook App_id (0: none)
+	bbb: Twitter Account (0: none)
+	ccc: mixi Like Developer ID (0: none)
+	d: 1 eqall google +1 button (0: none)
+	e: 1 eqall Hatena Bookmark button (0: none)
 
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
-<MTSetVars><MTIf name="eyech" eq="1">eyecatch= eye-h
-	<MTElseIf eq="2">eyecatch=' eye-hb'
-	<MTElseIf eq="3">eyecatch=' eye-c'
-	<MTElseIf eq="4">eyecatch=' eye-m'
-	<MTElseIf eq="5">eyecatch=' eye-u'
-	</MTIf>
+<MTSetVars>
 	blog_id=<$MTBlogID$>
-</MTSetVars>
+	snsb=0
+	Lname=0
+	<MTIf name="eyech" eq="1">eyecatch= eye-h
+	<MTElseIf eq="2">eyecatch= eye-hb
+	<MTElseIf eq="3">eyecatch= eye-c
+	<MTElseIf eq="4">eyecatch= eye-m
+	<MTElseIf eq="5">eyecatch= eye-u
+	</MTIf>
+	<MTIf name="tempName" eq="index_archive_datebased">
+		<MTIf name="body">Lname=DY_entry<MTElse>Lname=DM_entry</MTIf>
+	<MTElseIf eq="index_archive_category">Lname=CA_entry
+	</MTIf>
+</MTSetVars><MTIf name="Others">
+	<MTIf name="eyech" ne="3">
+	<$MTGetVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
+	<MTElse><MTIf name="page_column" ne="multi">
+	<$MTGetVar name="Others" regex_replace="/set1/g","" setvar="Others"$>
+		</MTIf><MTIf name="page_column" ne="multi2">
+	<$MTGetVar name="Others" regex_replace="/set2/g","" setvar="Others"$>
+		</MTIf>
+	</MTIf>
+	<$MTGetVar name="Others" regex_replace="/  /g"," " setvar="Others"$>
+	<$MTGetVar name="Others" regex_replace="/^ /","" setvar="Others"$>
+	<MTIf name="Others">
+	<MTSetVarBlock name="page_column" append="1"$> <$MTGetVar name="Others"$></MTSetVarBlock></MTIf>
+</MTIf><MTIf name="GLNavi" eq="2">
+	<$MTSetVar name="page_column" value=" gt" append="1"$>
+</MTIf><MTIf name="tempName" eq="individual_entry">
+	<$MTGetVar name="button" regex_replace="/¥//g","," setvar="button"$>
+	<$MTSetVar name="bu_arrey" function="undef"$>
+	<MTFor var="i" from="1" to="5">
+		<$MTGetVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
+		<MTIf name="value"><$MTSetVar name="snsb" value="1"$></MTIf>
+		<$MTSetVar name="bu_arrey" function="push" value="$value"$>
+		<$MTGetVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
+	</MTFor>
+</MTIf><MTIf name="Lname">
+	<$MTGetVar name="$Lname" regex_replace="/¥//g","," setvar="$Lname"$>
+	<MTIf name="body">
+		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="M_groop"$>
+	<MTElse>
+		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
+	</MTIf>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
+	<MTSetVars>
+		<MTIf name="value">entry=ascend
+		<MTElse>entry=descend</MTIf>
+	</MTSetVars>
+</MTIf>

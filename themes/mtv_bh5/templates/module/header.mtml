@@ -2,7 +2,7 @@
       <h1 class="siteName"><a href="<$MTBlogURL$>"><$MTBlogName encode_html="1"$></a></h1>
 <MTIf tag="BlogDescription">
       <p class="description"><$MTBlogDescription remove_html="1"$></p>
-</MTIf>
-      <$MTInclude module="<__trans phrase="Global Navigation">"$>
+</MTIf><MTIf name="GLNavi">
+      <$MTInclude module="<__trans phrase="Global Navigation">"$></MTIf>
     </header>
     <!-- end header#header -->

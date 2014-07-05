@@ -1,23 +1,20 @@
               <ul class="info">
-<MTIf tag="EntryAuthorDisplayName">
-                <li class="author">Posted by: <span class="name"><$MTEntryAuthorDisplayName$></span></li>
-</MTIf>
+<MTIf name="PostName"><MTIf tag="EntryAuthorDisplayName">
+                <li class="author">Posted by: <span class="name"><$MTEntryAuthorDisplayName$></span></li></MTIf></MTIf>
                 <li class="date"><time datetime="<$MTEntryDate format_name="iso8601"$>"><$MTEntryDate$></time></li>
 <MTIf tag="EntryCategory">
-                <li class="category"><MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<MTCategoryLabel> Index"><MTCategoryLabel></a></MTEntryCategories></li>
-</MTIf>
+                <li class="category"><MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<MTCategoryLabel> Index"><MTCategoryLabel></a></MTEntryCategories></li></MTIf>
 <MTIf name="tempName" eq="individual_entry"><MTIf name="snsb">
                 <li id="snsb"><ul>
-	<MTif name="bfbap">
+	<MTif name="bu_arrey" index="0">
                   <li><div class="fb-like" data-href="<$MTEntryPermalink$>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false"></div></li></MTif>
-	<MTif name="bgpls">
+	<MTif name="bu_arrey" index="3">
                   <li class="mark"><div class="g-plusone" data-size="medium" data-href="<$MTEntryPermalink$>"></div></li></MTif>
-	<MTif name="btwit">
-                  <li><a href="http://twitter.com/share" class="twitter-share-button" data-lang="ja" data-url="<$MTEntryPermalink$>" data-text="<$MTEntryTitle$> on Tweet" data-via="<$MTGetVar name="btwit"$>">Tweet</a></li></MTif>
-	<MTif name="bhatb">
+	<MTif name="bu_arrey" index="1">
+                  <li><a href="http://twitter.com/share" class="twitter-share-button" data-lang="ja" data-url="<$MTEntryPermalink$>" data-text="<$MTEntryTitle$> on Tweet" data-via="<$MTGetVar name="bu_arrey" index="1"$>">Tweet</a></li></MTif>
+	<MTif name="bu_arrey" index="4">
                   <li class="mark"><a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" data-hatena-bookmark-url="<$MTEntryPermalink$>" data-hatena-bookmark-title="<$MTEntryTitle$>"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="<__trans phrase="This entry is added to the Hatena bookmark">" width="20" height="20" style="border: none"></a></li></MTif>
-	<MTif name="bmixi">
-                  <li><div data-plugins-type="mixi-favorite" data-service-key="<$MTGetVar name="bmixi"$>" data-size="medium" data-href="<$MTEntryPermalink$>" data-show-count="true" data-show-comment="true" data-width="120"></div></li></MTif>
-                </ul></li>
-</MTIf></MTIf>
+	<MTif name="bu_arrey" index="2">
+                  <li><div data-plugins-type="mixi-favorite" data-service-key="<$MTGetVar name="bu_arrey" index="2"$>" data-size="medium" data-href="<$MTEntryPermalink$>" data-show-count="true" data-show-comment="true" data-width="120"></div></li></MTif>
+                </ul></li></MTIf></MTIf>
               </ul>

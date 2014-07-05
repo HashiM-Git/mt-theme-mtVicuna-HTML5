@@ -1,7 +1,7 @@
 <MTSetVars>
-	system_template=1
 	page_column=single
 	page_title=Page Not Found
+	system_template=1
 </MTSetVars>
 <$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <$MTCCLicenseRDF$>
-    <title><$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
   </head>
   <body class="individual system error <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

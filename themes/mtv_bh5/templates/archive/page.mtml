@@ -3,8 +3,7 @@
 	page_title=<$MTPageTitle remove_html="1"$>
 	current_page=<$MTPageID$>
 	tempName=individual_webpage
-</MTSetVars>
-<$MTInclude module="<__trans phrase="All Setting">"$>
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
@@ -17,15 +16,15 @@
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
-	<MTIf name="bfbap">
-    <meta property="fb:app_id" content="<$MTGetVar name="bfbap"$>"></MTIf></MTIf>
+	<MTIf name="bu_arrey" index="0">
+    <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
     <meta name="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="PageKeywords">    <meta name="keywords" content="<$MTPageKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-<MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
-    <$MTCanonicalLINK$>
+    <link rel="canonical" href="<$MTPagePermalink$>">
 <$MTCCLicenseRDF$>
-    <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+<MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
+    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="webPage <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">

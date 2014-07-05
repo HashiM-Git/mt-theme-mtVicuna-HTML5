@@ -589,6 +589,11 @@ div.textBody h2 {
 	margin-top: 2em;
 }
 
+article.entry p > img {
+	max-width: 100%;
+	height: auto;
+}
+
 div.textBody dl {
 	padding: 0.5em 20px;
 	margin-top: 1em;

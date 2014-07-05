@@ -2,16 +2,15 @@
 	page_column=single
 	page_title=Archives
 	tempName=index_archive
-</MTSetVars>
-<$MTInclude module="<__trans phrase="All Setting">"$>
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
     <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <$MTCanonicalLINK$>
+    <link rel="canonical" href="<$MTLink template="<__trans phrase="Archive Index">"$>">
 <$MTCCLicenseRDF$>
-    <title><$MTGetVar name="page_title"$> - <$MTBlogName encode_html="1"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="archives <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
@@ -20,12 +19,12 @@
       <div id="main">
         <$MTInclude module="<__trans phrase="Topic Path">"$>
         <h1><$MTGetVar name="page_title"$></h1>
-        <div class="entry">
+        <div class="entry"><$MTBlogEntryCount setvar="ecount"$>
           <ul class="info">
             <li class="entry"><span class="count"><$MTBlogEntryCount$></span> Entries</li>
             <li class="comment"><span class="count"><$MTBlogCommentCount$></span> Comments</li>
           </ul>
-<MTEntries sort_order="descend" lastn="9999">
+<MTEntries sort_order="descend" limit="$ecount">
           <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
 </MTEntries>
         </div>
