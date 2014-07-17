@@ -2,8 +2,7 @@
 	page_column=single
 	page_title=Confirmation
 	tempName=system_comment_preview
-</MTSetVars>
-<$MTInclude module="<__trans phrase="All Setting">"$>
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
@@ -14,7 +13,6 @@
     </script>
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-<MTIfCommentsAccepted>    <script src="<$MTLink template="javascript"$>"></script></MTIfCommentsAccepted>
 <$MTCCLicenseRDF$>
     <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
   </head>
