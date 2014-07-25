@@ -31,15 +31,18 @@
 		<MTIf name="year" ne="$endy">endm=12
 		<MTElse>endm=<$MTGetVar name="eendm"$>
 		</MTIf>
-	</MTSetVars>
-                  <ul class="mlist"><MTFor var="m" from="$stam" to="$endm">
+	</MTSetVars><MTFor var="m" from="$stam" to="$endm">
+	<MTIf name="__first__">
+                  <ul class="mlist"></MTIf>
 	<MTIf name="count" index="$m">
                     <li><$MTGetVar name="count" index="$m"$></li>
 	<MTElse>
                     <li><$MTGetVar name="m" sprintf="%d"$><__trans phrase="Month"></li>
-	</MTIf></MTFor>
+	</MTIf>
+	<MTIf name="__last__">
                   </ul>
-                </li><$MTSetVar name="count" function="undef"$>
+                </li></MTIf>
+	</MTFor><$MTSetVar name="count" function="undef"$>
 </MTArchiveList>
 <MTIf tag="Link" template="<__trans phrase="Archive Index">">
                 <li><a href="<$MTLink template="<__trans phrase="Archive Index">"$>">All</a></li>

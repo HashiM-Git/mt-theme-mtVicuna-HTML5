@@ -1,0 +1,28 @@
+<MTIf tag="AssetCount">
+<$MTSetVar name="acount" value="0"$>
+	<MTEntries lastn="0">
+		<MTEntryAssets type="image" lastn="1" sort_order="ascend">
+			<MTIf name="acount" lt="5">
+				<$MTSetVar name="acount" op="++"$>
+				<MTSetVarBlock name="EAssets" index="$acount">
+                <li>
+                  <a href="<$MTEntryPermalink$>" title="<$MTEntryTitle escape="html"$>" rel="nofollow">
+                    <img src="<$MTAssetThumbnailURL height="70" square="1"$>" alt="<$MTEntryTitle escape="html"$>" width="70" height="70">
+                  </a>
+                </li></MTSetVarBlock>
+			</MTIf>
+		</MTEntryAssets>
+	</MTEntries>
+</MTIf>
+<MTIf name="acount">
+          <section>
+            <h1>Recent Entry Photo</h1>
+            <div class="recentEntryAssets">
+              <ul class="thumb">
+	<MTFor var="x" from="1" to="$acount">
+<$MTGetVar name="EAssets" index="$x"$>
+	</MTFor>
+              </ul>
+            </div>
+          </section>
+</MTIf>

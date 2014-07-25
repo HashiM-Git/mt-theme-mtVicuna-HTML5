@@ -222,6 +222,9 @@ elements:
           u_recent_assets:
             label: Recent Assets
             filename: widget/u_recent_assets.mtml
+          u_recent_entry_assets:
+            label: Recent Entry Assets
+            filename: widget/u_recent_entry_assets.mtml
           u_feed:
             label: Feed
             filename: widget/u_feed.mtml
