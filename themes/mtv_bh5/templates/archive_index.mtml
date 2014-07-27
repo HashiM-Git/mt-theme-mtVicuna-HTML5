@@ -19,12 +19,12 @@
       <div id="main">
         <$MTInclude module="<__trans phrase="Topic Path">"$>
         <h1><$MTGetVar name="page_title"$></h1>
-        <div class="entry"><$MTBlogEntryCount setvar="ecount"$>
+        <div class="entry"><$MTBlogEntryCount setvar="limit"$>
           <ul class="info">
             <li class="entry"><span class="count"><$MTBlogEntryCount$></span> Entries</li>
             <li class="comment"><span class="count"><$MTBlogCommentCount$></span> Comments</li>
           </ul>
-<MTEntries sort_order="descend" limit="$ecount">
+<MTEntries sort_order="descend" limit="$limit">
           <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
 </MTEntries>
         </div>

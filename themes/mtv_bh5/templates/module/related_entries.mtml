@@ -6,7 +6,7 @@
 <MTSetVarTemplate name="rentrylmaked">
 	<$MTEntryID pad="1" setvar="cur"$><$MTEntryID setvar="centry"$>
 	<MTIf name="centry" lt="$entry"><MTUnless name="eid" like="$cur"><MTIf name="ent" lt="5">
-		<$MTSetVar name="ent" value="1" op="+"$>
+		<$MTSetVar name="ent" op="++"$>
 		<MTSetVarBlock name="rte" index="$ent"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></MTSetVarBlock>
 	</MTIf></MTUnless></MTIf>
 </MTSetVarTemplate>

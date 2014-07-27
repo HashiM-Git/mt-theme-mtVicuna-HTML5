@@ -30,8 +30,8 @@
         <$MTInclude module="<__trans phrase="Topic Path">"$>
         <$MTInclude module="<__trans phrase="Next Entry Link">" sim="1"$>
         <h1><$MTGetVar name="page_title"$></h1>
-        <div class="entry">
-<MTEntries sort_order="$entry">
+        <div class="entry"><$MTEntriesCount setvar="limit"$>
+<MTEntries sort_order="$entry" limit="$limit">
 	<MTIf name="body">
 		<MTIf name="M_groop">
 			<$MTSetVar name="month2" value="0"$>
@@ -41,7 +41,7 @@
             <h1><a href="./<$MTGetVar name="month"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h1><$MTSetVar name="ms" value="1"$>
 			</MTUnless>
             <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
-			<$MTSetVar name="ms" op="+" value="1"$>
+			<$MTSetVar name="ms" op="++"$>
 			<MTIf name="entry" eq="ascend">
 				<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
 			<MTElse>

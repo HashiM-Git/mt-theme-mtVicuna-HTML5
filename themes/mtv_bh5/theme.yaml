@@ -27,6 +27,14 @@ elements:
       base_path: templates
       require: 1
       base_css: 0
+      archive_type_preferred: Individual
+      days_on_index: 0
+#      convert_paras: 0
+#      sort_order_posts: ascend
+#      entries_on_index: 5
+#      file_extension: php
+#      include_system: php
+#      include_cache: 1
       stylecatcher_libraries:
         mtvicuna_h5base_skin:
           url: '{{support}}theme_static/mtv_bh5/'
