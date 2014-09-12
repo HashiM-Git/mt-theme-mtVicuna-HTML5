@@ -93,7 +93,7 @@ elements:
             mappings:
               entry_archive:
                 archive_type: Individual
-                file_template: %y/%m/%-f
+                file_template: '%y/%m/%-f'
         archive:
           entry_listing_category:
             label: Entry Listing Category
@@ -101,14 +101,14 @@ elements:
             mappings:
               category:
                 archive_type: Category
-                file_template: %-c/%i
+                file_template: '%-c/%i'
           entry_listing_datebased:
             label: Entry Listing Datebased
             filename: archive/entry_listing_datebased.mtml
             mappings:
               monthly:
                 archive_type: Monthly
-                file_template: %y/%m/%i
+                file_template: '%y/%m/%i'
         page:
            page:
             label: Page
@@ -116,7 +116,7 @@ elements:
             mappings:
               page_archive:
                 archive_type: Page
-                file_template: %-c/%-f
+                file_template: '%-c/%-f'
         module:
           asset_insertion:
             label: Asset Insertion
