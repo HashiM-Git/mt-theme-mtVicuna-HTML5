@@ -40,14 +40,10 @@ elements:
           url: '{{support}}theme_static/mtv_bh5/'
           label: 'mt.Vicuna HTML5 skin'
           description_label: 'Styles that are with the mt.Vicuna HTML5 Theme.'
-#        mtvicuna_legacy_skin:
-#          url: 'http://code.zelazny.mydns.jp/themes/mtvicuna-legacy/'
-#          label: mt.Vicuna Legacy skin
-#          description_label: Legacy Vicuna Styles covert to Recent version of the mt.Vicuna Theme.
-#        mtvicuna_html5_skin:
-#          url: 'http://kita2.net/stylelib/html5.php'
-#          label: mt.Vicuna HTML5 Stylelib
-#          description_label: This is style library only for the mt.Vicuna HTML5 theme.
+        mtvicuna_html5_skin:
+          url: 'http://kita2.net/stylelib/html5.php'
+          label: 'mt.Vicuna HTML5 Stylelib'
+          description_label: 'This is style library only for the mt.Vicuna HTML5 theme.'
       templates:
         index:
           archive_index:
