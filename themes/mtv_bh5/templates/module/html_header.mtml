@@ -2,7 +2,8 @@
     <meta name="author" content="<MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors>">
     <meta name="viewport" content="width=device-width">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="<$MTLink template="<__trans phrase="Stylesheet">"$>">
+    <link rel="stylesheet" href="<$MTLink template="<__trans phrase="Stylesheet">"$>"><MTIf name="TagCss">
+    <link rel="stylesheet" href="<$MTBlogURL$>css/<$MTGetVar name="TagCss"$>"></MTIf>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<$MTLink template="RSS"$>">
     <link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTLink template="Atom"$>">
     <link rel="alternate" type="application/rsd+xml" title="RSD" href="<$MTLink template="rsd"$>">
@@ -10,7 +11,7 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
     <![endif]-->
-    <script src="<$MTLink template="javascript"$>"></script>
-<MTIf name="jquery">    <link rel="stylesheet" href="<$MTBlogURL$>css/sp_gnavi.css">
+    <script src="<$MTLink template="javascript"$>"></script><MTIf name="jquery">
+    <link rel="stylesheet" href="<$MTBlogURL$>css/sp_gnavi.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="<$MTLink template="user_jquery"$>"></script></MTIf>

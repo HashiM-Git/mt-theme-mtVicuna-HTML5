@@ -1,6 +1,7 @@
 <MTSetVars>
 	jquery=1
 	eyech=0
+	TagC_num=0
 	PostName=1
 	GLNavi=1
 	Others=0
@@ -25,6 +26,9 @@
 	3: eye-c  (Content)
 	4: eye-m  (Main)
 	5: eye-u  (Utilities on the top - future/Bazooka double only)
+  $TagC_num is Tag Cloud CSS Number Setting
+	0: none
+	1-13: Tag Cloud Number
   $PostName is Entry infomation on PostName Setting
 	0: No Name display
 	1: On Name display(default)
@@ -76,6 +80,12 @@
 	<MTIf name="tempName" eq="index_archive_datebased">
 		<MTIf name="body">Lname=DY_entry<MTElse>Lname=DM_entry</MTIf>
 	<MTElseIf eq="index_archive_category">Lname=CA_entry
+	</MTIf>
+	<MTIf name="TagC_num">
+		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTGetVar name="TagC_num"$>.css
+		<MTElse>TagCss=tagCloud<$MTGetVar name="TagC_num"$>.css
+		</MTIf>
+	<MTElse>TagCss=0
 	</MTIf>
 </MTSetVars><MTIf name="Others">
 	<MTIf name="eyech" ne="3">
