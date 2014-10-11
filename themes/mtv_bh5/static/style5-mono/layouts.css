@@ -84,7 +84,7 @@ body.eye-c #content {
 }
 
 body.eye-c #utilities div.navi {
-	top: auto;
+	top: auto!important;
 }
 
 /* Main - <body class="eye-m">
@@ -690,7 +690,7 @@ body.al #footer {
 ---------------*/
 
   body.set1 #utilities div.navi {
-	top: 0;
+	top: 0!important;
   }
 
   body.set1 #content {
