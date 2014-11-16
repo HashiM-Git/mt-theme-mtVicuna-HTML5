@@ -2,7 +2,7 @@ label: 'mt.Vicuna Theme On HTML5'
 id: 'mtv_bh5'
 author_name: HashiM
 author_link: http://mtvicuna.kita2.net/
-version: 1.0.1
+version: 1.0.2
 class: blog
 description: <__trans phrase="A MT5 Theme for Vicuna CMS.">
 l10n_lexicon:

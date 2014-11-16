@@ -1,12 +1,15 @@
 <MTSetVars>
 	jquery=1
-	eyech=0
 	TagC_num=0
 	PostName=1
 	GLNavi=1
 	Others=0
-	CA_entry=0,0
-	DM_entry=0,0
+
+	IMindex=2,0
+	IAindex=1,0
+	A_entry=1,0
+	A_catlt=2,0,0,0
+	A_mdatb=2,0,0,0
 
 	DY_entry=1,1
 
@@ -16,16 +19,9 @@
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on http://mtvicuna.kita2.net/setup.html
-  $Jquery is Jquery(JavaScript) and SmartPhone Only GlobalNavigation
+  $jquery is Jquery(JavaScript) and SmartPhone Only GlobalNavigation
 	0: Off
 	1: On
-  $eyech is eyecatch class Setting
-	0: none
-	1: eye-h  (Header)
-	2: eye-hb (Header Banner)
-	3: eye-c  (Content)
-	4: eye-m  (Main)
-	5: eye-u  (Utilities on the top - future/Bazooka double only)
   $TagC_num is Tag Cloud CSS Number Setting
 	0: none
 	1-13: Tag Cloud Number
@@ -41,13 +37,45 @@
 	0: No Use
 	String Sample: 'set2 f1000 al only'
 	 ...Details on http://kita2.net/stylelib/sub/layouts.php
-  $CA_entry and $DM_entry is ArchiveEntry display of
-  entry-summary or entry-headline switch
-  and entry sort-order switch set. "," or "/" of delimiter
-  ($CA_entry: Category / $DM_entry: MonthlyDateBased )
-	Sample: 'm,l'
-	m: 0: entry-summary(default) 1: entry-headline
-	l: 0: descend(default) 1: ascend
+
+  $IMindex / $IAindex / $A_entry is Style And EyeCatch Setting(MainIndex / ArchiveIndex / BlogEntry) "," or "/" of delimiter
+	Sample: 'L,E'
+	L: Page Column Setting
+		1: Single Column
+		2: Double Column
+		L2: Double Column(Sidebar-Left)
+		3: Multi Column
+		R3: Multi Column(Sidebar-Right)
+		L3: Multi Column(Sidebar-Left)
+	E: EyeCatch Setting
+		0: none
+		1: eye-h  (Header)
+		2: eye-hb (Header Banner)
+		3: eye-c  (Content)
+		4: eye-m  (Main)
+		5: eye-u  (Utilities on the top - future/Bazooka double only)
+  $A_catlt / $A_mdatb is Style And EyeCatch And Entry-Style And EntrySort Setting(CategoryList / Monthly-Datebased) "," or "/" of delimiter
+	Sample: 'L,E,m,s'
+	L: Page Column Setting
+		1: Single Column
+		2: Double Column
+		L2: Double Column(Sidebar-Left)
+		3: Multi Column
+		R3: Multi Column(Sidebar-Right)
+		L3: Multi Coiumn(Sidebar-Left)
+	E: EyeCatch Setting
+		0: none
+		1: eye-h  (Header)
+		2: eye-hb (Header Banner)
+		3: eye-c  (Content)
+		4: eye-m  (Main)
+		5: eye-u  (Utilities on the top - future/Bazooka double only)
+	m: Entry-Style Setting
+		0: entry-summary(default)
+		1: entry-headline
+	l: EntrySort Setting
+		0: descend(default)
+		1: ascend
 
   $DY_entry is Year-ArchiveEntry Use Only Setting.
   Month Grouping List or Normal List switch
@@ -55,7 +83,8 @@
 	Sample: 'y,l'
 	y: 0: Normal List  1: Month Grouping List(default)
 	l: 0: descend  1: ascend(default)
-
+# PageColumn And EyeCatch is $IAindex Setting.
+  
   $GA_trackid is Google Analitics TrackID (0: none)
   $fbadmin is Facebook Admins (0: none)
   $button is SNS Button at entry page. "," or "/" of delimiter
@@ -65,21 +94,18 @@
 	ccc: mixi Like Developer ID (0: none)
 	d: 1 eqall google +1 button (0: none)
 	e: 1 eqall Hatena Bookmark button (0: none)
-
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
-<MTSetVars>
+<MTSetVarBlock name="A_ydatb"><$MTGetVar name="IAindex"$>,<$MTGetVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
 	blog_id=<$MTBlogID$>
 	snsb=0
+	Iname=0
 	Lname=0
-	<MTIf name="eyech" eq="1">eyecatch= eye-h
-	<MTElseIf eq="2">eyecatch= eye-hb
-	<MTElseIf eq="3">eyecatch= eye-c
-	<MTElseIf eq="4">eyecatch= eye-m
-	<MTElseIf eq="5">eyecatch= eye-u
-	</MTIf>
 	<MTIf name="tempName" eq="index_archive_datebased">
-		<MTIf name="body">Lname=DY_entry<MTElse>Lname=DM_entry</MTIf>
-	<MTElseIf eq="index_archive_category">Lname=CA_entry
+		<MTIf name="body">Lname=A_ydatb<MTElse>Lname=A_mdatb</MTIf>
+	<MTElseIf eq="index_archive_category">Lname=A_catlt
+	<MTElseIf eq="index_main">Iname=IMindex
+	<MTElseIF eq="index_archive">Iname=IAindex
+	<MTElseIf like="individual_">Iname=A_entry
 	</MTIf>
 	<MTIf name="TagC_num">
 		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTGetVar name="TagC_num"$>.css
@@ -87,6 +113,46 @@
 		</MTIf>
 	<MTElse>TagCss=0
 	</MTIf>
+</MTSetVars><MTUnless name="Lname"><MTUnless name="Iname">
+	<$MTGetVar name="IMindex" regex_replace="/¥//g","," setvar="IMindex"$>
+	<$MTGetVar name="IMindex" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
+</MTUnless></MTUnless><MTIf name="Iname">
+	<$MTGetVar name="$Iname" regex_replace="/¥//g","," setvar="$Iname"$>
+	<$MTGetVar name="$Iname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
+	<$MTGetVar name="$Iname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
+</MTIf><MTIf name="Lname">
+	<$MTGetVar name="$Lname" regex_replace="/¥//g","," setvar="$Lname"$>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="eyech"$>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
+	<MTIf name="body">
+		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="M_groop"$>
+	<MTElse>
+		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
+	</MTIf>
+	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
+	<MTSetVars>
+		<MTIf name="value">entry=ascend
+		<MTElse>entry=descend</MTIf>
+	</MTSetVars>
+</MTIf><MTSetVars>
+	<MTIf name="eyech" eq="1">eyecatch= eye-h
+	<MTElseIf eq="2">eyecatch= eye-hb
+	<MTElseIf eq="3">eyecatch= eye-c
+	<MTElseIf eq="4">eyecatch= eye-m
+	<MTElseIf eq="5">eyecatch= eye-u
+	</MTIf>
+	<MTUnless name="page_column">
+		<MTIf name="p_cset" eq="1">page_column=single
+		<MTElseIf eq="2">page_column=double
+		<MTElseIf eq="L2">page_column=double-l
+		<MTElseIf eq="3">page_column=multi
+		<MTElseIf eq="R3">page_column=multi2
+		<MTElseIf eq="L3">page_column=multi2-l
+		<MTElse>page_column=single
+		</MTIf>
+	</MTUnless>
 </MTSetVars><MTIf name="Others">
 	<MTIf name="eyech" ne="3">
 	<$MTGetVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
@@ -111,16 +177,4 @@
 		<$MTSetVar name="bu_arrey" function="push" value="$value"$>
 		<$MTGetVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
 	</MTFor>
-</MTIf><MTIf name="Lname">
-	<$MTGetVar name="$Lname" regex_replace="/¥//g","," setvar="$Lname"$>
-	<MTIf name="body">
-		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="M_groop"$>
-	<MTElse>
-		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
-	</MTIf>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
-	<MTSetVars>
-		<MTIf name="value">entry=ascend
-		<MTElse>entry=descend</MTIf>
-	</MTSetVars>
 </MTIf><$MTGetVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>

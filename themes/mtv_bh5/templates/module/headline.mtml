@@ -9,14 +9,14 @@
             <<$MTGetVar name="ettl"$>><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a><span class="date"> - Posted date: <time datetime="<$MTEntryDate format_name="iso8601"$>"><$MTEntryDate$></time></span></<$MTGetVar name="ettl"$>>
             <ul>
               <li class="textBody"><$MTEntryExcerpt remove_html="1" ltrim="1"$></li>
-	<MTIf name="PostName"><MTIf tag="EntryAuthorDisplayName">
+<MTIf name="PostName"><MTIf tag="EntryAuthorDisplayName">
               <li class="author">Posted by: <span class="name"><$MTEntryAuthorDisplayName$></span></li>
-	</MTIf></MTIf>
-	<MTIf tag="EntryCategory">
+</MTIf></MTIf>
+<MTIf tag="EntryCategory">
               <li class="category">Category: <MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<MTCategoryLabel> Index"><MTCategoryLabel></a></MTEntryCategories></li>
-	</MTIf>
-	<MTEntryIfTagged>
+</MTIf>
+<MTEntryIfTagged>
               <li class="tag">Tag: <MTEntryTags glue=", "><a href="<$MTTagSearchLink$>" rel="nofollow"><$MTTagName$></a></MTEntryTags></li>
-	</MTEntryIfTagged>
+</MTEntryIfTagged>
             </ul>
           </article>
