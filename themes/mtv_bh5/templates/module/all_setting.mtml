@@ -5,9 +5,12 @@
 	GLNavi=1
 	Others=0
 
+	MDtopic=1,0,1,0
+
 	IMindex=2,0
 	IAindex=1,0
 	A_entry=1,0
+	A_webpg=1,0
 	A_catlt=2,0,0,0
 	A_mdatb=2,0,0,0
 
@@ -32,13 +35,20 @@
 	0: No Use
 	1: Use(default)
 	2: Navigation On Top
-  $Others is Option body class Settings(set1,set2,al,f800‾f1000,etc...).
+  $Others is Option body class Settings(set1,set2,al,f800-f1000,etc...).
   It can use to put in original class setting. " "(space) of delimiter
 	0: No Use
 	String Sample: 'set2 f1000 al only'
 	 ...Details on http://kita2.net/stylelib/sub/layouts.php
-
-  $IMindex / $IAindex / $A_entry is Style And EyeCatch Setting(MainIndex / ArchiveIndex / BlogEntry) "," or "/" of delimiter
+  $MDtopic is microdata in topic-path switch On ArchiveTemplate(Entry / Webpage / CategoryList / Monthly-Datebased) "," or "/" of delimiter
+	Sample: 'E,W,C,D'
+	E: Entry Microdata Topic-path Setting
+	W: WebPage Microdata Topic-path Setting
+	C: CategoryList Microdata Topic-path Setting
+	D: Monthly-Datebased Microdata Topic-path Setting
+		0: normal Topic-Path
+		1: microdata in Topic-Path
+  $IMindex / $IAindex / $A_entry $A_webpg is Style And EyeCatch Setting(MainIndex / ArchiveIndex / Entry / WebPage) "," or "/" of delimiter
 	Sample: 'L,E'
 	L: Page Column Setting
 		1: Single Column
@@ -95,17 +105,34 @@
 	d: 1 eqall google +1 button (0: none)
 	e: 1 eqall Hatena Bookmark button (0: none)
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
+<$MTGetVar name="MDtopic" regex_replace="/\//g","," setvar="MDtopic"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdentry"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdwebpg"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdcatlt"$>
+<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="mddatlt"$>
 <MTSetVarBlock name="A_ydatb"><$MTGetVar name="IAindex"$>,<$MTGetVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
 	blog_id=<$MTBlogID$>
 	snsb=0
 	Iname=0
 	Lname=0
 	<MTIf name="tempName" eq="index_archive_datebased">
+		MDtpsw=<$MTGetVar name="mddatlt"$>
 		<MTIf name="body">Lname=A_ydatb<MTElse>Lname=A_mdatb</MTIf>
-	<MTElseIf eq="index_archive_category">Lname=A_catlt
-	<MTElseIf eq="index_main">Iname=IMindex
-	<MTElseIF eq="index_archive">Iname=IAindex
-	<MTElseIf like="individual_">Iname=A_entry
+	<MTElseIf eq="index_archive_category">
+		MDtpsw=<$MTGetVar name="mdcatlt"$>
+		Lname=A_catlt
+	<MTElseIf eq="index_main">
+		Iname=IMindex
+	<MTElseIF eq="index_archive">
+		Iname=IAindex
+	<MTElseIf like="_entry">
+		MDtpsw=<$MTGetVar name="mdentry"$>
+		Iname=A_entry
+	<MTElseIf like="_webpage">
+		MDtpsw=<$MTGetVar name="mdwebpg"$>
+		Iname=A_webpg
 	</MTIf>
 	<MTIf name="TagC_num">
 		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTGetVar name="TagC_num"$>.css
@@ -155,11 +182,11 @@
 	</MTUnless>
 </MTSetVars><MTIf name="Others">
 	<MTIf name="eyech" ne="3">
-	<$MTGetVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
+		<$MTGetVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
 	<MTElse><MTIf name="page_column" ne="multi">
-	<$MTGetVar name="Others" regex_replace="/set1/g","" setvar="Others"$>
+			<$MTGetVar name="Others" regex_replace="/set1/g","" setvar="Others"$>
 		</MTIf><MTIf name="page_column" ne="multi2">
-	<$MTGetVar name="Others" regex_replace="/set2/g","" setvar="Others"$>
+			<$MTGetVar name="Others" regex_replace="/set2/g","" setvar="Others"$>
 		</MTIf>
 	</MTIf>
 	<$MTGetVar name="Others" regex_replace="/  /g"," " setvar="Others"$>

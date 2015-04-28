@@ -25,7 +25,7 @@
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
         <$MTInclude module="<__trans phrase="Next Entry Link">" sim="1"$>
         <h1><$MTGetVar name="page_title"$></h1>
         <div class="entry"><$MTEntriesCount setvar="limit"$>
@@ -59,7 +59,7 @@
 		</MTIf>
 	</MTIf>
 </MTEntries>
-          <$MTInclude module="<__trans phrase="Next Entry Link">" sim="0"$>
+          <$MTInclude module="<__trans phrase="Next Entry Link">"$>
         </div>
         <$MTInclude module="<__trans phrase="Topic Path">"$>
       </div>

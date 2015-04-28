@@ -4,7 +4,7 @@
 	tempName=individual_webpage
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>">
+<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/WebPage">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTBlogName encode_html="1"$>: <$MTGetVar name="page_title"$>">
@@ -17,10 +17,10 @@
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
     <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-    <meta name="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
+    <meta itemprop="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="PageKeywords">    <meta name="keywords" content="<$MTPageKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link rel="canonical" href="<$MTPagePermalink$>">
+    <link itemprop="url" rel="canonical" href="<$MTPagePermalink$>">
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
@@ -30,24 +30,21 @@
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
+        <h1 itemprop="headline"><$MTGetVar name="page_title"$></h1>
         <article class="entry">
           <header>
             <ul class="info">
-              <li class="date">Last Modified: <time datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
+              <li class="date">Last Modified: <time itemprop="dateModified" datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
             </ul>
           </header>
-<MTIf tag="PageBody">
-          <div class="textBody">
-<$MTPageBody$>
-          </div>
-</MTIf>
+          <div itemprop="text" class="textBody">
+<MTIf tag="PageBody"><$MTPageBody$></MTIf>
 <MTIf tag="PageMore">
-          <div class="textBody" id="extended">
+            <hr id="extended">
 <$MTPageMore$>
-          </div>
 </MTIf>
+          </div>
           <$MTInclude module="<__trans phrase="Comments">"$>
           <$MTInclude module="<__trans phrase="TrackBacks">"$>
         </article>

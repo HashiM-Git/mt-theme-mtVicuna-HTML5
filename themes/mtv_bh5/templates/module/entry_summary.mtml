@@ -7,10 +7,8 @@
             <div class="textBody">
 <$MTEntryBody$>
             </div>
-            <footer>
-<MTIf tag="EntryMore">
-              <p class="continue"><a href="<$MTEntryPermalink$>#extended" title="<__trans phrase="Extended"> - <$MTEntryTitle encode_html="1"$>" rel="nofollow">Continue reading</a></p>
-</MTIf>
+            <footer><MTIf tag="EntryMore">
+              <p class="continue"><a href="<$MTEntryPermalink$>#extended" title="<__trans phrase="Extended"> - <$MTEntryTitle encode_html="1"$>" rel="nofollow">Continue reading</a></p></MTIf>
               <ul class="reaction">
 <MTEntryIfAllowComments>
                 <li class="comment"><a href="<$MTEntryPermalink$>#comments" title="<__trans phrase="Comments on <$MTEntryTitle encode_html="1"$>">" rel="nofollow">Comments</a>: <span class="count"><$MTEntryCommentCount$></span></li>

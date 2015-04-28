@@ -246,7 +246,7 @@ textarea {
 	padding: 0.5em 10px;
 }
 
-input.button {
+.button, .submit {
 	padding: 5px 10px;
 	border: none;
 	font-size: 85%;
@@ -256,7 +256,7 @@ input.button {
 	background-color: #01b0f0;
 }
 
-input.button:hover {
+.button:hover, .submit:hover {
 	background-color: #000;
 }
 
@@ -303,9 +303,8 @@ td {
 ---------------*/
 
 hr {
-	margin: 1.5em 0;
-	border: none;
-	border-top: 1px dotted #ccc;
+	margin: 0.5em 0;
+	border: 0px none;
 }
 
 select#entry-category,

@@ -3,7 +3,7 @@
 	tempName=index_main
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>">
+<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/Blog">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTGetVar name="page_title"$>">
@@ -15,11 +15,11 @@
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
     <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-<MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
+<MTIf tag="BlogDescription">    <meta itemprop="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link rel="canonical" href="<$MTBlogURL$>">
+    <link itemprop="url" rel="canonical" href="<$MTBlogURL$>">
 <$MTCCLicenseRDF$>
-    <title><$MTGetVar name="page_title"$></title>
+    <title itemprop="name"><$MTGetVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="mainIndex <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">

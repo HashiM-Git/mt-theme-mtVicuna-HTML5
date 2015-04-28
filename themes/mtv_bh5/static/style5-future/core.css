@@ -260,27 +260,6 @@ textarea {
 	padding: 0.5em 10px;
 }
 
-input.submit,
-input[type="submit"] {
-	_padding: 0; /* for IE */
-	border-color: #fff;
-	color: #666;
-	border: none;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #c2c2c2 #8f8f8f #8f8f8f #c2c2c2;
-	background: url(images/common/bg_grad09.gif) repeat-x left top;
-	font-size: 85%;
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-input.submit:hover,
-input[type="submit"]:hover {
-	color: #000;
-	border-color: #000;
-}
-
 input.radio {
 	background-color: transparent;
 	background-image: none;
@@ -324,9 +303,8 @@ td {
 ---------------*/
 
 hr {
-	margin: 1.5em 0;
-	border: none;
-	border-top: 1px dotted #ccc;
+	margin: 0.5em 0;
+	border: 0px none;
 }
 
 select#entry-category,
@@ -968,6 +946,25 @@ ul#flip1 li.create-entry a {
 	margin: 10px 0px;
 	width: 80%;
 	max-width: 85%;
+}
+
+.button, .submit {
+	_padding: 0; /* for IE */
+	border-color: #fff;
+	color: #666;
+	border: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #c2c2c2 #8f8f8f #8f8f8f #c2c2c2;
+	background: url(images/common/bg_grad09.gif) repeat-x left top;
+	font-size: 85%;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.button:hover, .submit:hover {
+	color: #000;
+	border-color: #000;
 }
 
 /*=========================

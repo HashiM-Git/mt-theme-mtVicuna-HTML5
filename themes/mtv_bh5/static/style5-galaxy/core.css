@@ -241,22 +241,6 @@ textarea {
 	padding: 0.5em 10px;
 }
 
-input.submit,
-input[type="submit"] {
-	padding: 5px 10px;
-	border: none;
-	font-size: 85%;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: #78890c;
-}
-
-input.submit:hover,
-input[type="submit"]:hover {
-	background-color: #b1c722;
-}
-
 input.radio {
 	border: none;
 	background-color: transparent;
@@ -298,9 +282,8 @@ td {
 ---------------*/
 
 hr {
-	margin: 1.5em 0;
-	border: none;
-	border-top: 1px dotted #222;
+	margin: 0.5em 0;
+	border: 0px none;
 }
 
 select#entry-category,
@@ -816,6 +799,20 @@ ul#flip1 li.create-entry a {
 #comments-form ul li textarea {
 	width: 80%;
 	max-width: 85%;
+}
+
+.button, .submit {
+	padding: 5px 10px;
+	border: none;
+	font-size: 85%;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #78890c;
+}
+
+.button:hover, .submit:hover {
+	background-color: #b1c722;
 }
 
 /* Trackback info

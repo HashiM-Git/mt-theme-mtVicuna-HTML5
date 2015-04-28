@@ -36,14 +36,16 @@ elements:
 #      include_system: php
 #      include_cache: 1
       stylecatcher_libraries:
-        mtvicuna_h5base_skin:
+        mtvicuna_hb5:
           url: '{{support}}theme_static/mtv_bh5/'
           label: 'mt.Vicuna HTML5 skin'
           description_label: 'Styles that are with the mt.Vicuna HTML5 Theme.'
-        mtvicuna_html5_skin:
+          order: 1
+        mtvicuna_hb5_lib:
           url: 'http://kita2.net/stylelib/html5.php'
           label: 'mt.Vicuna HTML5 Stylelib'
           description_label: 'This is style library only for the mt.Vicuna HTML5 theme.'
+          order: 1
       templates:
         index:
           archive_index:

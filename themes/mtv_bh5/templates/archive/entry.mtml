@@ -3,7 +3,7 @@
 	tempName=individual_entry
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>">
+<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/Article">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
     <meta property="og:title" content="<$MTGetVar name="page_title"$>">
@@ -16,10 +16,10 @@
     <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
     <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-    <meta name="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
+    <meta itemprop="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link rel="canonical" href="<$MTEntryPermalink$>">
+    <link itemprop="url" rel="canonical" href="<$MTEntryPermalink$>">
 <MTEntryPrevious>    <link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryPrevious>
 <MTEntryNext>    <link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryNext>
 <$MTCCLicenseRDF$>
@@ -31,24 +31,23 @@
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
         <$MTInclude module="<__trans phrase="Next Entry Link">" sim="1"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <h1 itemprop="headline"><$MTGetVar name="page_title"$></h1>
         <article class="entry">
           <header>
             <$MTInclude module="<__trans phrase="Entry Metadata">"$>
           </header>
-          <div class="textBody">
+          <div itemprop="articleBody" class="textBody">
 <$MTEntryBody$>
-          </div>
 <MTIf tag="EntryMore">
-          <div class="textBody" id="extended">
+            <hr id="extended">
 <$MTEntryMore$>
-          </div>
 </MTIf>
+          </div>
           <$MTInclude module="<__trans phrase="Related Entries">"$>
           <footer>
-            <$MTInclude module="<__trans phrase="Next Entry Link">" sim="0"$>
+            <$MTInclude module="<__trans phrase="Next Entry Link">"$>
           </footer>
           <$MTInclude module="<__trans phrase="Comments">"$>
           <$MTInclude module="<__trans phrase="TrackBacks">"$>
