@@ -1,13 +1,13 @@
 <$MTSetVar name="calender_title_format" value="%Y %b"$>
 <MTSetVarTemplate name="calendartemp">
           <section>
-            <h1>Calendar</h1>
+            <h3>Calendar</h3>
             <div class="calendar">
               <p class="summary">Monthly calendar</p>
               <table class="calendar">
                 <caption>
                   <MTArchivePrevious archive_type="Monthly"><a href="<$MTArchiveLink archive_type="Monthly"$>" title="Older" rel="nofollow">&laquo;</a></MTArchivePrevious>
-                  <$MTGetVar name="calender_title"$>
+                  <$MTVar name="calender_title"$>
                   <MTArchiveNext archive_type="Monthly"><a href="<$MTArchiveLink archive_type="Monthly"$>" title="Newer" rel="nofollow">&raquo;</a></MTArchiveNext>
                 </caption>
                 <tr>
@@ -31,15 +31,15 @@
 <MTIf name="tempName" eq="index_main">
 	<MTArchiveList archive_type="Monthly" lastn="1">
 		<$MTArchiveDate format="$calender_title_format" setvar="calender_title"$>
-		<$MTGetVar name="calendartemp"$>
+		<$MTVar name="calendartemp"$>
 	</MTArchiveList>
 <MTElse name="archive_class" like="monthly|daily|weekly">
 	<$MTArchiveDate format="$calender_title_format" setvar="calender_title"$>
-		<$MTGetVar name="calendartemp"$>
+		<$MTVar name="calendartemp"$>
 <MTElse name="archive_class" eq="entry-archive">
 	<$MTEntryID setvar="entry_id"$>
 	<MTEntries id="$entry_id">
 		<$MTEntryDate format="$calender_title_format" setvar="calender_title"$>
-		<$MTGetVar name="calendartemp"$>
+		<$MTVar name="calendartemp"$>
 	</MTEntries>
 </MTIf>

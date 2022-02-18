@@ -189,6 +189,10 @@ body.al #footer {
 	padding: 1px 0;
   }
 
+  #main > .entry > header > h1 {
+	margin: 0 -15px;
+  }
+
   article.entry ul.info,
   .archives article.entry ul.info,
   .system div.entry ul.info {
@@ -203,19 +207,26 @@ body.al #footer {
 	display: inline;
   }
 
-  #trackback ul li { display: block; }
-  ,entry > .section h1 {
+#trackback ul li { display: block; }
+
+  ,entry > .section h1,
+  ,entry > .section > header > h2 {
 	margin-right: 0;
 	padding-right: 0;
   }
 
-  .entry > .section h1 a {
+  .entry > .section h1 a,
+  .entry > .section > header > h2 > a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
 
   .entry > .section h1 a:hover {
+	text-decoration: none;
+  }
+
+  .entry > .section > header > h2 > a:hover {
 	text-decoration: none;
   }
 
@@ -374,8 +385,10 @@ body.al #footer {
 
   #utilities section > div,
   #utilities section > h1,
+  #utilities section > h3,
   #utilities aside > div,
-  #utilities aside > h1 {
+  #utilities aside > h1,
+  #utilities aside > h3 {
 	margin: 0 0 5px;
   }
 
@@ -437,8 +450,10 @@ body.al #footer {
 
   body.single #utilities section > div,
   body.single #utilities section > h1,
+  body.single #utilities section > h3,
   body.single #utilities aside > div,
-  body.single #utilities aside > h1 {
+  body.single #utilities aside > h1,
+  body.single #utilities aside > h3 {
 	margin: 0 0 5px;
   }
 
@@ -561,8 +576,12 @@ body.al #footer {
 
   body.multi article.headline > h1,
   body.multi .entry > .section h1,
+  body.multi article.headline > h2,
+  body.multi .entry > .section h2,
   body.multi #comments > h1,
-  body.multi #trackback > h1 {
+  body.multi #trackback > h1,
+  body.multi #comments > h2,
+  body.multi #trackback > h2 {
 	margin-left: 0;
 	margin-right: 0;
   }
@@ -623,8 +642,10 @@ body.al #footer {
   }
 
   body.multi2 #utilities div.navi section > h1,
+  body.multi2 #utilities div.navi section > h3,
   body.multi2 #utilities div.navi section > div,
   body.multi2 #utilities div.navi aside > h1,
+  body.multi2 #utilities div.navi aside > h3,
   body.multi2 #utilities div.navi aside > div {
 	margin-right: 10px;
   }
@@ -669,8 +690,10 @@ body.al #footer {
   }
 
   body.multi2-l #utilities div.navi section h1,
+  body.multi2-l #utilities div.navi section h3,
   body.multi2-l #utilities div.navi section div,
   body.multi2-l #utilities div.navi aside h1,
+  body.multi2-l #utilities div.navi aside h3,
   body.multi2-l #utilities div.navi aside div {
 	margin-right: 10px;
   }
@@ -715,8 +738,10 @@ body.al #footer {
   }
 
   body.set2 #utilities div.navi section h1,
+  body.set2 #utilities div.navi section h3,
   body.set2 #utilities div.navi section div,
   body.set2 #utilities div.navi aside h1,
+  body.set2 #utilities div.navi aside h3,
   body.set2 #utilities div.navi aside div {
 	margin-right: 5px;
   }
@@ -728,8 +753,10 @@ body.al #footer {
   }
 
   body.set2 #utilities div.others section h1,
+  body.set2 #utilities div.others section h3,
   body.set2 #utilities div.others section div,
   body.set2 #utilities div.others aside h1,
+  body.set2 #utilities div.others aside h3,
   body.set2 #utilities div.others aside div {
 	margin-right: 0;
   }

@@ -1,6 +1,6 @@
 
           <section>
-            <h1>Archives</h1>
+            <h3>Archives</h3>
             <div class="y-mArchives">
 <MTSetVars>
 	<MTArchiveList archive_type="Individual" lastn="1">
@@ -16,9 +16,9 @@
 <MTArchiveList archive_type="Yearly" lastn="3">
 	<$MTArchiveDate format="%Y" setvar="year"$>
 	<MTIfArchiveTypeEnabled archive_type="Yearly">
-                <li><a href="<$MTArchiveLink$>"><$MTGetVar name="year"$><__trans phrase="Year"></a> (<$MTArchiveCount$>)
+                <li><a href="<$MTArchiveLink$>"><$MTVar name="year"$><__trans phrase="Year"></a> (<$MTArchiveCount$>)
 	<MTElse>
-                <li><$MTGetVar name="year"$><__trans phrase="Year"> (<$MTArchiveCount$>)
+                <li><$MTVar name="year"$><__trans phrase="Year"> (<$MTArchiveCount$>)
 	</MTIfArchiveTypeEnabled>
 	<MTArchiveList archive_type="Monthly">
 		<$MTArchiveDate format="%B" setvar="month"$>
@@ -26,17 +26,17 @@
 	</MTArchiveList>
 	<MTSetVars>
 		<MTIf name="year" ne="$stay">stam=1
-		<MTElse>stam=<$MTGetVar name="estam"$>
+		<MTElse>stam=<$MTVar name="estam"$>
 		</MTIf>
 		<MTIf name="year" ne="$endy">endm=12
-		<MTElse>endm=<$MTGetVar name="eendm"$>
+		<MTElse>endm=<$MTVar name="eendm"$>
 		</MTIf>
 	</MTSetVars>
                   <ul class="mlist"><MTFor var="m" from="$stam" to="$endm">
 		<MTIf name="count" index="$m">
-                    <li><$MTGetVar name="count" index="$m"$></li>
+                    <li><$MTVar name="count" index="$m"$></li>
 		<MTElse>
-                    <li><$MTGetVar name="m" sprintf="%d"$><__trans phrase="Month"></li>
+                    <li><$MTVar name="m" sprintf="%d"$><__trans phrase="Month"></li>
 		</MTIf>
 	</MTFor><$MTSetVar name="count" function="undef"$>
                   </ul>

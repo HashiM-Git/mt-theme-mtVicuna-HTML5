@@ -3,15 +3,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="<$MTLink template="<__trans phrase="Stylesheet">"$>"><MTIf name="TagCss">
-    <link rel="stylesheet" href="<$MTBlogURL$>css/<$MTGetVar name="TagCss"$>"></MTIf>
+    <link rel="stylesheet" href="<$MTBlogURL$>css/<$MTVar name="TagCss"$>"></MTIf>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<$MTLink template="RSS"$>">
     <link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTLink template="Atom"$>">
-    <link rel="alternate" type="application/rsd+xml" title="RSD" href="<$MTLink template="rsd"$>">
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
     <script src="<$MTLink template="javascript"$>"></script><MTIf name="jquery"><MTIf name="GLNavi">
     <link rel="stylesheet" href="<$MTBlogURL$>css/sp_gnavi.css"></MTIf>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="<$MTLink template="user_jquery"$>"></script></MTIf>

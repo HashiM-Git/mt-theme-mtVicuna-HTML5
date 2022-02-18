@@ -1,44 +1,72 @@
 <MTSetVars>
 	page_title=<$MTEntryTitle remove_html="1"$>
 	tempName=individual_entry
-</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
+	jsonid=3
+</MTSetVars><MTEntryPrimaryCategory><MTHasParentCategory><MTParentCategory>
+	<$MTSetVar name="jsonid" value="4"$><$MTCategoryArchiveLink setvar="catpar_link"$><$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
+</MTParentCategory></MTHasParentCategory>
+<$MTCategoryArchiveLink setvar="cat_link"$><$MTCategoryLabel encode_html="1" setvar="cat_name"$></MTEntryPrimaryCategory>
+<MTIf name="jsonid" eq="3"><$MTVar name="json_id" note="new"$>
+<MTSetHashVar name="json_id">
+	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="cat_link"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTEntryPermalink$></MTSetVarBlock>
+</MTSetHashVar><$MTVar name="json_name" note="new"$><MTSetHashVar name="json_name">
+	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="cat_name"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
+</MTSetHashVar>
+<MTElse><$MTVar name="json_id" note="new"$>
+<MTSetHashVar name="json_id">
+	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="catpar_link"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTVar name="cat_link"$></MTSetVarBlock>
+	<MTSetVarBlock name="4"><$MTEntryPermalink$></MTSetVarBlock>
+</MTSetHashVar><$MTVar name="json_name" note="new"$><MTSetHashVar name="json_name">
+	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTVar name="cat_name"$></MTSetVarBlock>
+	<MTSetVarBlock name="4"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
+</MTSetHashVar>
+</MTIf><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/Article">
+<html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
-    <meta property="og:title" content="<$MTGetVar name="page_title"$>">
+    <meta property="og:title" content="<$MTVar name="page_title"$>">
     <meta property="og:type" content="article">
     <meta property="og:url" content="<$MTEntryPermalink$>">
 <MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
-    <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
+    <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
-    <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-    <meta itemprop="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
+    <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
+    <meta content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link itemprop="url" rel="canonical" href="<$MTEntryPermalink$>">
+    <link rel="canonical" href="<$MTEntryPermalink$>">
 <MTEntryPrevious>    <link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryPrevious>
 <MTEntryNext>    <link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryNext>
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
+    <$MTInclude module="JSON_LOAD"$>
   </head>
-  <body class="individual <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>" id="entry<$MTEntryID pad="1"$>">
+  <body class="individual <$MTVar name="page_column"$><$MTVar name="eyecatch"$>" id="entry<$MTEntryID pad="1"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
         <$MTInclude module="<__trans phrase="Next Entry Link">" sim="1"$>
-        <h1 itemprop="headline"><$MTGetVar name="page_title"$></h1>
         <article class="entry">
           <header>
+            <h1><$MTVar name="page_title"$></h1>
             <$MTInclude module="<__trans phrase="Entry Metadata">"$>
           </header>
-          <div itemprop="articleBody" class="textBody">
+          <div class="textBody">
 <$MTEntryBody$>
 <MTIf tag="EntryMore">
             <hr id="extended">
@@ -72,12 +100,10 @@
       fjs.parentNode.insertBefore(js, fjs);
     };
 	<MTif name="bu_arrey" index="0">
-    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTGetVar name="bu_arrey" index="0"$>&xfbml=1', 'fbjssdk');</MTif>
-	<MTif name="bu_arrey" index="3">
-    load('https://apis.google.com/js/plusone.js', 'gplus1js');</MTif>
+    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey" index="0"$>&xfbml=1', 'fbjssdk');</MTif>
 	<MTif name="bu_arrey" index="1">
     load('//platform.twitter.com/widgets.js', 'tweetjs');</MTif>
-	<MTif name="bu_arrey" index="4">
+	<MTif name="bu_arrey" index="3">
     load('//b.st-hatena.com/js/bookmark_button.js');</MTif>
 	<MTif name="bu_arrey" index="2">
     load('//static.mixi.jp/js/plugins.js#lang=ja');</MTif>

@@ -19,17 +19,17 @@
 	<MTUnless name="comment_preview">
 		<MTIgnore>### Comment Logs ###</MTIgnore>
           <section id="comments">
-            <h1>Comments:<span class="count"><$MTEntryCommentCount$></span></h1>
+            <h2>Comments:<span class="count"><$MTEntryCommentCount$></span></h2>
 		<MTIf tag="EntryCommentCount">
             <div class="log">
 			<MTComments>
 				<MTIfCommentParent>
 				<MTElse>
               <article<MTIfArchiveTypeEnabled archive_type="Individual"> id="comment-<$MTCommentID$>"</MTIfArchiveTypeEnabled>>
-					<$MTGetVar name="commentlog"$>
+					<$MTVar name="commentlog"$>
 					<MTCommentReplies>
                 <article<MTIfArchiveTypeEnabled archive_type="Individual"> id="comment-<$MTCommentID$>"</MTIfArchiveTypeEnabled>>
-						  <$MTGetVar name="commentlog"$>
+						  <$MTVar name="commentlog"$>
 						<$MTCommentRepliesRecurse$>
                 </article>
 					</MTCommentReplies>

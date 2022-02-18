@@ -3,31 +3,32 @@
 	tempName=index_main
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/Blog">
+<html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
-    <meta property="og:title" content="<$MTGetVar name="page_title"$>">
+    <meta property="og:title" content="<$MTVar name="page_title"$>">
     <meta property="og:type" content="blog">
     <meta property="og:url" content="<$MTBlogURL$>">
 <MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:locale" content="ja_JP">
 <MTIf tag="BlogDescription">    <meta property="og:description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
-    <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
+    <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
-    <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-<MTIf tag="BlogDescription">    <meta itemprop="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
+    <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
+<MTIf tag="BlogDescription">    <meta content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link itemprop="url" rel="canonical" href="<$MTBlogURL$>">
+    <link rel="canonical" href="<$MTBlogURL$>">
 <$MTCCLicenseRDF$>
-    <title itemprop="name"><$MTGetVar name="page_title"$></title>
+    <title><$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
+    <$MTInclude module="JSON_LOAD"$>
   </head>
-  <body class="mainIndex <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+  <body class="mainIndex <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
         <$MTInclude module="<__trans phrase="Topic Path">"$>
-<!--        <h1><$MTGetVar name="page_title"$></h1> -->
+<!--        <h1><$MTVar name="page_title"$></h1> -->
         <div class="entry">
 <MTEntries>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>

@@ -416,7 +416,8 @@ entry > article.section,
 	border: 0;
 }
 
-#main > h1 {
+#main > h1,
+#main > .entry > header > h1 {
 	margin: 0;
 	padding: 15px 30px;
 	border-top: 1px solid #333;
@@ -427,10 +428,16 @@ entry > article.section,
 	background-color: #222;
 }
 
+#main > .entry > header > h1 {
+	margin: 0 -30px;
+}
+
 /* Entry Title
 ---------------*/
 
-.entry > .section h1 {
+.entry > .section h1,
+.entry > section.section > h2,
+.entry > .section > header > h2 {
 	margin-bottom: 0;
 	padding: 0.3em 13px;
 	font-size: 131%;
@@ -439,7 +446,9 @@ entry > article.section,
 	border-bottom: 1px dotted #111;
 }
 
-.entry > .section h1 > a {
+.entry > .section h1 > a,
+.entry > section.section > h2 > a,
+.entry > .section > header > h2 > a {
 	text-decoration: none;
 }
 
@@ -452,6 +461,32 @@ entry > article.section,
 }
 
 .entry > .section h1 > a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.entry > section.section > h2 > a:link {
+	color: #eee;
+}
+
+.entry > section.section > h2 > a:visited {
+	color: #444;
+}
+
+.entry > section.section > h2 > a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.entry > .section > header > h2 > a:link {
+	color: #eee;
+}
+
+.entry > .section > header > h2 > a:visited {
+	color: #444;
+}
+
+.entry > .section > header > h2 > a:hover {
 	color: #fff;
 	text-decoration: underline;
 }
@@ -703,7 +738,9 @@ ul#flip1 li.create-entry a {
 }
 
 #comments h1,
-#trackback h1 {
+#trackback h1,
+#comments > h2,
+#trackback > h2 {
 	margin-bottom: 1em;
 	padding: 0.5em 15px;
 	font-size: 116%;
@@ -711,7 +748,8 @@ ul#flip1 li.create-entry a {
 	background-color: #222;
 }
 
-#comments h1 span.separator {
+#comments h1 span.separator,
+#comments > h2 span.separator {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 	font-size: 85%;
@@ -861,11 +899,15 @@ ul#flip1 li.create-entry a {
 }
 
 #utilities div > section h1,
-#utilities div > aside h1 {
+#utilities div > section h3,
+#utilities div > aside h1,
+#utilities div > aside h3 {
 	margin: 8px 5px 5px;
 	padding: 0 10px 1px;
 	color: #fff;
 	font-weight: bold;
+	font-size: 100%;
+	border: none;
 }
 
 #utilities section > div,
@@ -999,7 +1041,8 @@ article.headline {
 }
 
 article.headline > h1,
-article.headline > h2 {
+article.headline > h2,
+article.headline > h3 {
 	font-size: 100%;
 	font-weight: normal;
 	line-height: 1.1;
@@ -1009,7 +1052,8 @@ article.headline > h2 {
 }
 
 article.headline > h1 span.date,
-article.headline > h2 span.date {
+article.headline > h2 span.date,
+article.headline > h3 span.date {
 	font-size: 85%;
 }
 

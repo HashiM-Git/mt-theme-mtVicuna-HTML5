@@ -2,7 +2,7 @@ label: 'mt.Vicuna Theme On HTML5'
 id: 'mtv_bh5'
 author_name: HashiM
 author_link: http://mtvicuna.kita2.net/
-version: 1.0.2
+version: 1.1.0
 class: blog
 description: <__trans phrase="A MT5 Theme for Vicuna CMS.">
 l10n_lexicon:
@@ -36,12 +36,12 @@ elements:
 #      include_system: php
 #      include_cache: 1
       stylecatcher_libraries:
-        mtvicuna_hb5:
+        mtvicuna_bh5:
           url: '{{support}}theme_static/mtv_bh5/'
           label: 'mt.Vicuna HTML5 skin'
           description_label: 'Styles that are with the mt.Vicuna HTML5 Theme.'
           order: 1
-        mtvicuna_hb5_lib:
+        mtvicuna_bh5_lib:
           url: 'http://kita2.net/stylelib/html5.php'
           label: 'mt.Vicuna HTML5 Stylelib'
           description_label: 'This is style library only for the mt.Vicuna HTML5 theme.'
@@ -67,10 +67,6 @@ elements:
           main_index:
             label: Main Index
             outfile: index.html
-            rebuild_me: 1
-          rsd:
-            label: RSD
-            outfile: rsd.xml
             rebuild_me: 1
           rss:
             label: RSS
@@ -116,12 +112,12 @@ elements:
                 archive_type: Page
                 file_template: '%-c/%-f'
         module:
-          asset_insertion:
-            label: Asset Insertion
-            filename: module/asset_insertion.mtml
           all_setting:
             label: All Setting
             filename: module/all_setting.mtml
+          JSON_LOAD:
+            label: JSON_LOAD
+            filename: module/JSON_LOAD.mtml
           header:
             label: Header
             filename: module/header.mtml

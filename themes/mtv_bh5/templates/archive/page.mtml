@@ -4,41 +4,41 @@
 	tempName=individual_webpage
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
     <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
-    <meta property="og:title" content="<$MTBlogName encode_html="1"$>: <$MTGetVar name="page_title"$>">
+    <meta property="og:title" content="<$MTBlogName encode_html="1"$>: <$MTVar name="page_title"$>">
     <meta property="og:type" content="article">
     <meta property="og:url" content="<$MTPagePermalink$>">
 <MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
     <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
-    <meta property="fb:admins" content="<$MTGetVar name="fbadmin"$>">
+    <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
-    <meta property="fb:app_id" content="<$MTGetVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-    <meta itemprop="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
+    <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
+    <meta content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="PageKeywords">    <meta name="keywords" content="<$MTPageKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link itemprop="url" rel="canonical" href="<$MTPagePermalink$>">
+    <link rel="canonical" href="<$MTPagePermalink$>">
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
-  <body class="webPage <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+  <body class="webPage <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
-        <h1 itemprop="headline"><$MTGetVar name="page_title"$></h1>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
         <article class="entry">
           <header>
+            <h1><$MTVar name="page_title"$></h1>
             <ul class="info">
-              <li class="date">Last Modified: <time itemprop="dateModified" datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
+              <li class="date">Last Modified: <time datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
             </ul>
           </header>
-          <div itemprop="text" class="textBody">
+          <div class="textBody">
 <MTIf tag="PageBody"><$MTPageBody$></MTIf>
 <MTIf tag="PageMore">
             <hr id="extended">

@@ -411,7 +411,8 @@ article.entry {
 	border: 0;
 }
 
-#main > h1 {
+#main > h1,
+#main > .entry > header > h1 {
 	margin: 0;
 	padding: 15px 30px;
 	border-top: 1px solid #eee;
@@ -421,10 +422,16 @@ article.entry {
 	color: #000;
 }
 
+#main > .entry > header > h1 {
+	margin: 0 -30px;
+}
+
 /* Entry Title
 ---------------*/
 
-.entry > .section h1 {
+.entry > .section h1,
+.entry > section.section > h2,
+.entry > .section > header > h2 {
 	line-height: normal;
 	margin: 2% 0 0;
 	padding: 0.3em 0;
@@ -433,7 +440,9 @@ article.entry {
 	border-bottom: 4px solid #eee;
 }
 
-.entry > .section h1 a {
+.entry > .section h1 a,
+.entry > section.section > h2 > a,
+.entry > .section > header > h2 > a {
 	text-decoration: none;
 }
 
@@ -446,6 +455,32 @@ article.entry {
 }
 
 .entry > .section h1 a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.entry > section.section > h2 > a:link {
+	color: #000;
+}
+
+.entry > section.section > h2 > a:visited {
+	color: #333;
+}
+
+.entry > section.section > h2 > a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.entry > .section > header > h2 > a:link {
+	color: #000;
+}
+
+.entry > .section > header > h2 > a:visited {
+	color: #333;
+}
+
+.entry > .section > header > h2 > a:hover {
 	color: #333;
 	text-decoration: underline;
 }
@@ -721,7 +756,9 @@ ul#flip1 li.create-entry a {
 }
 
 #comments h1,
-#trackback h1 {
+#comments > h2,
+#trackback h1,
+#trackback > h2 {
 	margin-bottom: 1em;
 	padding: 0.5em 15px;
 	border: none;
@@ -730,7 +767,8 @@ ul#flip1 li.create-entry a {
 	background-color: #eee;
 }
 
-#comments h1 span.separator {
+#comments h1 span.separator,
+#comments > h2 span.separator {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 	font-size: 85%;
@@ -887,7 +925,9 @@ ul#flip1 li.create-entry a {
 }
 
 #utilities div > section h1,
-#utilities div > aside h1 {
+#utilities div > section h3,
+#utilities div > aside h1,
+#utilities div > aside h3 {
 	margin: 5px 10px;
 	padding: 4px 0;
 	border-top: 0;
@@ -1025,16 +1065,19 @@ article.headline {
 }
 
 article.headline > h1,
-article.headline > h2 {
+article.headline > h2,
+article.headline > h3 {
 	font-size: 100%;
 	font-weight: normal;
 	line-height: 1.1;
+	margin: 0;
 	padding: 0;
 	border: 0;
 }
 
 article.headline > h1 span.date,
-article.headline > h2 span.date {
+article.headline > h2 span.date,
+article.headline > h3 span.date {
 	font-size: 85%;
 }
 

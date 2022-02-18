@@ -1,0 +1,49 @@
+<MTSetVarTemplate name="_JSON_LD_index">
+  {
+    "@context": "http://schema.org",
+    "@type": "CreativeWork",
+    "mainEntity": {
+      "@type": "Blog",
+      "@id": "<$MTBlogURL$>"
+    },
+    "name": "<$MTBlogName encode_html="1"$>",
+    "description": "<$MTBlogDescription encode_html="1"$>",
+    "author": {
+      "@type": "Person",
+      "name": "<MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors>"
+    }
+  }</MTSetVarTemplate>
+<MTSetVarTemplate name="_JSON_LD_Format">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":[{<MTFor var="x" from="1" to="$jsonid">
+      "@type": "ListItem",
+      "position": "<$MTVar name="x"$>",
+      "name": "<$MTVar name="json_name" key="$x"$>",
+      "item": "<$MTVar name="json_id" key="$x"$>"
+    }<MTUnless name="__last__">,{</MTUnless></MTfor>]
+  }</MTSetVarTemplate>
+<script type="application/ld+json">
+<MTIf name="tempName" eq="index_main"><$MTVar name="_JSON_LD_index"$>
+<MTElse>[
+  <MTIf name="tempName" eq="individual_entry">{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "<$MTEntryPermalink$>"
+    },
+    "headline": "<$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$>",
+    "datePublished": "<$MTEntryDate format_name="iso8601"$>",
+    "dateModified": "<$MTEntryModifiedDate format_name="iso8601"$>",
+    "description": "<$MTEntryExcerpt remove_html="1" ltrim="1"$>",
+    "author": {
+      "@type": "Person",
+      "url": "<$MTBlogURL$>",
+      "name": "<$MTEntryAuthorDisplayName$>"
+    }
+  },<MTElse><$MTVar name="_JSON_LD_index"$>,</MTIf></MTIf>
+  <MTUnless name="tempName" eq="index_main"><$MTVar name="_JSON_LD_Format"$>
+]</MTUnless>
+</script>

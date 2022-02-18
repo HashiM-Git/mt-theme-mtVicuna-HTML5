@@ -18,16 +18,16 @@
 <MTArchiveNext>    <link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchiveNext>
 </MTIf>
 <$MTCCLicenseRDF$>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
-  <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+  <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
         <$MTInclude module="<__trans phrase="Next Entry Link">" sim="1"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <h1><$MTVar name="page_title"$></h1>
         <div class="entry"><$MTEntriesCount setvar="limit"$>
 <MTEntries sort_order="$entry" limit="$limit">
 	<MTIf name="body">
@@ -36,9 +36,9 @@
 			<MTUnless name="ms">
 				<$MTEntryDate format="%m" setvar="month"$>
           <section class="section">
-            <h1><a href="./<$MTGetVar name="month"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h1><$MTSetVar name="ms" value="1"$>
+            <h2><a href="./<$MTVar name="month"$>/" title="<$MTEntryDate format="%B"$><__trans phrase="Month">"><$MTEntryDate format="%b" language="en"$>.</a></h2><$MTSetVar name="ms" value="1"$>
 			</MTUnless>
-            <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
+            <$MTInclude module="<__trans phrase="Headline">" ettl="h3"$>
 			<$MTSetVar name="ms" op="++"$>
 			<MTIf name="entry" eq="ascend">
 				<MTEntryNext><$MTEntryDate format="%m" setvar="month2"$></MTEntryNext>
@@ -49,11 +49,11 @@
           </section><$MTSetVar name="ms" value="0"$>
 			</MTIf>
 		<MTElse>
-          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
 		</MTIf>
 	<MTElse>
 		<MTIf name="entry_sh">
-          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
 		<MTElse>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>
 		</MTIf>

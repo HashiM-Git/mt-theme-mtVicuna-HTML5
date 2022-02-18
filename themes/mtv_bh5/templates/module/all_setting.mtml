@@ -18,7 +18,7 @@
 
 	GA_trackid=0
 	fbadmin=0
-	button=0,0,0,0,0
+	button=0,0,0,0
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on http://mtvicuna.kita2.net/setup.html
@@ -98,67 +98,66 @@
   $GA_trackid is Google Analitics TrackID (0: none)
   $fbadmin is Facebook Admins (0: none)
   $button is SNS Button at entry page. "," or "/" of delimiter
-	Sample: 'aaa,bbb,ccc,d,e'
+	Sample: 'aaa,bbb,ccc,d'
 	aaa: Facebook App_id (0: none)
 	bbb: Twitter Account (0: none)
 	ccc: mixi Like Developer ID (0: none)
-	d: 1 eqall google +1 button (0: none)
-	e: 1 eqall Hatena Bookmark button (0: none)
+	d: 1 eqall Hatena Bookmark button (0: none)
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
-<$MTGetVar name="MDtopic" regex_replace="/\//g","," setvar="MDtopic"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdentry"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdwebpg"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdcatlt"$>
-<$MTGetVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="mddatlt"$>
-<MTSetVarBlock name="A_ydatb"><$MTGetVar name="IAindex"$>,<$MTGetVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
+<$MTVar name="MDtopic" regex_replace="/\//g","," setvar="MDtopic"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdentry"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdwebpg"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdcatlt"$>
+<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="mddatlt"$>
+<MTSetVarBlock name="A_ydatb"><$MTVar name="IAindex"$>,<$MTVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
 	blog_id=<$MTBlogID$>
 	snsb=0
 	Iname=0
 	Lname=0
 	<MTIf name="tempName" eq="index_archive_datebased">
-		MDtpsw=<$MTGetVar name="mddatlt"$>
+		MDtpsw=<$MTVar name="mddatlt"$>
 		<MTIf name="body">Lname=A_ydatb<MTElse>Lname=A_mdatb</MTIf>
 	<MTElseIf eq="index_archive_category">
-		MDtpsw=<$MTGetVar name="mdcatlt"$>
+		MDtpsw=<$MTVar name="mdcatlt"$>
 		Lname=A_catlt
 	<MTElseIf eq="index_main">
 		Iname=IMindex
 	<MTElseIF eq="index_archive">
 		Iname=IAindex
 	<MTElseIf like="_entry">
-		MDtpsw=<$MTGetVar name="mdentry"$>
+		MDtpsw=<$MTVar name="mdentry"$>
 		Iname=A_entry
 	<MTElseIf like="_webpage">
-		MDtpsw=<$MTGetVar name="mdwebpg"$>
+		MDtpsw=<$MTVar name="mdwebpg"$>
 		Iname=A_webpg
 	</MTIf>
 	<MTIf name="TagC_num">
-		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTGetVar name="TagC_num"$>.css
-		<MTElse>TagCss=tagCloud<$MTGetVar name="TagC_num"$>.css
+		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTVar name="TagC_num"$>.css
+		<MTElse>TagCss=tagCloud<$MTVar name="TagC_num"$>.css
 		</MTIf>
 	<MTElse>TagCss=0
 	</MTIf>
 </MTSetVars><MTUnless name="Lname"><MTUnless name="Iname">
-	<$MTGetVar name="IMindex" regex_replace="/¥//g","," setvar="IMindex"$>
-	<$MTGetVar name="IMindex" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
+	<$MTVar name="IMindex" regex_replace="/¥//g","," setvar="IMindex"$>
+	<$MTVar name="IMindex" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
 </MTUnless></MTUnless><MTIf name="Iname">
-	<$MTGetVar name="$Iname" regex_replace="/¥//g","," setvar="$Iname"$>
-	<$MTGetVar name="$Iname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
-	<$MTGetVar name="$Iname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
+	<$MTVar name="$Iname" regex_replace="/¥//g","," setvar="$Iname"$>
+	<$MTVar name="$Iname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
+	<$MTVar name="$Iname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="eyech"$>
 </MTIf><MTIf name="Lname">
-	<$MTGetVar name="$Lname" regex_replace="/¥//g","," setvar="$Lname"$>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="eyech"$>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
+	<$MTVar name="$Lname" regex_replace="/¥//g","," setvar="$Lname"$>
+	<$MTVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="p_cset"$>
+	<$MTVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
+	<$MTVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="eyech"$>
+	<$MTVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="$Lname"$>
 	<MTIf name="body">
-		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="M_groop"$>
+		<$MTVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="M_groop"$>
 	<MTElse>
-		<$MTGetVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
+		<$MTVar name="$Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
 	</MTIf>
-	<$MTGetVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
+	<$MTVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
 	<MTSetVars>
 		<MTIf name="value">entry=ascend
 		<MTElse>entry=descend</MTIf>
@@ -182,26 +181,26 @@
 	</MTUnless>
 </MTSetVars><MTIf name="Others">
 	<MTIf name="eyech" ne="3">
-		<$MTGetVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
+		<$MTVar name="Others" regex_replace="/set1|set2/g","" setvar="Others"$>
 	<MTElse><MTIf name="page_column" ne="multi">
-			<$MTGetVar name="Others" regex_replace="/set1/g","" setvar="Others"$>
+			<$MTVar name="Others" regex_replace="/set1/g","" setvar="Others"$>
 		</MTIf><MTIf name="page_column" ne="multi2">
-			<$MTGetVar name="Others" regex_replace="/set2/g","" setvar="Others"$>
+			<$MTVar name="Others" regex_replace="/set2/g","" setvar="Others"$>
 		</MTIf>
 	</MTIf>
-	<$MTGetVar name="Others" regex_replace="/  /g"," " setvar="Others"$>
-	<$MTGetVar name="Others" regex_replace="/^ /","" setvar="Others"$>
+	<$MTVar name="Others" regex_replace="/  /g"," " setvar="Others"$>
+	<$MTVar name="Others" regex_replace="/^ /","" setvar="Others"$>
 	<MTIf name="Others">
-	<MTSetVarBlock name="page_column" append="1"$> <$MTGetVar name="Others"$></MTSetVarBlock></MTIf>
+	<MTSetVarBlock name="page_column" append="1"$> <$MTVar name="Others"$></MTSetVarBlock></MTIf>
 </MTIf><MTIf name="GLNavi" eq="2">
 	<$MTSetVar name="page_column" value=" gt" append="1"$>
 </MTIf><MTIf name="tempName" eq="individual_entry">
-	<$MTGetVar name="button" regex_replace="/¥//g","," setvar="button"$>
+	<$MTVar name="button" regex_replace="/¥//g","," setvar="button"$>
 	<$MTSetVar name="bu_arrey" function="undef"$>
-	<MTFor var="i" from="1" to="5">
-		<$MTGetVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
+	<MTFor var="i" from="1" to="4">
+		<$MTVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
 		<MTIf name="value"><$MTSetVar name="snsb" value="1"$></MTIf>
 		<$MTSetVar name="bu_arrey" function="push" value="$value"$>
-		<$MTGetVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
+		<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
 	</MTFor>
-</MTIf><$MTGetVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>
+</MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>

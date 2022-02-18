@@ -1,7 +1,30 @@
 <MTSetVars>
 	page_title=<$MTArchiveTitle$> Archive
 	tempName=index_archive_category
-</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
+	jsonid=2
+</MTSetVars>
+<MTHasParentCategory><MTParentCategory>
+	<$MTSetVar name="jsonid" value="3"$><$MTCategoryArchiveLink setvar="catpar_link"$><$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
+</MTParentCategory></MTHasParentCategory>
+<MTIf name="jsonid" eq="2"><$MTVar name="json_id" note="初期化"$>
+<MTSetHashVar name="json_id">
+	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTArchiveLink$></MTSetVarBlock>
+</MTSetHashVar><$MTVar name="json_name" note="初期化"$><MTSetHashVar name="json_name">
+	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTArchiveTitle$></MTSetVarBlock>
+</MTSetHashVar>
+<MTElse><$MTVar name="json_id" note="初期化"$>
+<MTSetHashVar name="json_id">
+	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="catpar_link"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTArchiveLink$></MTSetVarBlock>
+</MTSetHashVar><$MTVar name="json_name" note="初期化"$><MTSetHashVar name="json_name">
+	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+	<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
+	<MTSetVarBlock name="3"><$MTArchiveTitle$></MTSetVarBlock>
+</MTSetHashVar>
+</MTIf><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
@@ -14,19 +37,20 @@
 <MTArchiveNext>    <link rel="next" href="<$MTArchiveLink$>" title="<$MTArchiveTitle$>"></MTArchiveNext>
 </MTIf>
 <$MTCCLicenseRDF$>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
+    <$MTInclude module="JSON_LOAD"$>
   </head>
-  <body class="category <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+  <body class="category <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
-        <$MTInclude module="<__trans phrase="Topic Path">" mdp="$MDtpsw"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <$MTInclude module="<__trans phrase="Topic Path">"$>
+        <h1><$MTVar name="page_title"$></h1>
         <div class="entry"><$MTCategoryCount setvar="limit"$>
 <MTEntries sort_order="$entry" limit="$limit">
 	<MTIf name="entry_sh">
-          <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
+          <$MTInclude module="<__trans phrase="Headline">" ettl="h2"$>
 	<MTElse>
           <$MTInclude module="<__trans phrase="Entry Summary">"$>
 	</MTIf>

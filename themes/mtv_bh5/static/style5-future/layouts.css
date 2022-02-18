@@ -200,18 +200,28 @@ body.eye-hb #globalNavi {
 	margin: 0 10px;
   }
 
-  .entry > .section h1 {
+  #main > .entry > header > h1 {
+	margin: 0 -10px;
+  }
+
+  .entry > .section h1,
+  .entry > .section > header > h2 {
 	margin-right: 0;
 	padding-right: 0;
   }
 
-  .entry > .section h1 a {
+  .entry > .section h1 a,
+  .entry > .section > header > h2 > a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
 
   .entry > .section h1 a:hover {
+	text-decoration: none;
+  }
+
+  .entry > .section > header > h2 > a:hover {
 	text-decoration: none;
   }
 
@@ -245,7 +255,9 @@ body.eye-hb #globalNavi {
   }
 
   #utilities div section > h1,
-  #utilities div aside > h1 {
+  #utilities div section > h3,
+  #utilities div aside > h1,
+  #utilities div aside > h3 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
@@ -458,7 +470,9 @@ body.eye-hb #globalNavi {
   }
 
   #utilities div section > h1,
-  #utilities div aside > h1 {
+  #utilities div section > h3,
+  #utilities div aside > h1,
+  #utilities div aside > h3 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
@@ -591,7 +605,9 @@ body.eye-c #content p.topicPath {
   }
 
   body.single #utilities div section > h1,
-  body.single #utilities div aside > h1 {
+  body.single #utilities div section > h3,
+  body.single #utilities div aside > h1,
+  body.single #utilities div aside > h3 {
 	margin-bottom: 0;
 	padding: 0.5em 10px 0.5em 10px;
 	border-left: 5px solid #bbb;
@@ -721,7 +737,9 @@ body.eye-c #content p.topicPath {
   }
 
   body.double #utilities div section > h1,
-  body.double #utilities div aside > h1 {
+  body.double #utilities div section > h3,
+  body.double #utilities div aside > h1,
+  body.double #utilities div aside > h3 {
 	margin: 0 5px 0 17px;
 	line-height: 1;
   }
@@ -757,7 +775,8 @@ body.eye-c #content p.topicPath {
 	background: url(images/interface/bg_dl-navi.png) repeat-y;
   }
 
-  body.double #utilities div.navi h1 {
+  body.double #utilities div.navi h1,
+  body.double #utilities div.navi h3 {
 	padding-bottom: 6px;
   }
 
@@ -795,7 +814,8 @@ body.eye-c #content p.topicPath {
 	background: #fff url(images/interface/bg_dl-others.png) no-repeat;
   }
 
-  body.double #utilities div.others h1 {
+  body.double #utilities div.others h1,
+  body.double #utilities div.others h3 {
 	margin: 0 2px;
 	padding: 0 13px;
 	border-bottom: none;

@@ -197,6 +197,10 @@ body.al #footer {
 	*min-height: 1px; /* for IE7 */
   }
 
+  #main > .entry > header > h1 {
+	margin: 0 -15px;
+  }
+
   article.entry ul.info,
   .archives div.entry ul.info,
   .system div.entry ul.info {
@@ -217,13 +221,18 @@ body.al #footer {
 	padding-right: 0;
   }
 
-  .entry > .section h1 a {
+  .entry > .section h1 a,
+  .entry > .section > header > h2 > a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
 
   .entry > .section h1 a:hover {
+	text-decoration: none;
+  }
+
+  .entry > .section > header > h2 > a:hover {
 	text-decoration: none;
   }
 
@@ -567,10 +576,19 @@ body.al #footer {
 	margin-right: 180px;
   }
 
+  body.multi #main > .entry > header > h1 {
+	margin-left: 150px;
+	margin-right: 150px;
+  }
+
   body.multi article.headline > h1,
+  body.multi article.headline > h2,
   body.multi .entry > .section h1,
+  body.multi .entry > .section > header > h2,
   body.multi #comments > h1,
-  body.multi #trackback > h1 {
+  body.multi #trackback > h1,
+  body.multi #comments > h2,
+  body.multi #trackback > h2 {
 	margin-left: 0;
 	margin-right: 0;
   }
@@ -629,8 +647,10 @@ body.al #footer {
   }
 
   body.multi2 #utilities div.navi section h1,
+  body.multi2 #utilities div.navi section h3,
   body.multi2 #utilities dl.navi section div,
   body.multi2 #utilities div.navi aside h1,
+  body.multi2 #utilities div.navi aside h3,
   body.multi2 #utilities dl.navi aside div {
 	margin-right: 0;
   }
@@ -672,8 +692,10 @@ body.al #footer {
   }
 
   body.multi2-l #utilities div.navi section h1,
+  body.multi2-l #utilities div.navi section h3,
   body.multi2-l #utilities div.navi section div,
   body.multi2-l #utilities div.navi aside h1,
+  body.multi2-l #utilities div.navi aside h3,
   body.multi2-l #utilities div.navi aside div {
 	margin-right: 0;
   }
@@ -715,8 +737,10 @@ body.al #footer {
   }
 
   body.set2 #utilities div.navi section h1,
+  body.set2 #utilities div.navi section h3,
   body.set2 #utilities duv.navi section div,
   body.set2 #utilities div.navi aside h1,
+  body.set2 #utilities div.navi aside h3,
   body.set2 #utilities duv.navi aside div {
 	margin-right: 5px;
   }
@@ -728,8 +752,10 @@ body.al #footer {
   }
 
   body.set2 #utilities div.others section h1,
+  body.set2 #utilities div.others section h3,
   body.set2 #utilities div.others section div,
   body.set2 #utilities div.others aside h1,
+  body.set2 #utilities div.others aside h3,
   body.set2 #utilities div.others aside div {
 	margin-right: 0;
   }

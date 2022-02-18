@@ -16,11 +16,11 @@
 </MTIf>
 <MTIf name="acount">
           <section>
-            <h1>Recent Entry Photo</h1>
+            <h3>Recent Entry Photo</h3>
             <div class="recentEntryAssets">
               <ul class="thumb">
 	<MTFor var="x" from="1" to="$acount">
-<$MTGetVar name="EAssets" index="$x"$>
+<$MTVar name="EAssets" index="$x"$>
 	</MTFor>
               </ul>
             </div>

@@ -185,18 +185,24 @@ body.al #footer {
 	background-image: none;
   }
 
-  .entry > .section h1 {
+  .entry > .section h1,
+  .entry > .section > header > h2 {
 	margin-right: 0;
 	padding-right: 0;
   }
 
-  .entry > .section h1 a {
+  .entry > .section h1 a,
+  .entry > .section > header > h2 > a {
 	display: block;
 	margin: 0;
 	padding: 0.2em;
   }
 
   .entry > .section h1 a:hover {
+	text-decoration: none;
+  }
+
+  .entry > .section > header > h2 > a:hover {
 	text-decoration: none;
   }
 
@@ -375,8 +381,10 @@ body.al #footer {
 
   #utilities div.navi > *,
   #utilities div.navi section > h1,
+  #utilities div.navi section > h3,
   #utilities div.navi section > div,
   #utilities div.navi aside > h1,
+  #utilities div.navi aside > h3,
   #utilities div.navi aside > div {
 	margin-right: 15px;
   }
@@ -440,8 +448,10 @@ body.al #footer {
 
   body.single #utilities div.navi > *,
   body.single #utilities div.navi section > h1,
+  body.single #utilities div.navi section > h3,
   body.single #utilities div.navi section > div,
   body.single #utilities div.navi aside > h1,
+  body.single #utilities div.navi aside > h3,
   body.single #utilities div.navi aside > div {
 	margin-right: 15px;
   }
@@ -500,7 +510,9 @@ body.al #footer {
   }
 
   body.double #comments > h1,
-  body.double #trackback > h1 {
+  body.double #comments > h2,
+  body.double #trackback > h1,
+  body.double #trackback > h2 {
 	margin-right: 0;
   }
 
@@ -549,9 +561,14 @@ body.al #footer {
   }
 
   body.double-l article.headline > h1,
+  body.double-l article.headline > h2,
+  body.double-l article.headline > h3,
   body.double-l .entry > .section h1,
+  body.double-l .entry > .section > header > h2,
   body.double-l #comments > h1,
-  body.double-l #trackback > h1 {
+  body.double-l #comments > h2,
+  body.double-l #trackback > h1,
+  body.double-l #trackback > h2 {
 	margin-left: 0;
   }
 
@@ -597,9 +614,14 @@ body.al #footer {
   }
 
   body.multi article.headline > h1,
+  body.multi article.headline > h2,
+  body.multi article.headline > h3,
   body.multi .entry > .section h1,
+  body.multi .entry > .section > header > h2,
   body.multi #comments > h1,
-  body.multi #trackback > h1 {
+  body.multi #comments > h2,
+  body.multi #trackback > h1,
+  body.multi #trackback > h2 {
 	margin-left: 0;
 	margin-right: 0;
   }
@@ -623,8 +645,10 @@ body.al #footer {
 
   body.multi #utilities div.navi > *,
   body.multi #utilities div.navi section > h1,
+  body.multi #utilities div.navi section > h3,
   body.multi #utilities div.navi section > div,
   body.multi #utilities div.navi aside > h1,
+  body.multi #utilities div.navi aside > h3,
   body.multi #utilities div.navi aside > div {
 	margin-right: 10px;
   }
@@ -639,8 +663,10 @@ body.al #footer {
 
   body.multi #utilities div.others > *,
   body.multi #utilities div.others section > h1,
+  body.multi #utilities div.others section > h3,
   body.multi #utilities div.others section > div,
   body.multi #utilities div.others aside > h1,
+  body.multi #utilities div.others aside > h3,
   body.multi #utilities div.others aside > div {
 	margin-left: 10px;
   }
@@ -672,7 +698,9 @@ body.al #footer {
   }
 
   body.multi2 #comments > h1,
-  body.multi2 #trackback > h1 {
+  body.multi2 #comments > h2,
+  body.multi2 #trackback > h1,
+  body.multi2 #trackback > h2 {
 	margin-left: 0;
 	margin-right: 0;
   }
@@ -693,8 +721,10 @@ body.al #footer {
 
   body.multi2 #utilities div.navi > *,
   body.multi2 #utilities div.navi section > h1,
+  body.multi2 #utilities div.navi section > h3,
   body.multi2 #utilities div.navi section > div,
   body.multi2 #utilities div.navi aside > h1,
+  body.multi2 #utilities div.navi aside > h3,
   body.multi2 #utilities div.navi aside > div {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -710,8 +740,10 @@ body.al #footer {
 
   body.multi2 #utilities div.others > *,
   body.multi2 #utilities div.others section > h1,
+  body.multi2 #utilities div.others section > h3,
   body.multi2 #utilities div.others section > div,
   body.multi2 #utilities div.others aside > h1,
+  body.multi2 #utilities div.others aside > h3,
   body.multi2 #utilities div.others aside > div {
 	margin-left: 15px;
   }
@@ -743,9 +775,14 @@ body.al #footer {
   }
 
   body.multi2-l article.headline > h1,
+  body.multi2-l article.headline > h2,
+  body.multi2-l article.headline > h3,
   body.multi2-l .entry > .section h1,
+  body.multi2-l .entry > .section > header > h2,
   body.multi2-l #comments > h1,
-  body.multi2-l #trackback > h1 {
+  body.multi2-l #comments > h2,
+  body.multi2-l #trackback > h1,
+  body.multi2-l #trackback > h2 {
 	margin-left: 0;
 	margin-right: 0;
   }
@@ -767,8 +804,10 @@ body.al #footer {
 
   body.multi2-l #utilities div.navi > *,
   body.multi2-l #utilities div.navi section > h1,
+  body.multi2-l #utilities div.navi section > h3,
   body.multi2-l #utilities div.navi section > div,
   body.multi2-l #utilities div.navi aside > h1,
+  body.multi2-l #utilities div.navi aside > h3,
   body.multi2-l #utilities div.navi aside > div {
 	margin-right: 15px;
   }
@@ -783,8 +822,10 @@ body.al #footer {
 
   body.multi2-l #utilities div.others > *,
   body.multi2-l #utilities div.others section > h1,
+  body.multi2-l #utilities div.others section > h3,
   body.multi2-l #utilities div.others section > div,
   body.multi2-l #utilities div.others aside > h1,
+  body.multi2-l #utilities div.others aside > h3,
   body.multi2-l #utilities div.others aside > div {
 	margin-left: 15px;
 	margin-right: 15px;
@@ -824,8 +865,10 @@ body.al #footer {
 
   body.set2 #utilities div.navi > *,
   body.set2 #utilities div.navi section > h1,
+  body.set2 #utilities div.navi section > h3,
   body.set2 #utilities div.navi section > div,
   body.set2 #utilities div.navi aside > h1,
+  body.set2 #utilities div.navi aside > h3,
   body.set2 #utilities div.navi aside > div {
 	margin-right: 0!important;
   }
@@ -838,8 +881,10 @@ body.al #footer {
 
   body.set2 #utilities div.others > *,
   body.set2 #utilities div.others section > h1,
+  body.set2 #utilities div.others section > h3,
   body.set2 #utilities div.others section > div,
   body.set2 #utilities div.others aside > h1,
+  body.set2 #utilities div.others aside > h3,
   body.set2 #utilities div.others aside > div {
 	margin-right: 15px!important;
   }
