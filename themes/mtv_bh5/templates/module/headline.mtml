@@ -6,7 +6,7 @@
 <MTElse>
           <article class="headline<MTIf name="__odd__"> odd</MTIf>">
 </MTIf>
-            <<$MTGetVar name="ettl"$>><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a><span class="date"> - Posted date: <time datetime="<$MTEntryDate format_name="iso8601"$>"><$MTEntryDate$></time></span></<$MTGetVar name="ettl"$>>
+            <<$MTVar name="ettl"$>><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a><span class="date"> - Posted date: <time datetime="<$MTEntryDate format_name="iso8601"$>"><$MTEntryDate$></time></span></<$MTVar name="ettl"$>>
             <ul>
               <li class="textBody"><$MTEntryExcerpt remove_html="1" ltrim="1"$></li>
 <MTIf name="PostName"><MTIf tag="EntryAuthorDisplayName">

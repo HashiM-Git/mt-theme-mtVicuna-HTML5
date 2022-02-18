@@ -13,14 +13,14 @@
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
 <$MTCCLicenseRDF$>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
   </head>
-  <body class="individual system <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>" onload="mtEntryOnLoad()" onload="mtEntryOnLoad()" onunload="mtEntryOnUnload()">
+  <body class="individual system <$MTVar name="page_column"$><$MTVar name="eyecatch"$>" onload="mtEntryOnLoad()" onload="mtEntryOnLoad()" onunload="mtEntryOnUnload()">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
         <$MTInclude module="<__trans phrase="Topic Path">"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <h1><$MTVar name="page_title"$></h1>
         <div class="entry">
           <ul class="info">
             <li class="author">Name: <$MTCommentPreviewAuthorLink spam_protect="1"$></li>

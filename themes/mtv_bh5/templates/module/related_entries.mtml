@@ -12,15 +12,15 @@
 </MTSetVarTemplate>
 <MTEntryIfTagged>
 	<MTSetVarBlock name="etag"><MTEntryTags glue=" OR "><$MTTagName$></MTEntryTags></MTSetVarBlock>
-	<MTEntries tags="$etag"><$MTGetVar name="rentrylmaked"$></MTEntries>
+	<MTEntries tags="$etag"><$MTVar name="rentrylmaked"$></MTEntries>
 <MTElse>
 	<MTIf tag="EntryCategory">
 		<MTSetVarBlock name="ecat"><MTEntryCategories glue=" OR "><$MTCategoryLabel$></MTEntryCategories></MTSetVarBlock>
-		<MTEntries category="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+		<MTEntries category="$ecat"><$MTVar name="rentrylmaked"$></MTEntries>
 	<MTElse>
 		<MTSetVarBlock name="ecat">NOT (<MTCategories glue=" OR "><$MTCategoryLabel$></MTCategories>)</MTSetVarBlock>
 		<MTUnless name="ecat" eq="NOT ()">
-			<MTEntries categories="$ecat"><$MTGetVar name="rentrylmaked"$></MTEntries>
+			<MTEntries categories="$ecat"><$MTVar name="rentrylmaked"$></MTEntries>
 		</MTUnless>
 	</MTIf>
 </MTEntryIfTagged>
@@ -29,7 +29,7 @@
             <h2><__trans phrase="Related Entries"></h2>
             <ul><MTFor var="x" from="1" to="$ent">
 		<MTIf name="rte" index="$x">
-              <li<MTIf name="__odd__"> class="odd"</MTIf>><$MTGetVar name="rte" index="$x"$></li>
+              <li<MTIf name="__odd__"> class="odd"</MTIf>><$MTVar name="rte" index="$x"$></li>
 		</MTIf>
             </MTFor></ul>
           </aside>

@@ -2,33 +2,7 @@
 	page_title=<$MTEntryTitle remove_html="1"$>
 	tempName=individual_entry
 	jsonid=3
-</MTSetVars><MTEntryPrimaryCategory><MTHasParentCategory><MTParentCategory>
-	<$MTSetVar name="jsonid" value="4"$><$MTCategoryArchiveLink setvar="catpar_link"$><$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
-</MTParentCategory></MTHasParentCategory>
-<$MTCategoryArchiveLink setvar="cat_link"$><$MTCategoryLabel encode_html="1" setvar="cat_name"$></MTEntryPrimaryCategory>
-<MTIf name="jsonid" eq="3"><$MTVar name="json_id" note="new"$>
-<MTSetHashVar name="json_id">
-	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
-	<MTSetVarBlock name="2"><$MTVar name="cat_link"$></MTSetVarBlock>
-	<MTSetVarBlock name="3"><$MTEntryPermalink$></MTSetVarBlock>
-</MTSetHashVar><$MTVar name="json_name" note="new"$><MTSetHashVar name="json_name">
-	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
-	<MTSetVarBlock name="2"><$MTVar name="cat_name"$></MTSetVarBlock>
-	<MTSetVarBlock name="3"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
-</MTSetHashVar>
-<MTElse><$MTVar name="json_id" note="new"$>
-<MTSetHashVar name="json_id">
-	<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
-	<MTSetVarBlock name="2"><$MTVar name="catpar_link"$></MTSetVarBlock>
-	<MTSetVarBlock name="3"><$MTVar name="cat_link"$></MTSetVarBlock>
-	<MTSetVarBlock name="4"><$MTEntryPermalink$></MTSetVarBlock>
-</MTSetHashVar><$MTVar name="json_name" note="new"$><MTSetHashVar name="json_name">
-	<MTSetVarBlock name="1">HOME</MTSetVarBlock>
-	<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
-	<MTSetVarBlock name="3"><$MTVar name="cat_name"$></MTSetVarBlock>
-	<MTSetVarBlock name="4"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
-</MTSetHashVar>
-</MTIf><$MTInclude module="<__trans phrase="All Setting">"$>
+</MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head<MTIf name="fbadmin"> prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"</MTIf>>
