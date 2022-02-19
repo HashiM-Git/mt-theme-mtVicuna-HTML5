@@ -241,33 +241,34 @@
 		</MTSetHashVar>
 	</MTIf>
 </MTIf><MTIf name="tempName" eq="index_archive_category">
-<MTHasParentCategory><MTParentCategory>
-	<$MTSetVar name="jsonid" value="3"$>
-	<$MTCategoryArchiveLink setvar="catpar_link"$>
-	<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
-</MTParentCategory></MTHasParentCategory>
-<MTIf name="jsonid" eq="2">
-	<$MTVar name="json_id" note="new"$>
-	<MTSetHashVar name="json_id">
-		<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
-		<MTSetVarBlock name="2"><$MTArchiveLink$></MTSetVarBlock>
-	</MTSetHashVar>
-	<$MTVar name="json_name" note="new"$>
-	<MTSetHashVar name="json_name">
-		<MTSetVarBlock name="1">HOME</MTSetVarBlock>
-		<MTSetVarBlock name="2"><$MTArchiveTitle$></MTSetVarBlock>
-	</MTSetHashVar>
-<MTElse>
-	<$MTVar name="json_id" note="new"$>
-	<MTSetHashVar name="json_id">
-		<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
-		<MTSetVarBlock name="2"><$MTVar name="catpar_link"$></MTSetVarBlock>
-		<MTSetVarBlock name="3"><$MTArchiveLink$></MTSetVarBlock>
-	</MTSetHashVar>
-	<$MTVar name="json_name" note="new"$>
-	<MTSetHashVar name="json_name">
-		<MTSetVarBlock name="1">HOME</MTSetVarBlock>
-		<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
-		<MTSetVarBlock name="3"><$MTArchiveTitle$></MTSetVarBlock>
-	</MTSetHashVar>
+	<MTHasParentCategory><MTParentCategory>
+		<$MTSetVar name="jsonid" value="3"$>
+		<$MTCategoryArchiveLink setvar="catpar_link"$>
+		<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
+	</MTParentCategory></MTHasParentCategory>
+	<MTIf name="jsonid" eq="2">
+		<$MTVar name="json_id" note="new"$>
+		<MTSetHashVar name="json_id">
+			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+			<MTSetVarBlock name="2"><$MTArchiveLink$></MTSetVarBlock>
+		</MTSetHashVar>
+		<$MTVar name="json_name" note="new"$>
+		<MTSetHashVar name="json_name">
+			<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+			<MTSetVarBlock name="2"><$MTArchiveTitle$></MTSetVarBlock>
+		</MTSetHashVar>
+	<MTElse>
+		<$MTVar name="json_id" note="new"$>
+		<MTSetHashVar name="json_id">
+			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+			<MTSetVarBlock name="2"><$MTVar name="catpar_link"$></MTSetVarBlock>
+			<MTSetVarBlock name="3"><$MTArchiveLink$></MTSetVarBlock>
+		</MTSetHashVar>
+		<$MTVar name="json_name" note="new"$>
+		<MTSetHashVar name="json_name">
+			<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+			<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
+			<MTSetVarBlock name="3"><$MTArchiveTitle$></MTSetVarBlock>
+		</MTSetHashVar>
+	</MTIf>
 </MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>
