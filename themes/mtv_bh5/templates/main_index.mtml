@@ -21,7 +21,7 @@
 <$MTCCLicenseRDF$>
     <title><$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
-    <$MTInclude module="JSON_LOAD"$>
+    <MTIf name="JSON_LD_sw">    <$MTInclude module="JSON_LOAD"$></MTIf>
   </head>
   <body class="mainIndex <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

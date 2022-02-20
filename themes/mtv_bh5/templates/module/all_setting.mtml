@@ -3,9 +3,10 @@
 	TagC_num=0
 	PostName=1
 	GLNavi=1
+	global_wpname=1
 	Others=0
 
-	MDtopic=1,0,1,0
+	JSON_LD_sw=1
 
 	IMindex=2,0
 	IAindex=1,0
@@ -35,19 +36,17 @@
 	0: No Use
 	1: Use(default)
 	2: Navigation On Top
+  $global_wpname is GlobalNavigation on WebPage(tag on:@globalNavi set) Name Setting
+	0: WebPage Title to Name
+	1: WebPage FileName to Name(default)
   $Others is Option body class Settings(set1,set2,al,f800-f1000,etc...).
   It can use to put in original class setting. " "(space) of delimiter
 	0: No Use
 	String Sample: 'set2 f1000 al only'
 	 ...Details on http://kita2.net/stylelib/sub/layouts.php
-  $MDtopic is microdata in topic-path switch On ArchiveTemplate(Entry / Webpage / CategoryList / Monthly-Datebased) "," or "/" of delimiter
-	Sample: 'E,W,C,D'
-	E: Entry Microdata Topic-path Setting
-	W: WebPage Microdata Topic-path Setting
-	C: CategoryList Microdata Topic-path Setting
-	D: Monthly-Datebased Microdata Topic-path Setting
-		0: normal Topic-Path
-		1: microdata in Topic-Path
+  $JSON_LD_sw is Structured Data switch (schema.org at JSON-LD format writing)
+	0: Off
+	1: On(default)
   $IMindex / $IAindex / $A_entry $A_webpg is Style And EyeCatch Setting(MainIndex / ArchiveIndex / Entry / WebPage) "," or "/" of delimiter
 	Sample: 'L,E'
 	L: Page Column Setting
@@ -104,34 +103,23 @@
 	ccc: mixi Like Developer ID (0: none)
 	d: 1 eqall Hatena Bookmark button (0: none)
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
-<$MTVar name="MDtopic" regex_replace="/\//g","," setvar="MDtopic"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdentry"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdwebpg"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="MDtopic"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+).*/","$1" setvar="mdcatlt"$>
-<$MTVar name="MDtopic" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="mddatlt"$>
 <MTSetVarBlock name="A_ydatb"><$MTVar name="IAindex"$>,<$MTVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
 	blog_id=<$MTBlogID$>
 	snsb=0
 	Iname=0
 	Lname=0
 	<MTIf name="tempName" eq="index_archive_datebased">
-		MDtpsw=<$MTVar name="mddatlt"$>
-		<MTIf name="body">Lname=A_ydatb<MTElse>Lname=A_mdatb</MTIf>
+		<MTIf name="body">Lname=<$MTVar name="A_ydatb"$><MTElse>Lname=<$MTVar name="A_mdatb"$></MTIf>
 	<MTElseIf eq="index_archive_category">
-		MDtpsw=<$MTVar name="mdcatlt"$>
-		Lname=A_catlt
+		Lname=<$MTVar name="A_catlt"$>
 	<MTElseIf eq="index_main">
-		Iname=IMindex
+		Iname=<$MTVar name="IMindex"$>
 	<MTElseIF eq="index_archive">
-		Iname=IAindex
+		Iname=<$MTVar name="IAindex"$>
 	<MTElseIf like="_entry">
-		MDtpsw=<$MTVar name="mdentry"$>
-		Iname=A_entry
+		Iname=<$MTVar name="A_entry"$>
 	<MTElseIf like="_webpage">
-		MDtpsw=<$MTVar name="mdwebpg"$>
-		Iname=A_webpg
+		Iname=<$MTVar name="A_webpg"$>
 	</MTIf>
 	<MTIf name="TagC_num">
 		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTVar name="TagC_num"$>.css
@@ -203,6 +191,7 @@
 		<$MTSetVar name="bu_arrey" function="push" value="$value"$>
 		<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
 	</MTFor>
+	<MTIf name="JSON_LD_sw">
 	<MTEntryPrimaryCategory><MTHasParentCategory><MTParentCategory>
 		<$MTSetVar name="jsonid" value="4"$>
 		<$MTCategoryArchiveLink setvar="catpar_link"$>
@@ -211,7 +200,7 @@
 	<$MTCategoryArchiveLink setvar="cat_link"$>
 	<$MTCategoryLabel encode_html="1" setvar="cat_name"$>
 	</MTEntryPrimaryCategory>
-	<MTIf name="jsonid" eq="3">
+		<MTIf name="jsonid" eq="3">
 		<$MTVar name="json_id" note="new"$>
 		<MTSetHashVar name="json_id">
 			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
@@ -224,7 +213,7 @@
 			<MTSetVarBlock name="2"><$MTVar name="cat_name"$></MTSetVarBlock>
 			<MTSetVarBlock name="3"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
 		</MTSetHashVar>
-	<MTElse>
+		<MTElse>
 		<$MTVar name="json_id" note="new"$>
 		<MTSetHashVar name="json_id">
 			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
@@ -239,14 +228,16 @@
 			<MTSetVarBlock name="3"><$MTVar name="cat_name"$></MTSetVarBlock>
 			<MTSetVarBlock name="4"><$MTEntryTitle remove_html="1"$></MTSetVarBlock>
 		</MTSetHashVar>
+		</MTIf>
 	</MTIf>
-</MTIf><MTIf name="tempName" eq="index_archive_category">
+</MTIf><MTIf name="JSON_LD_sw">
+	<MTIf name="tempName" eq="index_archive_category">
 	<MTHasParentCategory><MTParentCategory>
 		<$MTSetVar name="jsonid" value="3"$>
 		<$MTCategoryArchiveLink setvar="catpar_link"$>
 		<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
 	</MTParentCategory></MTHasParentCategory>
-	<MTIf name="jsonid" eq="2">
+		<MTIf name="jsonid" eq="2">
 		<$MTVar name="json_id" note="new"$>
 		<MTSetHashVar name="json_id">
 			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
@@ -257,7 +248,7 @@
 			<MTSetVarBlock name="1">HOME</MTSetVarBlock>
 			<MTSetVarBlock name="2"><$MTArchiveTitle$></MTSetVarBlock>
 		</MTSetHashVar>
-	<MTElse>
+		<MTElse>
 		<$MTVar name="json_id" note="new"$>
 		<MTSetHashVar name="json_id">
 			<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
@@ -270,5 +261,18 @@
 			<MTSetVarBlock name="2"><$MTVar name="catpar_name"$></MTSetVarBlock>
 			<MTSetVarBlock name="3"><$MTArchiveTitle$></MTSetVarBlock>
 		</MTSetHashVar>
+		</MTIf>
+	</MTIf>
+	<MTIf name="tempName" eq="individual_webpage">
+	<$MTVar name="json_id" note="new"$>
+	<MTSetHashVar name="json_id">
+		<MTSetVarBlock name="1"><$MTBlogURL$></MTSetVarBlock>
+		<MTSetVarBlock name="2"><$MTPagePermalink$></MTSetVarBlock>
+	</MTSetHashVar>
+	<$MTVar name="json_name" note="new"$>
+	<MTSetHashVar name="json_name">
+		<MTSetVarBlock name="1">HOME</MTSetVarBlock>
+		<MTSetVarBlock name="2"><$MTVar name="page_title"$></MTSetVarBlock>
+	</MTSetHashVar>
 	</MTIf>
 </MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>

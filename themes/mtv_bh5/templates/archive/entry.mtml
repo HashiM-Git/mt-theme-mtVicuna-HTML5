@@ -27,7 +27,7 @@
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
-    <$MTInclude module="JSON_LOAD"$>
+    <MTIf name="JSON_LD_sw">    <$MTInclude module="JSON_LOAD"$></MTIf>
   </head>
   <body class="individual <$MTVar name="page_column"$><$MTVar name="eyecatch"$>" id="entry<$MTEntryID pad="1"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
