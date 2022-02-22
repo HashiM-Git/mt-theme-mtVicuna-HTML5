@@ -15,17 +15,17 @@
   <head>
     <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
-    <link rel="alternate" type="application/atom+xml" title="<$MTBlogName encode_html="1"$>: <__trans phrase="Search Results">" href="<$MTCGIPath$><$MTSearchScript$>?<$MTGetVar name="search_type"$>=<$MTSearchString encode_url="1"$>&amp;Template=feed&amp;IncludeBlogs=<$MTSearchIncludeBlogs$>">
+    <link rel="alternate" type="application/atom+xml" title="<$MTBlogName encode_html="1"$>: <__trans phrase="Search Results">" href="<$MTCGIPath$><$MTSearchScript$>?<$MTVar name="search_type"$>=<$MTSearchString encode_url="1"$>&amp;Template=feed&amp;IncludeBlogs=<$MTSearchIncludeBlogs$>">
 <$MTCCLicenseRDF$>
-    <title><$MTBlogName encode_html="1"$> - <$MTGetVar name="page_title"$></title>
+    <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
     <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
-  <body class="individual system <$MTGetVar name="page_column"$><$MTGetVar name="eyecatch"$>">
+  <body class="individual system <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>
     <div id="content">
       <div id="main">
         <$MTInclude module="<__trans phrase="Topic Path">"$>
-        <h1><$MTGetVar name="page_title"$></h1>
+        <h1><$MTVar name="page_title"$></h1>
         <div class="entry">
 <MTSearchResults>
 	<$MTCurrentPage setvar="curpage"$><$MTTotalPages setvar="tpage"$>
@@ -34,7 +34,7 @@
             <li>Search: <em><$MTSearchString$></em></li>
             <li><em><span class="count"><$MTSearchResultCount$></span></em> Hits</li>
 		<MTIf name="tpage" ne="1">
-            <li>Pages: <em><$MTGetVar name="curpage"$></em> / <$MTGetVar name="tpage"$></li></MTIf>
+            <li>Pages: <em><$MTVar name="curpage"$></em> / <$MTVar name="tpage"$></li></MTIf>
           </ul>
 	</MTSearchResultsHeader>
           <$MTInclude module="<__trans phrase="Headline">" ettl="h1"$>
@@ -46,18 +46,18 @@
 		<MTIf name="tpage" ne="1">
           <ul class="rpnavi">
             <MTIfPreviousResults><li><a href="<$MTPreviousLink$>" title="Prev">&lt;&lt;</a></li></MTIfPreviousResults>
-			<$MTGetVar name="curpage" op="-" value="3" setvar="stapage"$>
+			<$MTVar name="curpage" op="-" value="3" setvar="stapage"$>
 			<MTIf name="stapage" lt="0"><MTSetVar name="stapage" value="1"></MTIf>
-			<$MTGetVar name="stapage" op="+" value="9" setvar="dispage"$>
+			<$MTVar name="stapage" op="+" value="9" setvar="dispage"$>
 			<MTPagerBlock>
 				<MTIf name="__counter__" eq="$dispage">
             <li><a href="<$MTPagerLink$>">&#8230;</a></li>
 				<MTElseif name="__counter__" lt="$dispage">
 					<MTIf name="__counter__" ge="$stapage">
 						<MTIf name="__counter__" eq="$curpage">
-            <li class="current"><$MTGetVar name="__value__"$></li>
+            <li class="current"><$MTVar name="__value__"$></li>
 						<MTElse>
-            <li><a href="<$MTPagerLink$>"><$MTGetVar name="__value__"$></a></li>
+            <li><a href="<$MTPagerLink$>"><$MTVar name="__value__"$></a></li>
 						</MTIf>
 					</MTIf>
 				</MTIf>

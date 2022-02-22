@@ -33,11 +33,13 @@
   {
     "@context": "http://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement":[{<MTFor var="x" from="1" to="$jsonid">
+    "itemListElement":[{<MTFor var="x" from="1" to="$jsonbr">
       "@type": "ListItem",
       "position": "<$MTVar name="x"$>",
-      "name": "<$MTVar name="json_name" key="$x"$>",
-      "item": "<$MTVar name="json_id" key="$x"$>"
+      "item":{
+        "@id": "<$MTVar name="json_id" key="$x"$>"<MTUnless name="x" eq="1">,
+        "name": "<$MTVar name="json_name" key="$x"$>"</MTUnless>
+      }
     }<MTUnless name="__last__">,{</MTUnless></MTfor>]
   }</MTSetVarTemplate>
 <script type="application/ld+json">
@@ -80,7 +82,7 @@
       "@id": "<$MTBlogURL$>#maker"
     }<MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
-  }</MTIf><MTUnless name="tempName" eq="index_main">,
-<$MTVar name="_JSON_LD_Bread"$></MTUnless>
+  }</MTIf><MTIf name="jsonbr">,
+<$MTVar name="_JSON_LD_Bread"$></MTIf>
 ]
 </script>
