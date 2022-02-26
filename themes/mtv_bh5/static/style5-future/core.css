@@ -461,6 +461,10 @@ p.topicPath span.current {
 	min-height: 1px; /* for IE7 (peekaboo) */
 }
 
+body.mainIndex #main > h1 {
+	display: none;
+}
+
 #main > .entry > header > h1 {
 	margin: 0 -20px;
 }

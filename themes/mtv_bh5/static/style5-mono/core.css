@@ -422,6 +422,10 @@ article.entry {
 	color: #000;
 }
 
+body.mainIndex #main > h1 {
+	display: none;
+}
+
 #main > .entry > header > h1 {
 	margin: 0 -30px;
 }

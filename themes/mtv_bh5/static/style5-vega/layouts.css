@@ -24,7 +24,7 @@ body {
 
 body.eye-h #header {
 	height: 180px;
-	background-image: url(images/eyecatch/image1.png);
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
 }
 
@@ -69,7 +69,7 @@ body.eye-hb #header h1.siteName {
 body.eye-hb #header h1.siteName a {
 	height: 180px;
 	display: block;
-	background-image: url(images/eyecatch/image1.png);
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
 	text-indent: 100%;
 	white-space: nowrap;
@@ -86,7 +86,7 @@ body.eye-hb #header p.description {
 body.eye-c #content {
 	padding-top: 180px;
 	border-top: none;
-	background-image: url(images/eyecatch/image1.png);
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
 }
 
@@ -103,7 +103,7 @@ body.eye-m #content {
 
 body.eye-m #main {
 	padding-top: 180px;
-	background-image: url(images/eyecatch/image1.png);
+	background-image: url(images/eyeCatch/image1.png);
 	background-repeat: no-repeat;
 }
 

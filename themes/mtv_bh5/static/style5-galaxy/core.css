@@ -428,6 +428,10 @@ entry > article.section,
 	background-color: #222;
 }
 
+body.mainIndex #main > h1 {
+	display: none;
+}
+
 #main > .entry > header > h1 {
 	margin: 0 -30px;
 }

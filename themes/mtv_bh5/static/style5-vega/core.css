@@ -452,6 +452,10 @@ article.entry {
 	margin: 0 -30px;
 }
 
+body.mainIndex #main > h1 {
+	display: none;
+}
+
 /* Entry Title
 ---------------*/
 
