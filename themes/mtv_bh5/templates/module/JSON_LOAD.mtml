@@ -1,4 +1,42 @@
+<$MTWebsiteID setvar="websid"$>
+<MTIf name="websid" eq="$blog_id">
+	<$MTBlogURL setvar="idxurl"$><$MTSetVar name="web_blog" value="0"$>
+	<MTSetVarBlock name="NameS"><MTAuthors roles="<__trans phrase="Website Administrator">"><$MTAuthorDisplayName$></MTAuthors></MTSetVarBlock>
+<MTelse>
+	<$MTWebsiteURL setvar="idxurl"$><$MTSetVar name="web_blog" value="1"$>
+	<MTSetVarBlock name="NameS"><MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors></MTSetVarBlock>
+</MTIf>
+<MTSetVarTemplate name="wsbbr">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":[{
+      "@type": "ListItem",
+      "position": "1",
+      "item":{
+        "@id": "<$MTWebsiteURL$>"
+      }
+    }]
+  }</MTSetVarTemplate>
+<MTSetVarTemplate name="JSON_paurl">
+    "publisher": {
+      "@id": "<$MTVar name="idxurl"$>#org"
+    },
+    "author": {
+      "@id": "<$MTVar name="idxurl"$>#maker"
+    }
+</MTSetVarTemplate>
 <MTSetVarTemplate name="_JSON_LD_index">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "@id": "<$MTWebsiteURL$>",
+    "url": "<$MTWebsiteURL$>",
+    "inLanguage": "ja",
+    "name": "<$MTWebsiteName encode_html="1"$>",
+    "description": "<$MTWebsiteDescription encode_html="1"$>",
+    <$MTVar name="JSON_paurl"$>
+  },<MTIf name="web_blog">
   {
     "@context": "http://schema.org",
     "@type": "Blog",
@@ -7,35 +45,36 @@
     "inLanguage": "ja",
     "name": "<$MTBlogName encode_html="1"$>",
     "description": "<$MTBlogDescription encode_html="1"$>",
-    "publisher": {
-      "@id": "<$MTBlogURL$>#org"
-    },
-    "author": {
-      "@id": "<$MTBlogURL$>#maker"
-    }
-  },
+    <$MTVar name="JSON_paurl"$>
+  },</MTIf>
   {
     "@context": "http://schema.org",
     "@type": "Organization",
-    "@id": "<$MTBlogURL$>#org",
-    "name": "<MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors>"
+    "@id": "<$MTVar name="idxurl"$>#org",
+    "name": "<$MTVar name="NameS"$>"
   },
   {
     "@context": "http://schema.org",
     "@type": "Person",
-    "@id": "<$MTBlogURL$>#maker",
+    "@id": "<$MTVar name="idxurl"$>#maker",
 <MTIf  name="tempName" eq="individual_entry">    "name": "<$MTEntryAuthorDisplayName$>",
 <MTElseIf eq="individual_webpage">    "name": "<$MTPageAuthorDisplayName$>",
-<MTElse>    "name": "<MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors>",
+<MTElse>    "name": "<$MTVar name="NameS"$>",
 </MTIf>    "url": "<$MTBlogURL$>"
   }</MTSetVarTemplate>
 <MTSetVarTemplate name="_JSON_LD_Bread">
   {
     "@context": "http://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement":[{<MTFor var="x" from="1" to="$jsonbr">
+    "itemListElement":[<MTIf name="web_blog">{
       "@type": "ListItem",
-      "position": "<$MTVar name="x"$>",
+      "position": "1",<$MTSetVar name="xw" value="1"$>
+      "item":{
+        "@id": "<$MTWebsiteURL$>"
+      }
+    },</MTIf>{<MTFor var="x" from="1" to="$jsonbr">
+      "@type": "ListItem",<MTIf name="web_blog"><$MTVar name="xw" op="++" setvar="xw"$><MTElse><$MTSetVar name="xw" value="$x"$></MTIf>
+      "position": "<$MTVar name="xw"$>",
       "item":{
         "@id": "<$MTVar name="json_id" key="$x"$>"<MTUnless name="x" eq="1">,
         "name": "<$MTVar name="json_name" key="$x"$>"</MTUnless>
@@ -56,12 +95,7 @@
     "datePublished": "<$MTEntryDate format_name="iso8601"$>",
     "dateModified": "<$MTEntryModifiedDate format_name="iso8601"$>",
     "description": "<$MTEntryExcerpt remove_html="1" ltrim="1"$>",
-    "publisher": {
-      "@id": "<$MTBlogURL$>#org"
-    },
-    "author": {
-      "@id": "<$MTBlogURL$>#maker"
-    }<MTBlogIfCCLicense>,
+    <$MTVar name="JSON_paurl"$><MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
   }<MTElseIf eq="individual_webpage">,
   {
@@ -75,14 +109,9 @@
     "datePublished": "<$MTPageDate format_name="iso8601"$>",
     "dateModified": "<$MTPageModifiedDate format_name="iso8601"$>",
     "description": "<$MTPageExcerpt remove_html="1" ltrim="1"$>",
-    "publisher": {
-      "@id": "<$MTBlogURL$>#org"
-    },
-    "author": {
-      "@id": "<$MTBlogURL$>#maker"
-    }<MTBlogIfCCLicense>,
+    <$MTVar name="JSON_paurl"$><MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
-  }</MTIf><MTIf name="jsonbr">,
+  }<MTElseIf eq="index_main"><MTIf name="web_blog">,<$MTVar name="wsbbr"$></MTIf></MTIf><MTIf name="jsonbr">,
 <$MTVar name="_JSON_LD_Bread"$></MTIf>
 ]
 </script>

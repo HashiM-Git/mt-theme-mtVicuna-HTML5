@@ -22,7 +22,7 @@
 	button=0,0,0,0
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
-	    Details on http://mtvicuna.kita2.net/setup.html
+	    Details on https://mtvicuna.kita2.net/setting.html
   $jquery is Jquery(JavaScript) and SmartPhone Only GlobalNavigation
 	0: Off
 	1: On
@@ -43,7 +43,7 @@
   It can use to put in original class setting. " "(space) of delimiter
 	0: No Use
 	String Sample: 'set2 f1000 al only'
-	 ...Details on http://kita2.net/stylelib/sub/layouts.php
+	 ...Details on https://mtvicuna.kita2.net/stylelib/layouts.html
   $JSON_LD_sw is Structured Data switch (schema.org at JSON-LD format writing)
 	0: Off
 	1: On(default)
@@ -147,7 +147,7 @@
 	<MTElse>
 		<$MTVar name="Lname" regex_replace="/^([^,]+).*/","$1" setvar="entry_sh"$>
 	</MTIf>
-	<$MTVar name="$Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
+	<$MTVar name="Lname" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="value"$>
 	<MTSetVars>
 		<MTIf name="value">entry=ascend
 		<MTElse>entry=descend</MTIf>

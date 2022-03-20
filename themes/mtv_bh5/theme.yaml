@@ -1,7 +1,7 @@
 label: 'mt.Vicuna Theme On HTML5'
 id: 'mtv_bh5'
 author_name: HashiM
-author_link: http://mtvicuna.kita2.net/
+author_link: https://mtvicuna.kita2.net/
 version: 1.1.0
 class: blog
 description: <__trans phrase="A MT5 Theme for Vicuna CMS.">
@@ -42,7 +42,7 @@ elements:
           description_label: 'Styles that are with the mt.Vicuna HTML5 Theme.'
           order: 1
         mtvicuna_bh5_lib:
-          url: 'http://kita2.net/stylelib/html5.php'
+          url: 'https://.mtvicuna.kita2.net/stylelib/'
           label: 'mt.Vicuna HTML5 Stylelib'
           description_label: 'This is style library only for the mt.Vicuna HTML5 theme.'
           order: 1
