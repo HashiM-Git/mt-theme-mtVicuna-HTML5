@@ -1,31 +1,23 @@
-<$MTWebsiteID setvar="websid"$>
+<$MTWebsiteID setvar="websid"$><$MTBlogURL setvar="b_URLid"$>
 <MTIf name="websid" eq="$blog_id">
 	<$MTBlogURL setvar="idxurl"$><$MTSetVar name="web_blog" value="0"$>
 	<MTSetVarBlock name="NameS"><MTAuthors roles="<__trans phrase="Website Administrator">"><$MTAuthorDisplayName$></MTAuthors></MTSetVarBlock>
 <MTelse>
 	<$MTWebsiteURL setvar="idxurl"$><$MTSetVar name="web_blog" value="1"$>
 	<MTSetVarBlock name="NameS"><MTAuthors roles="<__trans phrase="Blog Administrator">"><$MTAuthorDisplayName$></MTAuthors></MTSetVarBlock>
+	<MTIf name="idxurl" eq="$b_URLid"><$MTBlogArchiveURL setvar="bar_URLid"$>
+		<MTIf name="b_URLid" eq="$bar_URLid">
+			<MTSetVarBlock name="b_URLid"><$MTBlogURL$>#blog</MTSetVarBlock>
+		<MTElse><$MTBlogArchiveURL setvar="b_URLid"$></MTIf>
+	</MTIf>
 </MTIf>
-<MTSetVarTemplate name="wsbbr">
-  {
-    "@context": "http://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement":[{
-      "@type": "ListItem",
-      "position": "1",
-      "item":{
-        "@id": "<$MTWebsiteURL$>"
-      }
-    }]
-  }</MTSetVarTemplate>
 <MTSetVarTemplate name="JSON_paurl">
     "publisher": {
       "@id": "<$MTVar name="idxurl"$>#org"
     },
     "author": {
       "@id": "<$MTVar name="idxurl"$>#maker"
-    }
-</MTSetVarTemplate>
+    }</MTSetVarTemplate>
 <MTSetVarTemplate name="_JSON_LD_index">
   {
     "@context": "http://schema.org",
@@ -40,7 +32,7 @@
   {
     "@context": "http://schema.org",
     "@type": "Blog",
-    "@id": "<$MTBlogURL$>",
+    "@id": "<$MTVar name="b_URLid"$>",
     "url": "<$MTBlogURL$>",
     "inLanguage": "ja",
     "name": "<$MTBlogName encode_html="1"$>",
@@ -57,29 +49,36 @@
     "@context": "http://schema.org",
     "@type": "Person",
     "@id": "<$MTVar name="idxurl"$>#maker",
-<MTIf  name="tempName" eq="individual_entry">    "name": "<$MTEntryAuthorDisplayName$>",
+<MTIf name="tempName" eq="individual_entry">    "name": "<$MTEntryAuthorDisplayName$>",
 <MTElseIf eq="individual_webpage">    "name": "<$MTPageAuthorDisplayName$>",
-<MTElse>    "name": "<$MTVar name="NameS"$>",
-</MTIf>    "url": "<$MTBlogURL$>"
+<MTElse>    "name": "<$MTVar name="NameS"$>",</MTIf>
+<MTIf name="JSON_plofile">    "url": "<$MTVar name="JSON_plofile"$>"
+<MTElse>    "url": "<$MTBlogURL$>"</MTIf>
   }</MTSetVarTemplate>
 <MTSetVarTemplate name="_JSON_LD_Bread">
   {
     "@context": "http://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement":[<MTIf name="web_blog">{
+    "itemListElement":[{
       "@type": "ListItem",
-      "position": "1",<$MTSetVar name="xw" value="1"$>
+      "position": "1",<$MTSetVar name="xw" value="0"$>
       "item":{
         "@id": "<$MTWebsiteURL$>"
       }
-    },</MTIf>{<MTFor var="x" from="1" to="$jsonbr">
-      "@type": "ListItem",<MTIf name="web_blog"><$MTVar name="xw" op="++" setvar="xw"$><MTElse><$MTSetVar name="xw" value="$x"$></MTIf>
+    }<MTIf name="web_blog"><MTIf name="jsonbr">,{
+      "@type": "ListItem",
+      "position": "2",<$MTSetVar name="xw" value="2"$>
+      "item":{
+        "@id": "<$MTVar name="b_URLid"$>"
+      }
+    }</MTIf></MTIf><MTIf name="jsonbr" ge="2">,{<MTFor var="x" from="2" to="$jsonbr">
+<MTIf name="web_blog"><$MTVar name="xw" op="++" setvar="xw"$><MTElse><$MTSetVar name="xw" value="$x"$></MTIf>      "@type": "ListItem",
       "position": "<$MTVar name="xw"$>",
       "item":{
-        "@id": "<$MTVar name="json_id" key="$x"$>"<MTUnless name="x" eq="1">,
-        "name": "<$MTVar name="json_name" key="$x"$>"</MTUnless>
+        "@id": "<$MTVar name="json_id" index="$x"$>",
+        "name": "<$MTVar name="json_name" index="$x"$>"
       }
-    }<MTUnless name="__last__">,{</MTUnless></MTfor>]
+    }<MTUnless name="__last__">,{</MTUnless></MTfor></MTIf>]
   }</MTSetVarTemplate>
 <script type="application/ld+json">
 [
@@ -111,7 +110,8 @@
     "description": "<$MTPageExcerpt remove_html="1" ltrim="1"$>",
     <$MTVar name="JSON_paurl"$><MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
-  }<MTElseIf eq="index_main"><MTIf name="web_blog">,<$MTVar name="wsbbr"$></MTIf></MTIf><MTIf name="jsonbr">,
-<$MTVar name="_JSON_LD_Bread"$></MTIf>
+    }</MTIf><MTIf name="web_blog">,
+<$MTVar name="_JSON_LD_Bread"$><MTElse><MTIf name="jsonbr">,
+<$MTVar name="_JSON_LD_Bread"$></MTIf></MTIf>
 ]
 </script>
