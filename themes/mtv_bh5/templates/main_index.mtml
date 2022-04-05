@@ -15,7 +15,7 @@
     <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
 	<MTIf name="bu_arrey" index="0">
     <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
-<MTIf tag="BlogDescription">    <meta content="<$MTBlogDescription encode_html="1"$>"></MTIf>
+<MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
     <link rel="canonical" href="<$MTBlogURL$>">
 <$MTCCLicenseRDF$>
