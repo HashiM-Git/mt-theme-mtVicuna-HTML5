@@ -19,6 +19,7 @@
 	DY_entry=1,1
 
 	GA_trackid=0
+	GA4_id=0
 	fbadmin=0
 	button=0,0,0,0
 </MTSetVars>
@@ -107,17 +108,19 @@
 	ccc: mixi Like Developer ID (0: none)
 	d: 1 eqall Hatena Bookmark button (0: none)
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
-<$MTSetVar name="jsonbr" value="0"$>
-<MTSetVarBlock name="A_ydatb"><$MTVar name="IAindex"$>,<$MTVar name="DY_entry"$></MTSetVarBlock><MTSetVars>
+<MTSetVars>
+	jsonbr=0
+	A_ydatb=<$MTVar name="IAindex"$>,<$MTVar name="DY_entry"$>
 	blog_id=<$MTBlogID$>
 	snsb=0
 	Iname=0
 	Lname=0
 	<MTIf name="TagC_num">
 		<MTIf name="TagC_num" lt="10">TagCss=tagCloud0<$MTVar name="TagC_num"$>.css
-		<MTElse>TagCss=tagCloud<$MTVar name="TagC_num"$>.css
-		</MTIf>
-	<MTElse>TagCss=0
+		<MTElse>TagCss=tagCloud<$MTVar name="TagC_num"$>.css</MTIf>
+	<MTElse>TagCss=0</MTIf>
+	<MTIf name="GA4_id">GAtag=<$MTVar name="GA4_id"$>
+	<MTElse><MTIf name="GA_trackid">GAtag=<$MTVar name="GA_trackid"$><MTElse>GAtag=0</MTIf>
 	</MTIf>
 </MTSetVars>
 <MTIf name="tempName" eq="index_archive_datebased">
@@ -189,7 +192,15 @@
 	<MTSetVarBlock name="page_column" append="1"$> <$MTVar name="Others"$></MTSetVarBlock></MTIf>
 </MTIf><MTIf name="GLNavi" eq="2">
 	<$MTSetVar name="page_column" value=" gt" append="1"$>
-</MTIf><MTIf name="tempName" eq="individual_entry">
+</MTIf>
+<MTSetVarTemplate name="json_pcats">
+	<MTHasParentCategory><MTParentCategory>
+		<$MTSetVar name="jsonbr" value="3"$>
+		<$MTCategoryArchiveLink setvar="catpar_link"$>
+		<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
+	</MTParentCategory></MTHasParentCategory>
+</MTSetVarTemplate>
+<MTIf name="tempName" eq="individual_entry">
 	<$MTVar name="button" regex_replace="/¥//g","," setvar="button"$>
 	<$MTSetVar name="bu_arrey" function="undef"$>
 	<MTFor var="i" from="1" to="4">
@@ -200,23 +211,14 @@
 	</MTFor>
 	<MTIf name="JSON_LD_sw">
 		<$MTSetVar name="jsonbr" value="2"$>
-		<MTEntryPrimaryCategory><MTHasParentCategory><MTParentCategory>
-			<$MTSetVar name="jsonbr" value="3"$>
-			<$MTCategoryArchiveLink setvar="catpar_link"$>
-			<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
-		</MTParentCategory></MTHasParentCategory>
+		<MTEntryPrimaryCategory><$MTVar name="json_pcats"$>
 		<$MTCategoryArchiveLink setvar="cat_link"$>
 		<$MTCategoryLabel encode_html="1" setvar="cat_name"$>
 		</MTEntryPrimaryCategory>
 	</MTIf>
 </MTIf><MTIf name="JSON_LD_sw">
 	<MTIf name="tempName" eq="index_archive_category">
-		<$MTSetVar name="jsonbr" value="2"$>
-		<MTHasParentCategory><MTParentCategory>
-			<$MTSetVar name="jsonbr" value="3"$>
-			<$MTCategoryArchiveLink setvar="catpar_link"$>
-			<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
-		</MTParentCategory></MTHasParentCategory>
+		<$MTSetVar name="jsonbr" value="2"$><$MTVar name="json_pcats"$>
 		<$MTArchiveLink setvar="cat_link"$>
 		<$MTArchiveTitle setvar="cat_name"$>
 	</MTIf>
