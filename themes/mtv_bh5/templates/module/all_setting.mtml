@@ -99,7 +99,8 @@
 	l: 0: descend  1: ascend(default)
 # PageColumn And EyeCatch is $IAindex Setting.
   
-  $GA_trackid is Google Analitics TrackID (0: none)
+  $GA_trackid is Google Analytics Universal Analytics ID (0: none)
+  $GA4_id is Google Analytics 4 Measurement ID (0: none)
   $fbadmin is Facebook Admins (0: none)
   $button is SNS Button at entry page. "," or "/" of delimiter
 	Sample: 'aaa,bbb,ccc,d'
@@ -193,6 +194,14 @@
 </MTIf><MTIf name="GLNavi" eq="2">
 	<$MTSetVar name="page_column" value=" gt" append="1"$>
 </MTIf>
+<$MTVar name="button" regex_replace="/\//g","," setvar="button"$>
+<$MTSetVar name="bu_arrey" function="undef"$>
+<MTFor var="i" from="1" to="4">
+	<$MTVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
+	<MTIf name="value"><$MTSetVar name="snsb" value="1"$></MTIf>
+	<$MTSetVar name="bu_arrey" function="push" value="$value"$>
+	<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
+</MTFor>
 <MTSetVarTemplate name="json_pcats">
 	<MTHasParentCategory><MTParentCategory>
 		<$MTSetVar name="jsonbr" value="3"$>
@@ -200,36 +209,28 @@
 		<$MTCategoryLabel encode_html="1" setvar="catpar_name"$>
 	</MTParentCategory></MTHasParentCategory>
 </MTSetVarTemplate>
-<MTIf name="tempName" eq="individual_entry">
-	<$MTVar name="button" regex_replace="/¥//g","," setvar="button"$>
-	<$MTSetVar name="bu_arrey" function="undef"$>
-	<MTFor var="i" from="1" to="4">
-		<$MTVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
-		<MTIf name="value"><$MTSetVar name="snsb" value="1"$></MTIf>
-		<$MTSetVar name="bu_arrey" function="push" value="$value"$>
-		<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
-	</MTFor>
-	<MTIf name="JSON_LD_sw">
+<MTIf name="JSON_LD_sw">
+	<MTIf name="tempName" eq="individual_entry">
 		<$MTSetVar name="jsonbr" value="2"$>
 		<MTEntryPrimaryCategory><$MTVar name="json_pcats"$>
 		<$MTCategoryArchiveLink setvar="cat_link"$>
 		<$MTCategoryLabel encode_html="1" setvar="cat_name"$>
 		</MTEntryPrimaryCategory>
-	</MTIf>
-</MTIf><MTIf name="JSON_LD_sw">
-	<MTIf name="tempName" eq="index_archive_category">
+	<MTElseIf eq="index_archive_category">
 		<$MTSetVar name="jsonbr" value="2"$><$MTVar name="json_pcats"$>
 		<$MTArchiveLink setvar="cat_link"$>
 		<$MTArchiveTitle setvar="cat_name"$>
+	<MTElseIf eq="individual_webpage">
+		<$MTSetVar name="jsonbr" value="1"$>
 	</MTIf>
-	<$MTVar name="json_id" function="undef"$><$MTVar name="json_name" function="undef"$>
-	<$MTSetVar name="json_id" index="$jsonbr" value="$cat_link"$>
-	<$MTSetVar name="json_name" index="$jsonbr" value="$cat_name"$>
-	<MTIf name="jsonbr" eq="3">
-		<$MTSetVar name="json_id" index="2" value="$catpar_link"$>
-		<$MTSetVar name="json_name" index="2" value="$catpar_name"$>
-	</MTIf>
-	<MTIf name="tempName" eq="individual_webpage">
-		<MTUnless name="jsonbr"><$MTSetVar name="jsonbr" value="1"$></MTUnless>
+	<MTIf name="jsonbr" ge="2">
+		<$MTVar name="json_id" function="undef"$>
+		<$MTVar name="json_name" function="undef"$>
+		<$MTSetVar name="json_id" index="$jsonbr" value="$cat_link"$>
+		<$MTSetVar name="json_name" index="$jsonbr" value="$cat_name"$>
+		<MTIf name="jsonbr" eq="3">
+			<$MTSetVar name="json_id" index="2" value="$catpar_link"$>
+			<$MTSetVar name="json_name" index="2" value="$catpar_name"$>
+		</MTIf>
 	</MTIf>
 </MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>
