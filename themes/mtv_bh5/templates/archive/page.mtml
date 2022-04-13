@@ -4,23 +4,26 @@
 	tempName=individual_webpage
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>">
-  <head<MTIf name="fbadmin"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"</MTIf>>
-    <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
-    <meta property="og:title" content="<$MTBlogName encode_html="1"$>: <$MTVar name="page_title"$>">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="<$MTPagePermalink$>">
-<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
-    <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
-    <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
-	<MTIf name="bu_arrey" index="0">
-    <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
+<html lang="<$MTDefaultLanguage$>"<MTIf name="OpenGP" eq="1"> prefix="og: https://ogp.me/ns#"</MTIf>>
+  <head<MTIf name="OpenGP" eq="2"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"</MTIf>>
+    <meta charset="<$MTPublishCharset$>">
     <meta name="description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="PageKeywords">    <meta name="keywords" content="<$MTPageKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
     <link rel="canonical" href="<$MTPagePermalink$>">
+<MTIf name="OpenGP">
+    <!-- Open Graph Protocol -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
+    <meta property="og:title" content="<$MTVar name="page_title"$>">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<$MTPagePermalink$>">
+<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
+    <meta property="og:description" content="<$MTPageExcerpt remove_html="1" ltrim="1"$>">
+<MTIf name="bu_arrey[0]">    <meta property="fb:app_id" content="<$MTVar name="bu_arrey[0]"$>"></MTIf>
+<MTIf name="bu_arrey[1]">    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@<$MTVar name="bu_arrey[1]"$>"></MTIf>
+</MTIf>
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>

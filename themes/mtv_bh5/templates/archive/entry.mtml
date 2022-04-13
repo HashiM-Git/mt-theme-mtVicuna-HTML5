@@ -3,25 +3,28 @@
 	tempName=individual_entry
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>">
-  <head<MTIf name="fbadmin"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"</MTIf>>
-    <meta charset="<$MTPublishCharset$>"><MTIf name="fbadmin">
-    <meta property="og:title" content="<$MTVar name="page_title"$>">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="<$MTEntryPermalink$>">
-<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
-    <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
-    <meta property="og:locale" content="ja_JP">
-    <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
-    <meta property="fb:admins" content="<$MTVar name="fbadmin"$>">
-	<MTIf name="bu_arrey" index="0">
-    <meta property="fb:app_id" content="<$MTVar name="bu_arrey" index="0"$>"></MTIf></MTIf>
+<html lang="<$MTDefaultLanguage$>"<MTIf name="OpenGP" eq="1"> prefix="og: https://ogp.me/ns#"</MTIf>>
+  <head<MTIf name="OpenGP" eq="2"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"</MTIf>>
+    <meta charset="<$MTPublishCharset$>">
     <meta name="description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
 <MTIf tag="EntryKeywords">    <meta name="keywords" content="<$MTEntryKeywords remove_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
     <link rel="canonical" href="<$MTEntryPermalink$>">
 <MTEntryPrevious>    <link rel="prev" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryPrevious>
 <MTEntryNext>    <link rel="next" href="<$MTEntryPermalink$>" title="<$MTEntryTitle encode_html="1"$>"></MTEntryNext>
+<MTIf name="OpenGP">
+    <!-- Open Graph Protocol -->
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="<$MTBlogName encode_html="1"$>">
+    <meta property="og:title" content="<$MTVar name="page_title"$>">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<$MTEntryPermalink$>">
+<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
+    <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
+<MTIf name="bu_arrey[0]">    <meta property="fb:app_id" content="<$MTVar name="bu_arrey[0]"$>"></MTIf>
+<MTIf name="bu_arrey[1]">    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@<$MTVar name="bu_arrey[1]"$>"></MTIf>
+</MTIf>
 <$MTCCLicenseRDF$>
 <MTIfPingsAccepted><$MTEntryTrackbackData$></MTIfPingsAccepted>
     <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
@@ -62,7 +65,7 @@
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTIf name="snsb">
-	<MTif name="bu_arrey" index="0">
+	<MTif name="bu_arrey[0]">
     <div id="fb-root"></div></MTif>
     <script>
 (function(w, d, s) {
@@ -72,13 +75,13 @@
       js = d.createElement(s); js.src = url; js.id = id; js.async = true;
       fjs.parentNode.insertBefore(js, fjs);
     };
-	<MTif name="bu_arrey" index="0">
-    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey" index="0"$>&xfbml=1', 'fbjssdk');</MTif>
-	<MTif name="bu_arrey" index="1">
+	<MTif name="bu_arrey[0]">
+    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey[0]"$>&xfbml=1', 'fbjssdk');</MTif>
+	<MTif name="bu_arrey[1]">
     load('//platform.twitter.com/widgets.js', 'tweetjs');</MTif>
-	<MTif name="bu_arrey" index="3">
+	<MTif name="bu_arrey[3]">
     load('//b.st-hatena.com/js/bookmark_button.js');</MTif>
-	<MTif name="bu_arrey" index="2">
+	<MTif name="bu_arrey[2]">
     load('//static.mixi.jp/js/plugins.js#lang=ja');</MTif>
   }
   if (w.addEventListener) { w.addEventListener("load", go, false); }

@@ -202,6 +202,11 @@
 	<$MTSetVar name="bu_arrey" function="push" value="$value"$>
 	<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
 </MTFor>
+<MTSetVars>
+	<MTIf name="bu_arrey[0]">OpenGP=2
+	<MTElseIf name="bu_arrey[1]">OpenGP=1
+	<MTElse>OpenGP=0</MTIf>
+</MTSetVars>
 <MTSetVarTemplate name="json_pcats">
 	<MTHasParentCategory><MTParentCategory>
 		<$MTSetVar name="jsonbr" value="3"$>
