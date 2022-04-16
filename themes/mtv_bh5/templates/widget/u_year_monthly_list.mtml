@@ -22,7 +22,7 @@
 	</MTIfArchiveTypeEnabled>
 	<MTArchiveList archive_type="Monthly">
 		<$MTArchiveDate format="%B" setvar="month"$>
-		<MTSetVarBlock name="count" index="$month"><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%Y<__trans phrase="Year">%B<__trans phrase="Month">"$>(<$MTArchiveCount$>)"><$MTArchiveDate format="%B"$><__trans phrase="Month"></a></MTSetVarBlock>
+		<MTSetVarBlock name="count[$month]"><a href="<$MTArchiveLink$>" title="<$MTArchiveDate format="%Y<__trans phrase="Year">%B<__trans phrase="Month">"$>(<$MTArchiveCount$>)"><$MTArchiveDate format="%B"$><__trans phrase="Month"></a></MTSetVarBlock>
 	</MTArchiveList>
 	<MTSetVars>
 		<MTIf name="year" ne="$stay">stam=1
@@ -34,7 +34,7 @@
 	</MTSetVars>
                   <ul class="mlist"><MTFor var="m" from="$stam" to="$endm">
 		<MTIf name="count" index="$m">
-                    <li><$MTVar name="count" index="$m"$></li>
+                    <li><$MTVar name="count[$m]"$></li>
 		<MTElse>
                     <li><$MTVar name="m" sprintf="%d"$><__trans phrase="Month"></li>
 		</MTIf>

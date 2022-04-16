@@ -9,6 +9,8 @@
 	JSON_LD_sw=1
 	JSON_plofile=0
 
+	Blog_img=0
+
 	IMindex=2,0
 	IAindex=1,0
 	A_entry=1,0
@@ -20,14 +22,14 @@
 
 	GA_trackid=0
 	GA4_id=0
-	fbadmin=0
+
 	button=0,0,0,0
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on https://mtvicuna.kita2.net/setting.html
   $jquery is Jquery(JavaScript) and SmartPhone Only GlobalNavigation
 	0: Off
-	1: On
+	1: On(default)
   $TagC_num is Tag Cloud CSS Number Setting
 	0: none
 	1-13: Tag Cloud Number
@@ -43,15 +45,18 @@
 	1: WebPage FileName to Name(default)
   $Others is Option body class Settings(set1,set2,al,f800-f1000,etc...).
   It can use to put in original class setting. " "(space) of delimiter
-	0: No Use
+	0: No Use(default)
 	String Sample: 'set2 f1000 al only'
 	 ...Details on https://mtvicuna.kita2.net/stylelib/layouts.html
   $JSON_LD_sw is Structured Data switch (schema.org at JSON-LD format writing)
 	0: Off
 	1: On(default)
   $JSON_plofile is JSON-LD on MyPlofile URL Setting
-	0: Off(default) 
+	0: Off(default)
 	Strings: plofile URL Writing
+  $Blog_img is OpenGraphPlotocol or JSON-LD on Blog image URL Setting
+	0: Off(default)
+	Strings: Blog image URL Writing
   $IMindex / $IAindex / $A_entry $A_webpg is Style And EyeCatch Setting(MainIndex / ArchiveIndex / Entry / WebPage) "," or "/" of delimiter
 	Sample: 'L,E'
 	L: Page Column Setting
@@ -62,7 +67,7 @@
 		R3: Multi Column(Sidebar-Right)
 		L3: Multi Column(Sidebar-Left)
 	E: EyeCatch Setting
-		0: none
+		0: none(default)
 		1: eye-h  (Header)
 		2: eye-hb (Header Banner)
 		3: eye-c  (Content)
@@ -78,7 +83,7 @@
 		R3: Multi Column(Sidebar-Right)
 		L3: Multi Coiumn(Sidebar-Left)
 	E: EyeCatch Setting
-		0: none
+		0: none(default)
 		1: eye-h  (Header)
 		2: eye-hb (Header Banner)
 		3: eye-c  (Content)
@@ -101,7 +106,7 @@
   
   $GA_trackid is Google Analytics Universal Analytics ID (0: none)
   $GA4_id is Google Analytics 4 Measurement ID (0: none)
-  $fbadmin is Facebook Admins (0: none)
+
   $button is SNS Button at entry page. "," or "/" of delimiter
 	Sample: 'aaa,bbb,ccc,d'
 	aaa: Facebook App_id (0: none)
@@ -207,6 +212,19 @@
 	<MTElseIf name="bu_arrey[1]">OpenGP=1
 	<MTElse>OpenGP=0</MTIf>
 </MTSetVars>
+<MTIf name="OpenGP"><MTIf name="Blog_img"><$MTSetVar name="Art_img" value=""$>
+	<MTIf name="tempName" eq="individual_entry">
+		<MTEntryAssets type="image" limit="1">
+			<$MTAssetThumbnailURL height="256" square="1" setvar="Art_img"$>
+		</MTEntryAssets>
+		<MTUnless name="Art_img"><$MTSetVar name="Art_img" value="$Blog_img"$></MTUnless>
+	<MTElseIf eq="individual_webpage">
+		<MTPageAssets type="image" limit="1">
+			<$MTAssetThumbnailURL height="256" square="1" setvar="Art_img"$>
+		</MTPageAssets>
+		<MTUnless name="Art_img"><$MTSetVar name="Art_img" value="$Blog_img"$></MTUnless>
+	</MTIf>
+</MTIf></MTIf>
 <MTSetVarTemplate name="json_pcats">
 	<MTHasParentCategory><MTParentCategory>
 		<$MTSetVar name="jsonbr" value="3"$>
@@ -221,21 +239,29 @@
 		<$MTCategoryArchiveLink setvar="cat_link"$>
 		<$MTCategoryLabel encode_html="1" setvar="cat_name"$>
 		</MTEntryPrimaryCategory>
+		<$MTSetVar name="wp_img" value=""$>
+		<MTEntryAssets type="image" limit="1">
+			<$MTAssetThumbnailURL height="150" square="1" setvar="wp_img"$>
+		</MTEntryAssets>
 	<MTElseIf eq="index_archive_category">
 		<$MTSetVar name="jsonbr" value="2"$><$MTVar name="json_pcats"$>
 		<$MTArchiveLink setvar="cat_link"$>
 		<$MTArchiveTitle setvar="cat_name"$>
 	<MTElseIf eq="individual_webpage">
 		<$MTSetVar name="jsonbr" value="1"$>
+		<$MTSetVar name="wp_img" value=""$>
+		<MTPageAssets type="image" limit="1">
+			<$MTAssetThumbnailURL height="150" square="1" setvar="wp_img"$>
+		</MTPageAssets>
 	</MTIf>
 	<MTIf name="jsonbr" ge="2">
 		<$MTVar name="json_id" function="undef"$>
 		<$MTVar name="json_name" function="undef"$>
-		<$MTSetVar name="json_id" index="$jsonbr" value="$cat_link"$>
-		<$MTSetVar name="json_name" index="$jsonbr" value="$cat_name"$>
+		<$MTSetVar name="json_id[$jsonbr]" value="$cat_link"$>
+		<$MTSetVar name="json_name[$jsonbr]" value="$cat_name"$>
 		<MTIf name="jsonbr" eq="3">
-			<$MTSetVar name="json_id" index="2" value="$catpar_link"$>
-			<$MTSetVar name="json_name" index="2" value="$catpar_name"$>
+			<$MTSetVar name="json_id[2]" value="$catpar_link"$>
+			<$MTSetVar name="json_name[2]" value="$catpar_name"$>
 		</MTIf>
 	</MTIf>
 </MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>

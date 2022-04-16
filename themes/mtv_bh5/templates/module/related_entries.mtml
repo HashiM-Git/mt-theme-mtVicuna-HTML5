@@ -7,7 +7,7 @@
 	<$MTEntryID pad="1" setvar="cur"$><$MTEntryID setvar="centry"$>
 	<MTIf name="centry" lt="$entry"><MTUnless name="eid" like="$cur"><MTIf name="ent" lt="5">
 		<$MTSetVar name="ent" op="++"$>
-		<MTSetVarBlock name="rte" index="$ent"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></MTSetVarBlock>
+		<MTSetVarBlock name="rte[$ent]"><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></MTSetVarBlock>
 	</MTIf></MTUnless></MTIf>
 </MTSetVarTemplate>
 <MTEntryIfTagged>
@@ -28,8 +28,8 @@
           <aside class="relatedEntries">
             <h2><__trans phrase="Related Entries"></h2>
             <ul><MTFor var="x" from="1" to="$ent">
-		<MTIf name="rte" index="$x">
-              <li<MTIf name="__odd__"> class="odd"</MTIf>><$MTVar name="rte" index="$x"$></li>
+		<MTIf name="rte[$x]">
+              <li<MTIf name="__odd__"> class="odd"</MTIf>><$MTVar name="rte[$x]"$></li>
 		</MTIf>
             </MTFor></ul>
           </aside>

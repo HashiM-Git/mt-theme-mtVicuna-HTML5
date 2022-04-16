@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="<$MTLink template="<__trans phrase="Stylesheet">"$>"><MTIf name="TagCss">
     <link rel="stylesheet" href="<$MTBlogURL$>css/<$MTVar name="TagCss"$>"></MTIf>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<$MTLink template="RSS"$>">
-    <link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTLink template="Atom"$>">
-<!--[if lt IE 9]>
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="<$MTLink template="Atom"$>"><MTIgnore>
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<$MTBlogURL$>image/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="<$MTBlogURL$>image/apple-touch-icon.png">
+</MTIgnore><!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->

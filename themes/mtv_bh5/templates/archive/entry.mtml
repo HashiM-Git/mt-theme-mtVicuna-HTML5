@@ -19,7 +19,7 @@
     <meta property="og:title" content="<$MTVar name="page_title"$>">
     <meta property="og:type" content="article">
     <meta property="og:url" content="<$MTEntryPermalink$>">
-<MTIgnore><meta property="og:image" content="Eye catch picture of a page"></MTIgnore>
+<MTIf name="Blog_img">    <meta property="og:image" content="<$MTVar name="Art_img"$>"></MTIf>
     <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
 <MTIf name="bu_arrey[0]">    <meta property="fb:app_id" content="<$MTVar name="bu_arrey[0]"$>"></MTIf>
 <MTIf name="bu_arrey[1]">    <meta name="twitter:card" content="summary">
@@ -65,8 +65,8 @@
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTIf name="snsb">
-	<MTif name="bu_arrey[0]">
-    <div id="fb-root"></div></MTif>
+	<MTIf name="bu_arrey[0]">
+    <div id="fb-root"></div></MTIf>
     <script>
 (function(w, d, s) {
   function go(){
@@ -75,14 +75,14 @@
       js = d.createElement(s); js.src = url; js.id = id; js.async = true;
       fjs.parentNode.insertBefore(js, fjs);
     };
-	<MTif name="bu_arrey[0]">
-    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey[0]"$>&xfbml=1', 'fbjssdk');</MTif>
-	<MTif name="bu_arrey[1]">
-    load('//platform.twitter.com/widgets.js', 'tweetjs');</MTif>
-	<MTif name="bu_arrey[3]">
-    load('//b.st-hatena.com/js/bookmark_button.js');</MTif>
-	<MTif name="bu_arrey[2]">
-    load('//static.mixi.jp/js/plugins.js#lang=ja');</MTif>
+	<MTIf name="bu_arrey[0]">
+    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey[0]"$>&xfbml=1', 'fbjssdk');</MTIf>
+	<MTIf name="bu_arrey[1]">
+    load('//platform.twitter.com/widgets.js', 'tweetjs');</MTIf>
+	<MTIf name="bu_arrey[3]">
+    load('//b.st-hatena.com/js/bookmark_button.js');</MTIf>
+	<MTIf name="bu_arrey[2]">
+    load('//static.mixi.jp/js/plugins.js#lang=ja');</MTIf>
   }
   if (w.addEventListener) { w.addEventListener("load", go, false); }
   else if (w.attachEvent) { w.attachEvent("onload",go); }

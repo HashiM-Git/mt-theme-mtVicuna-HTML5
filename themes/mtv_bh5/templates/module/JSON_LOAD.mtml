@@ -26,7 +26,8 @@
     "url": "<$MTWebsiteURL$>",
     "inLanguage": "ja",
     "name": "<$MTWebsiteName encode_html="1"$>",
-    "description": "<$MTWebsiteDescription encode_html="1"$>",
+    "description": "<$MTWebsiteDescription encode_html="1"$>",<MTUnless name="web_blog"><MTIf name="Blog_img">
+    "image": "<$MTVar name="Blog_img"$>",</MTIf></MTUnless>
     <$MTVar name="JSON_paurl"$>
   },<MTIf name="web_blog">
   {
@@ -36,7 +37,8 @@
     "url": "<$MTBlogURL$>",
     "inLanguage": "ja",
     "name": "<$MTBlogName encode_html="1"$>",
-    "description": "<$MTBlogDescription encode_html="1"$>",
+    "description": "<$MTBlogDescription encode_html="1"$>",<MTIf name="Blog_img">
+    "image": "<$MTVar name="Blog_img"$>",</MTIf>
     <$MTVar name="JSON_paurl"$>
   },</MTIf>
   {
@@ -75,8 +77,8 @@
 <MTIf name="web_blog"><$MTVar name="xw" op="++" setvar="xw"$><MTElse><$MTSetVar name="xw" value="$x"$></MTIf>      "@type": "ListItem",
       "position": "<$MTVar name="xw"$>",
       "item":{
-        "@id": "<$MTVar name="json_id" index="$x"$>",
-        "name": "<$MTVar name="json_name" index="$x"$>"
+        "@id": "<$MTVar name="json_id[$x]"$>",
+        "name": "<$MTVar name="json_name[$x]"$>"
       }
     }<MTUnless name="__last__">,{</MTUnless></MTfor></MTIf>]
   }</MTSetVarTemplate>
@@ -93,7 +95,8 @@
     "headline": "<$MTVar name="page_title"$>",
     "datePublished": "<$MTEntryDate format_name="iso8601"$>",
     "dateModified": "<$MTEntryModifiedDate format_name="iso8601"$>",
-    "description": "<$MTEntryExcerpt remove_html="1" ltrim="1"$>",
+    "description": "<$MTEntryExcerpt remove_html="1" ltrim="1"$>",<MTIf name="wp_img">
+    "image": "<$MTVar name="wp_img"$>",</MTIf>
     <$MTVar name="JSON_paurl"$><MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
   }<MTElseIf eq="individual_webpage">,
@@ -107,7 +110,8 @@
     "headline": "<$MTVar name="page_title"$>",
     "datePublished": "<$MTPageDate format_name="iso8601"$>",
     "dateModified": "<$MTPageModifiedDate format_name="iso8601"$>",
-    "description": "<$MTPageExcerpt remove_html="1" ltrim="1"$>",
+    "description": "<$MTPageExcerpt remove_html="1" ltrim="1"$>",<MTIf name="wp_img">
+    "image": "<$MTVar name="wp_img"$>",</MTIf>
     <$MTVar name="JSON_paurl"$><MTBlogIfCCLicense>,
     "license": "<$MTBlogCCLicenseURL$>"</MTBlogIfCCLicense>
   }</MTIf><MTIf name="web_blog">,
