@@ -129,7 +129,7 @@ elements:
             filename: module/html_header.mtml
           google_analytics4:
             label: Google Analytics4
-            filename: module/google_analytics.mtml
+            filename: module/google_analytics4.mtml
           topic_path:
             label: Topic Path
             filename: module/topic_path.mtml
