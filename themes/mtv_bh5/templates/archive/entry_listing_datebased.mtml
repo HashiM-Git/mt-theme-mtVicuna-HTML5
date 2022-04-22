@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>">
   <head>
+    <$MTInclude module="<__trans phrase="Google Analytics4">"$>
     <meta charset="<$MTPublishCharset$>">
     <$MTInclude module="<__trans phrase="HTML Header">"$>
     <link rel="canonical" href="<$MTArchiveLink$>">
@@ -19,7 +20,6 @@
 </MTIf>
 <$MTCCLicenseRDF$>
     <title><$MTBlogName encode_html="1"$> - <$MTVar name="page_title"$></title>
-    <$MTInclude module="<__trans phrase="Google Analytics">"$>
   </head>
   <body class="dateBasedArchive<MTIf name="body"> archives</MTIf> <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">
     <$MTInclude module="<__trans phrase="Header">"$>

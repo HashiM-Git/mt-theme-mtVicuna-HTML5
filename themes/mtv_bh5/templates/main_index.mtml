@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="<$MTDefaultLanguage$>"<MTIf name="OpenGP" eq="1"> prefix="og: https://ogp.me/ns#"</MTIf>>
   <head<MTIf name="OpenGP" eq="2"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#"</MTIf>>
+    <$MTInclude module="<__trans phrase="Google Analytics4">"$>
     <meta charset="<$MTPublishCharset$>">
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>
     <$MTInclude module="<__trans phrase="HTML Header">"$>
@@ -23,7 +24,6 @@
 </MTIf>
 <$MTCCLicenseRDF$>
     <title><$MTVar name="page_title"$></title>
-    <$MTInclude module="<__trans phrase="Google Analytics">"$>
     <MTIf name="JSON_LD_sw">    <$MTInclude module="JSON_LOAD"$></MTIf>
   </head>
   <body class="mainIndex <$MTVar name="page_column"$><$MTVar name="eyecatch"$>">

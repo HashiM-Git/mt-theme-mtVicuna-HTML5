@@ -127,8 +127,8 @@ elements:
           html_header:
             label: HTML Header
             filename: module/html_header.mtml
-          google_analytics:
-            label: Google Analytics
+          google_analytics4:
+            label: Google Analytics4
             filename: module/google_analytics.mtml
           topic_path:
             label: Topic Path
