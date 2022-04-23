@@ -11,6 +11,9 @@
 		<MTElse><$MTBlogArchiveURL setvar="b_URLid"$></MTIf>
 	</MTIf>
 </MTIf>
+<MTUnless name="NameS">
+	<MTSetVarBlock name="NameS"><MTAuthors lastn="1"><$MTAuthorDisplayName$></MTAuthors></MTSetVarBlock>
+</MTUnless>
 <MTSetVarTemplate name="JSON_paurl">
     "publisher": {
       "@id": "<$MTVar name="idxurl"$>#org"
@@ -25,8 +28,9 @@
     "@id": "<$MTWebsiteURL$>",
     "url": "<$MTWebsiteURL$>",
     "inLanguage": "ja",
-    "name": "<$MTWebsiteName encode_html="1"$>",
-    "description": "<$MTWebsiteDescription encode_html="1"$>",<MTUnless name="web_blog"><MTIf name="Blog_img">
+    "name": "<$MTWebsiteName encode_html="1"$>",<MTIf tag="WebsiteDescription">
+    "description": "<$MTWebsiteDescription encode_html="1"$>",</MTIf>
+<MTUnless name="web_blog"><MTIf name="Blog_img">
     "image": "<$MTVar name="Blog_img"$>",</MTIf></MTUnless>
     <$MTVar name="JSON_paurl"$>
   },<MTIf name="web_blog">
@@ -36,8 +40,8 @@
     "@id": "<$MTVar name="b_URLid"$>",
     "url": "<$MTBlogURL$>",
     "inLanguage": "ja",
-    "name": "<$MTBlogName encode_html="1"$>",
-    "description": "<$MTBlogDescription encode_html="1"$>",<MTIf name="Blog_img">
+    "name": "<$MTBlogName encode_html="1"$>",<MTIf tag="BlogDescription">
+    "description": "<$MTBlogDescription encode_html="1"$>",</MTIf><MTIf name="Blog_img">
     "image": "<$MTVar name="Blog_img"$>",</MTIf>
     <$MTVar name="JSON_paurl"$>
   },</MTIf>
@@ -83,8 +87,7 @@
     }<MTUnless name="__last__">,{</MTUnless></MTfor></MTIf>]
   }</MTSetVarTemplate>
 <script type="application/ld+json">
-[
-<$MTVar name="_JSON_LD_index"$><MTIf name="tempName" eq="individual_entry">,
+[<$MTVar name="_JSON_LD_index"$><MTIf name="tempName" eq="individual_entry">,
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
