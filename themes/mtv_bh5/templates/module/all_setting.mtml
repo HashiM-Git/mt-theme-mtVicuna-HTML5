@@ -23,7 +23,7 @@
 	GA_trackid=0
 	GA4_id=0
 
-	button=0,0,0,0
+	button=1,1,1,1,1,1
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on https://mtvicuna.kita2.net/setting.html
@@ -108,11 +108,13 @@
   $GA4_id is Google Analytics 4 Measurement ID (0: none)
 
   $button is SNS Button at entry page. "," or "/" of delimiter
-	Sample: 'aaa,bbb,ccc,d'
-	aaa: Facebook App_id (0: none)
-	bbb: Twitter Account (0: none)
-	ccc: mixi Like Developer ID (0: none)
+	Sample: 'aaaaaaaaaaaaaaa,bbb,c,d,e,f'
+	aaaaaaaaaaaaaaa: Facebook App_id or 1 eqall Facebook share button (0: none)
+	bbb: Twitter Account on Tweet button (0: none)
+	c: 1 eqall Pocket Bookmark button (0: none)
 	d: 1 eqall Hatena Bookmark button (0: none)
+	e: 1 eqall LINE share button (0: none)
+	f: 1 eqall URL clipBoard copy button (0: none)
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
 <MTSetVars>
 	jsonbr=0
@@ -201,17 +203,21 @@
 </MTIf>
 <$MTVar name="button" regex_replace="/\//g","," setvar="button"$>
 <$MTSetVar name="bu_arrey" function="undef"$>
-<MTFor var="i" from="1" to="4">
+<MTFor var="i" from="1" to="6">
 	<$MTVar name="button" regex_replace="/^([^,]+).*/","$1" setvar="value"$>
 	<MTIf name="value"><$MTSetVar name="snsb" value="1"$></MTIf>
 	<$MTSetVar name="bu_arrey" function="push" value="$value"$>
 	<$MTVar name="button" regex_replace="/^([^,]+,?)(.*)/","$2" setvar="button"$>
 </MTFor>
-<MTSetVars>
-	<MTIf name="bu_arrey[0]">OpenGP=2
-	<MTElseIf name="bu_arrey[1]">OpenGP=1
-	<MTElse>OpenGP=0</MTIf>
-</MTSetVars>
+<$MTVar name="bu_arrey[0]" count_characters="1" setvar="FbAppID"$>
+<MTIf name="FbAppID" ge="15"><$MTVar name="bu_arrey[0]" setvar="FbAppID"$>
+	<$MTSetVar name="bu_arrey[0]" value="1"$>
+	<$MTSetVar name="OpenGP" value="2"$>
+<MTElse>
+	<$MTSetVar name="FbAppID" value="0"$>
+	<$MTSetVar name="OpenGP" value="0"$>
+</MTIf>
+<MTIf name="bu_arrey[1]"><$MTSetVar name="OpenGP" value="1"$></MTIf>
 <MTIf name="OpenGP"><MTIf name="Blog_img"><$MTSetVar name="Art_img" value=""$>
 	<MTIf name="tempName" eq="individual_entry">
 		<MTEntryAssets type="image" limit="1">

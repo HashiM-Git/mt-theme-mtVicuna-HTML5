@@ -101,6 +101,18 @@ http://developer.yahoo.net/yui/license.txt
 http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
+@font-face {
+  font-family: 'vicunaicon';
+  src:  url('images/icon/vicunaicon.eot?9w8m3o');
+  src:  url('images/icon/vicunaicon.eot?9w8m3o#iefix') format('embedded-opentype'),
+    url('images/icon/vicunaicon.ttf?9w8m3o') format('truetype'),
+    url('images/icon/vicunaicon.woff?9w8m3o') format('woff'),
+    url('images/icon/vicunaicon.svg?9w8m3o#vicunaicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 /*========================================
   Elements
 ========================================*/
@@ -563,6 +575,44 @@ div.entry div#profile-comment-threads {
 
 /* ul.info
 ---------------*/
+[class^="vicon-"] *, [class*=" vicon-"] * {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'vicunaicon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  padding-left: 18px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vicon-lastfm a:before {
+  content: "\e903";
+  color: #D51007;
+}
+.vicon-github a:before {
+  content: "\e908";
+  color: #181717;
+}
+.vicon-quotes-right a:before {
+  content: "\e978";
+}
+.vicon-rss a:before {
+  content: "\ea9b";
+  color: #FFA500;
+}
+.vicon-rss2 a:before {
+  content: "\ea9c";
+  color: #FFA500;
+}
+.vicon-lastfm2 a:before {
+  content: "\eacc";
+  color: #D51007;
+}
 
 ul.info {
 	margin: 0 0 1em 0;
@@ -612,11 +662,71 @@ article.entry ul.info > li,
 	display: inline-block;
 	font-size: 82%;
 	margin: 0;
-	width: 110px;
+	width: 50px;
 }
 
-#snsb > ul > li.mark {
-	width: 80px;
+#snsb > ul > li * {
+	font-size: 0;
+	cursor: pointer;
+	margin: 0;
+	border: 0;
+	background: transparent;
+}
+
+.vicon-clip button:before {
+  content: "\e9cd";
+  color: #010708;
+  font-size: 25px;
+}
+.vicon-facebook a:before {
+  content: "\e900";
+  color: #1877F2;
+  font-size: 25px;
+}
+.vicon-feedly a:before {
+  content: "\e901";
+  color: #2BB24C;
+  font-size: 25px;
+}
+.vicon-hatenabook a:before {
+  content: "\e902";
+  color: #00A4DE;
+  font-size: 25px;
+}
+.vicon-line a:before {
+  content: "\e904";
+  color: #00C300;
+  font-size: 25px;
+}
+.vicon-pinter a:before {
+  content: "\e905";
+  color: #BD081C;
+  font-size: 25px;
+}
+.vicon-pocket a:before {
+  content: "\e906";
+  color: #EF3F56;
+  font-size: 25px;
+}
+.vicon-twitter a:before {
+  content: "\e907";
+  color: #1DA1F2;
+  font-size: 25px;
+}
+.vicon-facebook1 a:before {
+  content: "\ea90";
+  color: #1877F2;
+  font-size: 25px;
+}
+.vicon-facebook2 a:before {
+  content: "\ea91";
+  color: #1877F2;
+  font-size: 25px;
+}
+.vicon-pinter2 a:before {
+  content: "\ead2";
+  color: #BD081C;
+  font-size: 25px;
 }
 
 /* Text Style

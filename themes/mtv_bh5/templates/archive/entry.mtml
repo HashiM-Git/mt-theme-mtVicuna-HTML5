@@ -22,7 +22,7 @@
     <meta property="og:url" content="<$MTEntryPermalink$>">
 <MTIf name="Blog_img">    <meta property="og:image" content="<$MTVar name="Art_img"$>"></MTIf>
     <meta property="og:description" content="<$MTEntryExcerpt remove_html="1" ltrim="1"$>">
-<MTIf name="bu_arrey[0]">    <meta property="fb:app_id" content="<$MTVar name="bu_arrey[0]"$>"></MTIf>
+<MTIf name="FbAppID">    <meta property="fb:app_id" content="<$MTVar name="FbAppID"$>"></MTIf>
 <MTIf name="bu_arrey[1]">    <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@<$MTVar name="bu_arrey[1]"$>"></MTIf>
 </MTIf>
@@ -64,29 +64,17 @@
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
-<MTIf name="snsb">
-	<MTIf name="bu_arrey[0]">
-    <div id="fb-root"></div></MTIf>
+<MTIf name="bu_arrey[5]">
     <script>
-(function(w, d, s) {
-  function go(){
-    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.src = url; js.id = id; js.async = true;
-      fjs.parentNode.insertBefore(js, fjs);
-    };
-	<MTIf name="bu_arrey[0]">
-    load('//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<$MTVar name="bu_arrey[0]"$>&xfbml=1', 'fbjssdk');</MTIf>
-	<MTIf name="bu_arrey[1]">
-    load('//platform.twitter.com/widgets.js', 'tweetjs');</MTIf>
-	<MTIf name="bu_arrey[3]">
-    load('//b.st-hatena.com/js/bookmark_button.js');</MTIf>
-	<MTIf name="bu_arrey[2]">
-    load('//static.mixi.jp/js/plugins.js#lang=ja');</MTIf>
-  }
-  if (w.addEventListener) { w.addEventListener("load", go, false); }
-  else if (w.attachEvent) { w.attachEvent("onload",go); }
-}(window, document, 'script'));
+document.getElementById("copy-page").onclick = function() {
+  $(document.body).append("<textarea id=\"copyTarget\" style=\"position:absolute; left:-9999px; top:0px;\" readonly=\"readonly\">" +location.href+ "</textarea>");
+  let obj = document.getElementById("copyTarget");
+  let range = document.createRange();
+  range.selectNode(obj);
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
+  document.getElementById("cAction").innerHTML = "<__trans phrase="I copied it">";
+};
     </script></MTIf>
   </body>
 </html>

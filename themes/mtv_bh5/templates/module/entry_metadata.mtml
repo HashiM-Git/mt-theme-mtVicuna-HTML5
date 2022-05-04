@@ -7,12 +7,28 @@
 <MTIf name="tempName" eq="individual_entry"><MTIf name="snsb">
                 <li id="snsb"><ul>
 	<MTIf name="bu_arrey[0]">
-                  <li><div class="fb-like" data-href="<$MTEntryPermalink$>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false"></div></li></MTIf>
+                  <li class="vicon-facebook">
+                    <a title="Facebook share" href="https://www.facebook.com/sharer/sharer.php?u=<$MTEntryPermalink encode_url="1"$>" rel="noopener noreferrer" target="_blank">Facebook</a>
+                  </li></MTIf>
 	<MTIf name="bu_arrey[1]">
-                  <li><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-url="<$MTEntryPermalink$>" data-text="<$MTEntryTitle$> on Tweet" data-via="<$MTVar name="bu_arrey[1]"$>">Tweet</a></li></MTIf>
-	<MTIf name="bu_arrey[3]">
-                  <li class="mark"><a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" data-hatena-bookmark-url="<$MTEntryPermalink$>" data-hatena-bookmark-title="<$MTEntryTitle$>"><img src="https://b.st-hatena.com/images/entry-button/button-only.gif" alt="<__trans phrase="This entry is added to the Hatena bookmark">" width="20" height="20" style="border: none"></a></li></MTIf>
+                  <li class="vicon-twitter">
+                    <a title="Twitter share" href="http://twitter.com/share?url=<$MTEntryPermalink encode_url="1"$>&text=<$MTEntryTitle encode_url="1"$>&via=<$MTVar name="bu_arrey[1]"$>&tw_p=tweetbutton&related=<$MTVar name="bu_arrey[1]"$>" rel="noopener noreferrer" target="_blank">Twitter</a>
+                  </li></MTIf>
 	<MTIf name="bu_arrey[2]">
-                  <li><div data-plugins-type="mixi-favorite" data-service-key="<$MTVar name="bu_arrey[2]"$>" data-size="medium" data-href="<$MTEntryPermalink$>" data-show-count="true" data-show-comment="true" data-width="120"></div></li></MTIf>
+                  <li class="vicon-pocket">
+                    <a title="Pocket Bookmark" href="http://getpocket.com/edit?url=<$MTEntryPermalink encode_url="1"$>&title=<$MTEntryTitle encode_url="1"$>" rel="noopener noreferrer" target="_blank">Pocket</a>
+                  </li></MTIf>
+	<MTIf name="bu_arrey[3]">
+                  <li class="vicon-hatenabook">
+                    <a title="Hatena Bookmark" href="http://b.hatena.ne.jp/add?mode=confirm&url=<$MTEntryPermalink encode_url="1"$>&title=<$MTEntryTitle encode_url="1"$>" rel="noopener noreferrer" target="_blank">Hatena</a>
+                  </li></MTIf>
+	<MTIf name="bu_arrey[4]">
+                  <li class="vicon-line">
+                    <a title="LINE share" href="https://timeline.line.me/social-plugin/share?url=<$MTEntryPermalink encode_url="1"$>" rel="noopener noreferrer" target="_blank">LINE</a>
+                  </li></MTIf>
+	<MTIf name="bu_arrey[5]">
+                  <li class="vicon-clip">
+                    <button title="<__trans phrase="URL is copied by a clipboard">" type="button" id="copy-page"><span id="cAction"><__trans phrase="URL is copied by a clipboard"></span></button>
+                  </li></MTIf>
                 </ul></li></MTIf></MTIf>
               </ul>
