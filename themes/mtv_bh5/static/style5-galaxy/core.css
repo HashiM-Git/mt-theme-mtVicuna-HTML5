@@ -102,18 +102,6 @@ http://developer.yahoo.net/yui/license.txt
   http://developer.yahoo.com/yui/examples/fonts/fonts-size_source.html
 */ body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
-@font-face {
-  font-family: 'vicunaicon';
-  src:  url('images/icon/vicunaicon.eot?9w8m3o');
-  src:  url('images/icon/vicunaicon.eot?9w8m3o#iefix') format('embedded-opentype'),
-    url('images/icon/vicunaicon.ttf?9w8m3o') format('truetype'),
-    url('images/icon/vicunaicon.woff?9w8m3o') format('woff'),
-    url('images/icon/vicunaicon.svg?9w8m3o#vicunaicon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 /*========================================
   Elements
 ========================================*/
@@ -561,26 +549,26 @@ div.entry div#profile-comment-threads {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.vicon-lastfm a:before {
+.vicon-lastfm a::before {
   content: "\e903";
   color: #D51007;
 }
-.vicon-github a:before {
+.vicon-github a::before {
   content: "\e908";
   color: #181717;
 }
-.vicon-quotes-right a:before {
+.vicon-quotes-right a::before {
   content: "\e978";
 }
-.vicon-rss a:before {
+.vicon-rss a::before {
   content: "\ea9b";
   color: #FFA500;
 }
-.vicon-rss2 a:before {
+.vicon-rss2 a::before {
   content: "\ea9c";
   color: #FFA500;
 }
-.vicon-lastfm2 a:before {
+.vicon-lastfm2 a::before {
   content: "\eacc";
   color: #D51007;
 }
@@ -645,71 +633,137 @@ article.entry > ul.info li,
 #snsb > ul > li * {
 	font-size: 0;
 	cursor: pointer;
-	margin: 0;
+	margin: 0 10px;
 	border: 0;
+	display: inline-block;
 	background: transparent;
 }
 
-.vicon-clip button:before {
+#snsb > ul > li a::before {
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding-top: 4px;
+  text-align: center;
+  height: 30px;
+  width: 32px;
+}
+
+#snsb > ul > li button::before {
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding-top: 1px;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+}
+
+#snsb > ul > li button:hover::before {
+  opacity: 0.5;
+}
+
+.vicon-clip button::before {
   content: "\e9cd";
   color: #ffffff;
   font-size: 25px;
 }
-.vicon-facebook a:before {
+.vicon-facebook a::before {
   content: "\e900";
   color: #1877F2;
   background-color: #ffffff;
+  border-color: #1877F2;
   font-size: 25px;
 }
-.vicon-feedly a:before {
+
+.vicon-facebook a:hover::before {
+  background-color: #1877F2;
+  color: #FFFFFF;
+}
+
+.vicon-feedly a::before {
   content: "\e901";
   color: #2BB24C;
+  border-color: #2BB24C;
   font-size: 25px;
 }
-.vicon-hatenabook a:before {
+.vicon-hatenabook a::before {
   content: "\e902";
   color: #00A4DE;
+  border-color: #00A4DE;
   font-size: 25px;
   background-color: #ffffff;
 }
-.vicon-line a:before {
+.vicon-hatenabook a:hover::before {
+  background-color: #00A4DE;
+  color: #FFFFFF;
+}
+
+.vicon-line a::before {
   content: "\e904";
   color: #00C300;
+  border-color: #00C300;
   font-size: 25px;
   background-color: #ffffff;
 }
-.vicon-pinter a:before {
+.vicon-line a:hover::before {
+  background-color: #00C300;
+  color: #FFFFFF;
+}
+
+.vicon-pinter a::before {
   content: "\e905";
   color: #BD081C;
+  border-color: #BD081C;
   font-size: 25px;
 }
-.vicon-pocket a:before {
+.vicon-pocket a::before {
   content: "\e906";
   color: #EF3F56;
+  border-color: #EF3F56;
   font-size: 25px;
   background-color: #ffffff;
 }
-.vicon-twitter a:before {
+.vicon-pocket a:hover::before {
+  background-color: #EF3F56;
+  color: #FFFFFF;
+}
+
+.vicon-twitter a::before {
   content: "\e907";
   color: #1DA1F2;
+  border-color: #1DA1F2;
   font-size: 25px;
   background-color: #ffffff;
 }
-.vicon-facebook1 a:before {
+.vicon-twitter a:hover::before {
+  background-color: #1DA1F2;
+  color: #FFFFFF;
+}
+
+.vicon-facebook1 a::before {
   content: "\ea90";
   color: #1877F2;
+  border-color: #1877F2;
   background-color: #ffffff;
   font-size: 25px;
 }
-.vicon-facebook2 a:before {
+.vicon-facebook2 a::before {
   content: "\ea91";
   color: #1877F2;
+  border-color: #1877F2;
   background-color: #ffffff;
   font-size: 25px;
 }
-.vicon-pinter2 a:before {
+.vicon-pinter2 a::before {
   content: "\ead2";
   color: #BD081C;
+  border-color: #BD081C;
   font-size: 25px;
 }
 

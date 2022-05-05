@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'vicunaicon';
+  src:  url('vicunaicon.eot?9w8m3o');
+  src:  url('vicunaicon.eot?9w8m3o#iefix') format('embedded-opentype'),
+    url('vicunaicon.ttf?9w8m3o') format('truetype'),
+    url('vicunaicon.woff?9w8m3o') format('woff'),
+    url('vicunaicon.svg?9w8m3o#vicunaicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
