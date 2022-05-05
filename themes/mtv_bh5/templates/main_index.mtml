@@ -3,8 +3,8 @@
 	tempName=index_main
 </MTSetVars><$MTInclude module="<__trans phrase="All Setting">"$>
 <!DOCTYPE html>
-<html lang="<$MTDefaultLanguage$>"<MTIf name="OpenGP" eq="1"> prefix="og: https://ogp.me/ns#"</MTIf>>
-  <head<MTIf name="OpenGP" eq="2"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#"</MTIf>>
+<html lang="<$MTDefaultLanguage$>"<MTIf name="OpenGP"> prefix="og: https://ogp.me/ns#"</MTIf>>
+  <head<MTIf name="FbAppID"> prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#"</MTIf>>
     <$MTInclude module="<__trans phrase="Google Analytics4">"$>
     <meta charset="<$MTPublishCharset$>">
 <MTIf tag="BlogDescription">    <meta name="description" content="<$MTBlogDescription encode_html="1"$>"></MTIf>

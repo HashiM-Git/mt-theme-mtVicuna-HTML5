@@ -23,7 +23,7 @@
 	GA_trackid=0
 	GA4_id=0
 
-	button=1,1,1,1,1,1
+	button=1,0,1,1,1,1
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on https://mtvicuna.kita2.net/setting.html
@@ -115,6 +115,7 @@
 	d: 1 eqall Hatena Bookmark button (0: none)
 	e: 1 eqall LINE share button (0: none)
 	f: 1 eqall URL clipBoard copy button (0: none)
+# Facebook App_id, Twitter, Hatena Bookmark, LINE share set is OpenGraphPlotocol MetaTag setting
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
 <MTSetVars>
 	jsonbr=0
@@ -212,12 +213,16 @@
 <$MTVar name="bu_arrey[0]" count_characters="1" setvar="FbAppID"$>
 <MTIf name="FbAppID" ge="15"><$MTVar name="bu_arrey[0]" setvar="FbAppID"$>
 	<$MTSetVar name="bu_arrey[0]" value="1"$>
-	<$MTSetVar name="OpenGP" value="2"$>
+	<$MTSetVar name="OpenGP" value="1"$>
 <MTElse>
 	<$MTSetVar name="FbAppID" value="0"$>
 	<$MTSetVar name="OpenGP" value="0"$>
 </MTIf>
-<MTIf name="bu_arrey[1]"><$MTSetVar name="OpenGP" value="1"$></MTIf>
+<MTUnless name="OpenGP">
+	<MTIf name="bu_arrey[1]"><$MTSetVar name="OpenGP" value="1"$></MTIf>
+	<MTIf name="bu_arrey[3]"><$MTSetVar name="OpenGP" value="1"$></MTIf>
+	<MTIf name="bu_arrey[4]"><$MTSetVar name="OpenGP" value="1"$></MTIf>
+</MTUnless>
 <MTIf name="OpenGP"><MTIf name="Blog_img"><$MTSetVar name="Art_img" value=""$>
 	<MTIf name="tempName" eq="individual_entry">
 		<MTEntryAssets type="image" limit="1">
