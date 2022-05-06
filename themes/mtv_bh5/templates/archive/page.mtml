@@ -40,6 +40,7 @@
             <h1><$MTVar name="page_title"$></h1>
             <ul class="info">
               <li class="date">Last Modified: <time datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
+<MTPageIfTagged tag="$WPageSnsTag"><$MTVar name="Snsb_typing"></MTPageIfTagged>
             </ul>
           </header>
           <div class="textBody">
@@ -60,5 +61,17 @@
     </div>
     <!-- end div#content -->
     <$MTInclude module="<__trans phrase="Footer">"$>
+<MTPageIfTagged tag="$WPageSnsTag"><MTIf name="bu_arrey[5]">
+    <script>
+document.getElementById("copy-page").onclick = function() {
+  $(document.body).append("<textarea id=\"copyTarget\" style=\"position:absolute; left:-9999px; top:0px;\" readonly=\"readonly\">" +location.href+ "</textarea>");
+  let obj = document.getElementById("copyTarget");
+  let range = document.createRange();
+  range.selectNode(obj);
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
+  document.getElementById("cAction").innerHTML = "<__trans phrase="I copied it">";
+};
+    </script></MTIf></MTPageIfTagged>
   </body>
 </html>

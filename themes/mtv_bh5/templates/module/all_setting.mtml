@@ -24,6 +24,7 @@
 	GA4_id=0
 
 	button=1,0,1,1,1,1
+	WPageSnsTag=@WPageSns
 </MTSetVars>
 <MTIgnore>  Do not remove this block.
 	    Details on https://mtvicuna.kita2.net/setting.html
@@ -103,7 +104,7 @@
 	y: 0: Normal List  1: Month Grouping List(default)
 	l: 0: descend  1: ascend(default)
 # PageColumn And EyeCatch is $IAindex Setting.
-  
+
   $GA_trackid is Google Analytics Universal Analytics ID (0: none)
   $GA4_id is Google Analytics 4 Measurement ID (0: none)
 
@@ -116,6 +117,10 @@
 	e: 1 eqall LINE share button (0: none)
 	f: 1 eqall URL clipBoard copy button (0: none)
 # Facebook App_id, Twitter, Hatena Bookmark, LINE share set is OpenGraphPlotocol MetaTag setting
+  
+  $WPageSnsTag is WebPage in SNS Button(befour $button) at Tagged Set.
+	@WPageSns(default)
+
 </MTIgnore><$MTSetVar name="eyecatch" value=""$>
 <MTSetVars>
 	jsonbr=0
@@ -276,3 +281,39 @@
 		</MTIf>
 	</MTIf>
 </MTIf><$MTVar name="page_column" regex_replace="/  /g"," " setvar="page_column"$>
+<MTIf name="tempName" eq="individual_entry">
+	<$MTEntryPermalink encode_url="1" setvar="Sns_plink"$>
+	<$MTEntryTitle encode_url="1" setvar="Sns_pttle"$>
+<MTElseIf eq="individual_webpage">
+	<$MTPagePermalink encode_url="1" setvar="Sns_plink"$>
+	<$MTPageTitle encode_url="1" setvar="Sns_pttle"$>
+</MTIf>
+<MTSetVarTemplate name="Snsb_typing">
+<MTIf name="snsb">
+              <li id="snsb"><ul>
+	<MTIf name="bu_arrey[0]">
+                <li class="vicon-facebook">
+                  <a title="Facebook share" href="https://www.facebook.com/sharer/sharer.php?u=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">Facebook</a>
+                </li></MTIf>
+	<MTIf name="bu_arrey[1]">
+                <li class="vicon-twitter">
+                  <a title="Twitter share" href="http://twitter.com/share?url=<$MTVar name="Sns_plink"$>&text=<$MTVar name="Sns_pttle"$>&via=<$MTVar name="bu_arrey[1]"$>&tw_p=tweetbutton&related=<$MTVar name="bu_arrey[1]"$>" rel="noopener noreferrer" target="_blank">Twitter</a>
+                </li></MTIf>
+	<MTIf name="bu_arrey[2]">
+                <li class="vicon-pocket">
+                  <a title="Pocket Bookmark" href="http://getpocket.com/edit?url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Pocket</a>
+                </li></MTIf>
+	<MTIf name="bu_arrey[3]">
+                <li class="vicon-hatenabook">
+                  <a title="Hatena Bookmark" href="http://b.hatena.ne.jp/add?mode=confirm&url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Hatena</a>
+                </li></MTIf>
+	<MTIf name="bu_arrey[4]">
+                <li class="vicon-line">
+                  <a title="LINE share" href="https://timeline.line.me/social-plugin/share?url=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">LINE</a>
+                </li></MTIf>
+	<MTIf name="bu_arrey[5]">
+                <li class="vicon-clip">
+                  <button title="<__trans phrase="URL is copied by a clipboard">" type="button" id="copy-page"><span id="cAction"><__trans phrase="URL is copied by a clipboard"></span></button>
+                </li></MTIf>
+              </ul></li></MTIf>
+</MTSetVarTemplate>

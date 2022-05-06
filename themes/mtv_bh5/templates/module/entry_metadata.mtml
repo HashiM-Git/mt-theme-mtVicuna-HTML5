@@ -4,31 +4,5 @@
                 <li class="date"><time datetime="<$MTEntryDate format_name="iso8601"$>"><$MTEntryDate$></time></li>
 <MTIf tag="EntryCategory">
                 <li class="category"><MTEntryCategories glue=" | "><a href="<$MTCategoryArchiveLink$>" title="<MTCategoryLabel> Index"><MTCategoryLabel></a></MTEntryCategories></li></MTIf>
-<MTIf name="tempName" eq="individual_entry"><MTIf name="snsb">
-                <li id="snsb"><ul>
-	<MTIf name="bu_arrey[0]">
-                  <li class="vicon-facebook">
-                    <a title="Facebook share" href="https://www.facebook.com/sharer/sharer.php?u=<$MTEntryPermalink encode_url="1"$>" rel="noopener noreferrer" target="_blank">Facebook</a>
-                  </li></MTIf>
-	<MTIf name="bu_arrey[1]">
-                  <li class="vicon-twitter">
-                    <a title="Twitter share" href="http://twitter.com/share?url=<$MTEntryPermalink encode_url="1"$>&text=<$MTEntryTitle encode_url="1"$>&via=<$MTVar name="bu_arrey[1]"$>&tw_p=tweetbutton&related=<$MTVar name="bu_arrey[1]"$>" rel="noopener noreferrer" target="_blank">Twitter</a>
-                  </li></MTIf>
-	<MTIf name="bu_arrey[2]">
-                  <li class="vicon-pocket">
-                    <a title="Pocket Bookmark" href="http://getpocket.com/edit?url=<$MTEntryPermalink encode_url="1"$>&title=<$MTEntryTitle encode_url="1"$>" rel="noopener noreferrer" target="_blank">Pocket</a>
-                  </li></MTIf>
-	<MTIf name="bu_arrey[3]">
-                  <li class="vicon-hatenabook">
-                    <a title="Hatena Bookmark" href="http://b.hatena.ne.jp/add?mode=confirm&url=<$MTEntryPermalink encode_url="1"$>&title=<$MTEntryTitle encode_url="1"$>" rel="noopener noreferrer" target="_blank">Hatena</a>
-                  </li></MTIf>
-	<MTIf name="bu_arrey[4]">
-                  <li class="vicon-line">
-                    <a title="LINE share" href="https://timeline.line.me/social-plugin/share?url=<$MTEntryPermalink encode_url="1"$>" rel="noopener noreferrer" target="_blank">LINE</a>
-                  </li></MTIf>
-	<MTIf name="bu_arrey[5]">
-                  <li class="vicon-clip">
-                    <button title="<__trans phrase="URL is copied by a clipboard">" type="button" id="copy-page"><span id="cAction"><__trans phrase="URL is copied by a clipboard"></span></button>
-                  </li></MTIf>
-                </ul></li></MTIf></MTIf>
+<MTIf name="tempName" eq="individual_entry"><$MTVar name="Snsb_typing"></MTIf>
               </ul>
