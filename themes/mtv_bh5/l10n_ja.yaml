@@ -74,7 +74,7 @@ Year: '年'
 Month: '月'
 http://www.sixapart.com/labs/openid/: 'https://www.sixapart.jp/about/openid.html'
 <em>[_1]</em> [_2] <a href="[_3]" title="full comment on [_4]">read more</a>: '<em>[_1]</em> [_2] <a href="[_3]" title="[_4]へのコメント">続きを読む</a>'
-URL is copied by a clipboard: 'URLをコピー'
+Page Title and URL is copied by a clipboard: 'ページタイトルとURLをクリップボードにコピー'
 I copied it: 'コピーしました'
 ## 権限の関係(コミュニティ以外は基本ローカライズで設定済)
 Website Administrator: 'ウェブサイト管理者'

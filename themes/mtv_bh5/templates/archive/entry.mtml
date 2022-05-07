@@ -66,15 +66,34 @@
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTIf name="bu_arrey[5]">
     <script>
-document.getElementById("copy-page").onclick = function() {
-  $(document.body).append("<textarea id=\"copyTarget\" style=\"position:absolute; left:-9999px; top:0px;\" readonly=\"readonly\">" +location.href+ "</textarea>");
-  let obj = document.getElementById("copyTarget");
-  let range = document.createRange();
-  range.selectNode(obj);
-  window.getSelection().addRange(range);
-  document.execCommand('copy');
-  document.getElementById("cAction").innerHTML = "<__trans phrase="I copied it">";
-};
+var btn = document.getElementById('copy-page');
+btn.addEventListener('click', function(e) {
+    copy_to_clipboard('<$MTEntryTitle encode_html="1"$> URL: <$MTEntryPermalink$>');
+});
+function copy_to_clipboard(value) {
+    if(navigator.clipboard) {
+        var copyText = value;
+        navigator.clipboard.writeText(copyText).then(function() {
+            alert('<__trans phrase="I copied it">');
+        });
+    } else {
+        copy_to_clipboard_for_old_browser(value);
+    }
+}
+function copy_to_clipboard_for_old_browser(value) {
+    // old browser in textarea
+    var textarea = document.createElement('textarea');
+    textarea.style.position ='absolute';
+    textarea.style.opacity = 0;
+    textarea.style.pointerEvents = 'none';
+    textarea.value = value;
+    // textarea in copy after delete
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.setSelectionRange(0, 999999);
+    document.execCommand('copy');
+    textarea.parentNode.removeChild(textarea);
+}
     </script></MTIf>
   </body>
 </html>
