@@ -409,6 +409,12 @@ article.entry {
 	*min-height: 1px; /* for IE7 */
 }
 
+.entry > header {
+	margin: 0 -30px;
+	background-color: #1e1e1e;
+
+}
+
 entry > article.section,
 .entry > article.headline,
 .system > .entry > section.section {
@@ -433,7 +439,7 @@ body.mainIndex #main > h1 {
 }
 
 #main > .entry > header > h1 {
-	margin: 0 -30px;
+	margin: 0;
 }
 
 /* Entry Title
@@ -527,10 +533,6 @@ article.section > div.textBody h5,
 	font-size: 84%;
 }
 
-div.entry div#profile-comment-threads {
-	border: none transparent;
-}
-
 /* ul.info
 ---------------*/
 [class^="vicon-"] *, [class*=" vicon-"] * {
@@ -599,7 +601,7 @@ ul.info > li a {
 article.entry ul.info,
 .archives div.entry ul.info,
 .system div.entry ul.info {
-	margin: 0 -30px 1.5em;
+	margin: 0 0 10px;
 	padding: 0.3em 30px;
 	position: relative;
 	top: -2px;
@@ -613,25 +615,29 @@ article.entry > ul.info li,
 	border-left: 1px solid #000;
 }
 
-#snsb {
-	margin: 0.3em 0 0;
+ul.snsbutton {
+	margin: 0.3em 2em;
+	padding-bottom: 1em;
 	border: 0;
-}
-
-#snsb > ul {
-	margin: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 	list-style: none;
 }
 
-#snsb > ul > li {
-	display: inline-block;
+footer > ul.snsbutton {
+	margin: 10px 0 -15px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+ul.snsbutton > li {
 	font-size: 82%;
 	margin: 0;
 	width: 50px;
 }
 
-#snsb > ul > li * {
-	font-size: 0;
+ul.snsbutton > li * {
 	cursor: pointer;
 	margin: 0 10px;
 	border: 0;
@@ -639,7 +645,28 @@ article.entry > ul.info li,
 	background: transparent;
 }
 
-#snsb > ul > li a::before {
+footer > ul.snsbutton > li {
+	margin: 0;
+	padding: 0;
+	flex-basis: 14%;
+}
+
+header > ul.snsbutton > li * {
+	font-size: 0;
+}
+
+footer > ul.snsbutton > li a {
+  background-color: #ffffff;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 0 auto;
+  height: 30px;
+  width: 100px;
+  padding: 4px 0 0 4px;
+}
+
+header > ul.snsbutton > li a::before {
   border-style: solid;
   border-width: 1px;
   -webkit-border-radius: 2px;
@@ -651,7 +678,11 @@ article.entry > ul.info li,
   width: 32px;
 }
 
-#snsb > ul > li button::before {
+footer > ul.snsbutton > li a::before {
+  border: 0 none;
+}
+
+header > ul.snsbutton > li button::before {
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
@@ -664,14 +695,19 @@ article.entry > ul.info li,
   width: 30px;
 }
 
-#snsb > ul > li button:hover::before {
-  opacity: 0.5;
-}
-
+.vicon-clip button { color: #ffffff; }
 .vicon-clip button::before {
   content: "\e9cd";
   color: #ffffff;
   font-size: 25px;
+}
+ul.snsbutton > li button:hover {
+  opacity: 0.5;
+}
+
+.vicon-facebook a {
+  color: #1877F2;
+  border-color: #1877F2;
 }
 .vicon-facebook a::before {
   content: "\e900";
@@ -680,7 +716,10 @@ article.entry > ul.info li,
   border-color: #1877F2;
   font-size: 25px;
 }
-
+.vicon-facebook a:hover {
+  background-color: #1877F2;
+  color: #FFFFFF;
+}
 .vicon-facebook a:hover::before {
   background-color: #1877F2;
   color: #FFFFFF;
@@ -692,6 +731,11 @@ article.entry > ul.info li,
   border-color: #2BB24C;
   font-size: 25px;
 }
+
+.vicon-hatenabook a {
+  color: #00A4DE;
+  border-color: #00A4DE;
+}
 .vicon-hatenabook a::before {
   content: "\e902";
   color: #00A4DE;
@@ -699,17 +743,29 @@ article.entry > ul.info li,
   font-size: 25px;
   background-color: #ffffff;
 }
+.vicon-hatenabook a:hover {
+  background-color: #00A4DE;
+  color: #FFFFFF;
+}
 .vicon-hatenabook a:hover::before {
   background-color: #00A4DE;
   color: #FFFFFF;
 }
 
+.vicon-line a {
+  color: #00C300;
+  border-color: #00C300;
+}
 .vicon-line a::before {
   content: "\e904";
   color: #00C300;
   border-color: #00C300;
   font-size: 25px;
   background-color: #ffffff;
+}
+.vicon-line a:hover {
+  background-color: #00C300;
+  color: #FFFFFF;
 }
 .vicon-line a:hover::before {
   background-color: #00C300;
@@ -722,6 +778,11 @@ article.entry > ul.info li,
   border-color: #BD081C;
   font-size: 25px;
 }
+
+.vicon-pocket a {
+  color: #EF3F56;
+  border-color: #EF3F56;
+}
 .vicon-pocket a::before {
   content: "\e906";
   color: #EF3F56;
@@ -729,17 +790,29 @@ article.entry > ul.info li,
   font-size: 25px;
   background-color: #ffffff;
 }
+.vicon-pocket a:hover {
+  background-color: #EF3F56;
+  color: #FFFFFF;
+}
 .vicon-pocket a:hover::before {
   background-color: #EF3F56;
   color: #FFFFFF;
 }
 
+.vicon-twitter a {
+  color: #1DA1F2;
+  border-color: #1DA1F2;
+}
 .vicon-twitter a::before {
   content: "\e907";
   color: #1DA1F2;
   border-color: #1DA1F2;
   font-size: 25px;
   background-color: #ffffff;
+}
+.vicon-twitter a:hover {
+  background-color: #1DA1F2;
+  color: #FFFFFF;
 }
 .vicon-twitter a:hover::before {
   background-color: #1DA1F2;

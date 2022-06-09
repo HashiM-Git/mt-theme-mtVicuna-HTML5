@@ -190,13 +190,13 @@ body.al #footer {
   }
 
   #main > .entry > header > h1 {
-	margin: 0 -15px;
+	margin: 0 15px;
   }
 
   article.entry ul.info,
   .archives article.entry ul.info,
   .system div.entry ul.info {
-	margin: 0 -15px 1em;
+	margin: 0 15px;
 	padding: 0.3em 15px;
   }
 
@@ -205,9 +205,15 @@ body.al #footer {
   .system div.entry ul.info li {
 	float: none;
 	display: inline;
+	margin: 0;
   }
 
-#trackback ul li { display: block; }
+  footer > ul.snsbutton > li {
+	margin-bottom: 3px;
+	flex-basis: 20%;
+  }
+
+  #trackback ul li { display: block; }
 
   ,entry > .section h1,
   ,entry > .section > header > h2 {
@@ -373,6 +379,11 @@ body.al #footer {
 }
 
 @media screen and (min-width:481px) and (max-width:839px) {
+
+  footer > ul.snsbutton > li {
+	margin-bottom: 5px;
+	flex-basis: 26%;
+  }
 
   #globalNavi ul li {
 	width: 33.33%;

@@ -206,6 +206,11 @@ body.al #footer {
 	text-decoration: none;
   }
 
+  footer > ul.snsbutton > li {
+	margin-bottom: 3px;
+	flex-basis: 30%;
+  }
+
   .headlbox > div.entry-sect {
 	border: 0;
   }
@@ -331,6 +336,11 @@ body.al #footer {
 	margin-left: auto;
 	position: relative;
 	text-align: left;
+  }
+
+  footer > ul.snsbutton > li {
+	margin-bottom: 5px;
+	flex-basis: 26%;
   }
 
 /*========================================

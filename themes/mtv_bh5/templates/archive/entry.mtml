@@ -50,7 +50,7 @@
 </MTIf>
           </div>
           <$MTInclude module="<__trans phrase="Related Entries">"$>
-          <footer>
+          <footer><$MTVar name="Snsb_typing">
             <$MTInclude module="<__trans phrase="Next Entry Link">"$>
           </footer>
           <$MTInclude module="<__trans phrase="Comments">"$>
@@ -66,7 +66,7 @@
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTIf name="bu_arrey[5]">
     <script>
-var btn = document.getElementById('copy-page');
+var btn = document.getElementByClassName('copy-page');
 btn.addEventListener('click', function(e) {
     copy_to_clipboard('<$MTEntryTitle encode_html="1"$> URL: <$MTEntryPermalink$>');
 });

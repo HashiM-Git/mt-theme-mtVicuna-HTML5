@@ -40,8 +40,8 @@
             <h1><$MTVar name="page_title"$></h1>
             <ul class="info">
               <li class="date">Last Modified: <time datetime="<$MTPageModifiedDate format_name="iso8601"$>"><$MTPageModifiedDate format="%x %X"$></time></li>
-<MTPageIfTagged tag="$WPageSnsTag"><$MTVar name="Snsb_typing"></MTPageIfTagged>
             </ul>
+<MTPageIfTagged tag="$WPageSnsTag"><$MTVar name="Snsb_typing"></MTPageIfTagged>
           </header>
           <div class="textBody">
 <MTIf tag="PageBody"><$MTPageBody$></MTIf>
@@ -50,6 +50,11 @@
 <$MTPageMore$>
 </MTIf>
           </div>
+<MTPageIfTagged tag="$WPageSnsTag">
+          <footer>
+          <$MTVar name="Snsb_typing">
+          </footer>
+</MTPageIfTagged>
           <$MTInclude module="<__trans phrase="Comments">"$>
           <$MTInclude module="<__trans phrase="TrackBacks">"$>
         </article>
@@ -63,7 +68,7 @@
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTPageIfTagged tag="$WPageSnsTag"><MTIf name="bu_arrey[5]">
     <script>
-var btn = document.getElementById('copy-page');
+var btn = document.getElementByClassName('copy-page');
 btn.addEventListener('click', function(e) {
     copy_to_clipboard('<$MTPageTitle encode_html="1"$> URL: <$MTPagePermalink$>');
 });

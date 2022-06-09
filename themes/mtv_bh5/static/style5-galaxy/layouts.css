@@ -197,14 +197,16 @@ body.al #footer {
 	*min-height: 1px; /* for IE7 */
   }
 
+  .entry > header { margin: 0 -15px; }
+
   #main > .entry > header > h1 {
-	margin: 0 -15px;
+	margin: 0;
   }
 
   article.entry ul.info,
   .archives div.entry ul.info,
   .system div.entry ul.info {
-	margin: 0 -15px 1em;
+	margin: 0 0 1em;
 	padding: 0.3em 15px;
   }
 
@@ -213,6 +215,11 @@ body.al #footer {
   .system div.entry ul.info li {
 	float: none;
 	display: inline;
+  }
+
+  footer > ul.snsbutton > li {
+	margin-bottom: 3px;
+	flex-basis: 30%;
   }
 
   #trackback ul li { display: block; }
@@ -388,6 +395,11 @@ body.al #footer {
 
   h1 {
 	border-bottom: none;
+  }
+
+  footer > ul.snsbutton > li {
+	margin-bottom: 3px;
+	flex-basis: 24%;
   }
 
   #utilities {

@@ -406,6 +406,10 @@ article.entry {
 	*min-height: 1px; /* for IE7 */
 }
 
+.entry > header {
+	margin: 0;
+}
+
 .entry > article.section,
 .entry > article.headline,
 .system > .entry > section.section {
@@ -520,10 +524,6 @@ article.section > div.textBody h5,
 	font-size: 84%;
 }
 
-div.entry div#profile-comment-threads {
-	border: none transparent;
-}
-
 /* ul.info
 ---------------*/
 [class^="vicon-"] *, [class*=" vicon-"] * {
@@ -590,7 +590,7 @@ ul.info > li a {
 article.entry ul.info,
 .archives div.entry ul.info,
 .system div.entry ul.info {
-	margin: 0 0 1.5em;
+	margin: 0 0 10px;
 	padding: 0.3em 0;
 	position: relative;
 	top: -1px;
@@ -604,95 +604,119 @@ article.entry ul.info > li,
 	border-left: 1px solid #ccc;
 }
 
-#snsb {
-	margin: 0.3em 0 0;
-	border: 0;
-}
-
-#snsb > ul {
+ul.snsbutton {
 	margin: 0;
+	padding: 0;
+	border: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 	list-style: none;
 }
 
-#snsb > ul > li {
-	display: inline-block;
+footer > ul.snsbutton {
+	margin: 5px 0 -10px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+header > ul.snsbutton > li {
 	font-size: 82%;
 	margin: 0;
 	width: 50px;
 }
 
-#snsb > ul > li * {
-	font-size: 0;
+ul.snsbutton > li * {
 	cursor: pointer;
 	margin: 0 10px;
 	border: 0;
 	background: transparent;
 	display: inline-block;
+	text-decoration: none;
+}
+
+header > ul.snsbutton > li * {
+	font-size: 0;
 	height: 30px;
 	width: 30px;
 }
 
-#snsb > ul > li a:hover::before {
+ul.snsbutton > li a:hover {
   opacity: 0.7;
 }
 
-#snsb > ul > li button:hover::before {
-  opacity: 0.7;
+ul.snsbutton > li button:hover {
+  opacity: 0.6;
+}
+
+.vicon-clip button {
+	padding: 0;
+	color: #010708;
+	font-size: 93%;
 }
 
 .vicon-clip button::before {
   content: "\e9cd";
-  color: #010708;
   font-size: 25px;
 }
+
+.vicon-facebook a { color: #1877F2; }
 .vicon-facebook a::before {
   content: "\e900";
-  color: #1877F2;
   font-size: 25px;
 }
+
+.vicon-feedly a { color: #2BB24C; }
 .vicon-feedly a::before {
   content: "\e901";
-  color: #2BB24C;
   font-size: 25px;
 }
+
+.vicon-hatenabook a { color: #00A4DE; }
 .vicon-hatenabook a::before {
   content: "\e902";
-  color: #00A4DE;
   font-size: 25px;
 }
+
+.vicon-line a { color: #00C300; }
 .vicon-line a::before {
   content: "\e904";
-  color: #00C300;
   font-size: 25px;
 }
+
+.vicon-pinter a { color: #BD081C; }
 .vicon-pinter a::before {
   content: "\e905";
-  color: #BD081C;
   font-size: 25px;
 }
+
+.vicon-pocket a { color: #EF3F56; }
 .vicon-pocket a::before {
   content: "\e906";
-  color: #EF3F56;
   font-size: 25px;
 }
+
+.vicon-twitter a { color: #1DA1F2; }
 .vicon-twitter a::before {
   content: "\e907";
-  color: #1DA1F2;
   font-size: 25px;
 }
+
+.vicon-facebook1 a { color: #1877F2; }
 .vicon-facebook1 a::before {
   content: "\ea90";
-  color: #1877F2;
   font-size: 25px;
 }
+
+.vicon-facebook2 a { color: #1877F2; }
 .vicon-facebook2 a::before {
   content: "\ea91";
-  color: #1877F2;
   font-size: 25px;
 }
+
+.vicon-pinter2 a { color: #BD081C; }
 .vicon-pinter2 a::before {
   content: "\ead2";
-  color: #BD081C;
   font-size: 25px;
 }
 

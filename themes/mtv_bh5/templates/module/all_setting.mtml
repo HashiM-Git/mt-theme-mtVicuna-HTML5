@@ -290,30 +290,30 @@
 </MTIf>
 <MTSetVarTemplate name="Snsb_typing">
 <MTIf name="snsb">
-              <li id="snsb"><ul>
+            <ul class="snsbutton">
 	<MTIf name="bu_arrey[0]">
-                <li class="vicon-facebook">
-                  <a title="Facebook share" href="https://www.facebook.com/sharer/sharer.php?u=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">Facebook</a>
-                </li></MTIf>
+              <li class="vicon-facebook">
+                <a title="Facebook share" href="https://www.facebook.com/sharer/sharer.php?u=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">Facebook</a>
+              </li></MTIf>
 	<MTIf name="bu_arrey[1]">
-                <li class="vicon-twitter">
-                  <a title="Twitter share" href="http://twitter.com/share?url=<$MTVar name="Sns_plink"$>&text=<$MTVar name="Sns_pttle"$>&via=<$MTVar name="bu_arrey[1]"$>&tw_p=tweetbutton&related=<$MTVar name="bu_arrey[1]"$>" rel="noopener noreferrer" target="_blank">Twitter</a>
-                </li></MTIf>
+              <li class="vicon-twitter">
+                <a title="Twitter share" href="http://twitter.com/share?url=<$MTVar name="Sns_plink"$>&text=<$MTVar name="Sns_pttle"$>&via=<$MTVar name="bu_arrey[1]"$>&tw_p=tweetbutton&related=<$MTVar name="bu_arrey[1]"$>" rel="noopener noreferrer" target="_blank">Twitter</a>
+              </li></MTIf>
 	<MTIf name="bu_arrey[2]">
-                <li class="vicon-pocket">
-                  <a title="Pocket Bookmark" href="http://getpocket.com/edit?url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Pocket</a>
-                </li></MTIf>
+              <li class="vicon-pocket">
+                <a title="Pocket Bookmark" href="http://getpocket.com/edit?url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Pocket</a>
+              </li></MTIf>
 	<MTIf name="bu_arrey[3]">
-                <li class="vicon-hatenabook">
-                  <a title="Hatena Bookmark" href="http://b.hatena.ne.jp/add?mode=confirm&url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Hatena</a>
-                </li></MTIf>
+              <li class="vicon-hatenabook">
+                <a title="Hatena Bookmark" href="http://b.hatena.ne.jp/add?mode=confirm&url=<$MTVar name="Sns_plink"$>&title=<$MTVar name="Sns_pttle"$>" rel="noopener noreferrer" target="_blank">Hatena</a>
+              </li></MTIf>
 	<MTIf name="bu_arrey[4]">
-                <li class="vicon-line">
-                  <a title="LINE share" href="https://timeline.line.me/social-plugin/share?url=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">LINE</a>
-                </li></MTIf>
+              <li class="vicon-line">
+                <a title="LINE share" href="https://timeline.line.me/social-plugin/share?url=<$MTVar name="Sns_plink"$>" rel="noopener noreferrer" target="_blank">LINE</a>
+              </li></MTIf>
 	<MTIf name="bu_arrey[5]">
-                <li class="vicon-clip">
-                  <button title="<__trans phrase="Page Title and URL is copied by a clipboard">" type="button" id="copy-page">ClipCopy</button>
-                </li></MTIf>
-              </ul></li></MTIf>
+              <li class="vicon-clip">
+                <button title="<__trans phrase="Page Title and URL is copied by a clipboard">" type="button" class="copy-page">ClipCopy</button>
+              </li></MTIf>
+            </ul></MTIf>
 </MTSetVarTemplate>
