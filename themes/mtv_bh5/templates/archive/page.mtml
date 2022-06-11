@@ -68,10 +68,12 @@
     <$MTInclude module="<__trans phrase="Footer">"$>
 <MTPageIfTagged tag="$WPageSnsTag"><MTIf name="bu_arrey[5]">
     <script>
-var btn = document.getElementByClassName('copy-page');
-btn.addEventListener('click', function(e) {
-    copy_to_clipboard('<$MTPageTitle encode_html="1"$> URL: <$MTPagePermalink$>');
-});
+var btn = document.getElementsByClassName('copy-page');
+for (var i = 0; i < btn.length; i++) {
+    btn[i].onclick = function (e) {
+        copy_to_clipboard('<$MTPageTitle encode_html="1"$> URL: <$MTPagePermalink$>');
+    }
+}
 function copy_to_clipboard(value) {
     if(navigator.clipboard) {
         var copyText = value;
