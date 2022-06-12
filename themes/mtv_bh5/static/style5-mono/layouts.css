@@ -173,16 +173,6 @@ body.al #footer {
 	transform: rotate(-45deg);
   }
 
-  ul#flip1 li.create-entry {
-	width: 100%;
-	font-size: 102%;
-  }
-
-  ul#flip1 li.create-entry a {
-	padding-left: 0;
-	background-image: none;
-  }
-
   div.entry,
   article.entry {
 	margin: 0 15px;
@@ -236,14 +226,8 @@ body.al #footer {
 	text-decoration: none;
   }
 
-  .headlbox > div.entry-sect {
-	border: 0;
-  }
-
   article.section .textBody,
   article.section footer,
-  .headlbox > p.ccount,
-  .headlbox > div.lcomment,
   #utilities .categoryArchives .icon-entry,
   #utilities .categoryArchives .icon-comment {
 	display: none;
@@ -311,27 +295,15 @@ body.al #footer {
 	border-top: solid 10px #800;
   }
 
-  body.member .entry > .member {
-	margin: 1.5em 1em;
-	width: auto;
-	height: 64px;
-	float: none;
-	clear: both;
-  }
-
-  body.member .entry > .member p {
-	float: left;
-	width: 55px;
-	margin: 0 2px 2px 0;
-  }
-
-  body.member .entry > .member ul {
-	margin: 0 0.5em;
-	float: left;
-	list-style-type: none;
-  }
-
   #utilities { border-top: 1px solid #eee; }
+
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
+  }
 
   body.eye-h #header {
 	height: auto;
@@ -439,6 +411,14 @@ body.al #footer {
 	content: ".";
 	display: block;
 	clear: both;
+  }
+
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
   }
 }
 

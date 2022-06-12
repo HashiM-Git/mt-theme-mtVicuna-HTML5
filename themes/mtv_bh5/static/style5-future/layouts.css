@@ -184,17 +184,6 @@ body.eye-hb #globalNavi {
 	transform: rotate(-45deg);
   }
 
-  ul#flip1 li.create-entry {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	font-size: 102%;
-  }
-
-  ul#flip1 li.create-entry a {
-	background-image: none;
-  }
-
   div.entry,
   article.entry {
 	margin: 0 10px;
@@ -288,14 +277,8 @@ body.eye-hb #globalNavi {
 	border-left: none;
   }
 
-  .headlbox > div.entry-sect {
-	border: 0;
-  }
-
   article.section .textBody,
   article.section footer,
-  .headlbox > p.ccount,
-  .headlbox > div.lcomment,
   #utilities .categoryArchives .icon-entry,
   #utilities .categoryArchives .icon-comment {
 	display: none;
@@ -363,24 +346,12 @@ body.eye-hb #globalNavi {
 	border-top: solid 10px #811;
   }
 
-  body.member .entry > .member {
-	margin: 1.5em 1em;
-	width: auto;
-	height: 64px;
-	float: none;
-	clear: both;
-  }
-
-  body.member .entry > .member p {
-	float: left;
-	width: 55px;
-	margin: 0 2px 2px 0;
-  }
-
-  body.member .entry > .member ul {
-	margin: 0 0.5em;
-	float: left;
-	list-style-type: none;
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
   }
 
   body.eye-h #header {
@@ -541,6 +512,13 @@ body.eye-hb #globalNavi {
 
   #utilities div.others section > div ul.feed {
 	margin: 0;
+  }
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
   }
 }
 

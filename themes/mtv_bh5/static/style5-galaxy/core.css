@@ -34,6 +34,7 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
+html { scroll-behavior: smooth; }
 body {
     line-height:1;
 }
@@ -537,42 +538,42 @@ article.section > div.textBody h5,
 ---------------*/
 [class^="vicon-"] *, [class*=" vicon-"] * {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'vicunaicon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  text-decoration: none;
+	font-family: 'vicunaicon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	text-decoration: none;
 
   /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .vicon-lastfm a::before {
-  content: "\e903";
-  color: #D51007;
+	content: "\e903";
+	color: #D51007;
 }
 .vicon-github a::before {
-  content: "\e908";
-  color: #181717;
+	content: "\e908";
+	color: #181717;
 }
 .vicon-quotes-right a::before {
-  content: "\e978";
+	content: "\e978";
 }
 .vicon-rss a::before {
-  content: "\ea9b";
-  color: #FFA500;
+	content: "\ea9b";
+	color: #FFA500;
 }
 .vicon-rss2 a::before {
-  content: "\ea9c";
-  color: #FFA500;
+	content: "\ea9c";
+	color: #FFA500;
 }
 .vicon-lastfm2 a::before {
-  content: "\eacc";
-  color: #D51007;
+	content: "\eacc";
+	color: #D51007;
 }
 
 ul.info {
@@ -643,6 +644,7 @@ ul.snsbutton > li * {
 	border: 0;
 	display: inline-block;
 	background: transparent;
+	text-align: left;
 }
 
 footer > ul.snsbutton > li {
@@ -656,188 +658,193 @@ header > ul.snsbutton > li * {
 }
 
 footer > ul.snsbutton > li a {
-  background-color: #ffffff;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  display: inline-block;
-  margin: 0 auto;
-  height: 30px;
-  width: 100px;
-  padding: 4px 0 0 4px;
+	background-color: #ffffff;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0 auto;
+	height: 30px;
+	width: 100px;
+	padding: 4px 0 0 4px;
 }
 
 header > ul.snsbutton > li a::before {
-  border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  display: inline-block;
-  padding-top: 4px;
-  text-align: center;
-  height: 30px;
-  width: 32px;
+	border-style: solid;
+	border-width: 1px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	display: inline-block;
+	padding-top: 4px;
+	text-align: center;
+	height: 30px;
+	width: 32px;
 }
 
 footer > ul.snsbutton > li a::before {
-  border: 0 none;
+	border: 0 none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 header > ul.snsbutton > li button::before {
-  border-style: solid;
-  border-width: 1px;
-  border-color: transparent;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  display: inline-block;
-  padding-top: 1px;
-  text-align: center;
-  height: 30px;
-  width: 30px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: transparent;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	display: inline-block;
+	padding-top: 1px;
+	text-align: center;
+	height: 30px;
+	width: 30px;
 }
 
-.vicon-clip button { color: #ffffff; }
+.vicon-clip button {
+	color: #ffffff;
+}
 .vicon-clip button::before {
-  content: "\e9cd";
-  color: #ffffff;
-  font-size: 25px;
+	content: "\e9cd";
+	color: #ffffff;
+	font-size: 25px;
 }
 ul.snsbutton > li button:hover {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 .vicon-facebook a {
-  color: #1877F2;
-  border-color: #1877F2;
+	color: #1877F2;
+	border-color: #1877F2;
 }
 .vicon-facebook a::before {
-  content: "\e900";
-  color: #1877F2;
-  background-color: #ffffff;
-  border-color: #1877F2;
-  font-size: 25px;
+	content: "\e900";
+	color: #1877F2;
+	background-color: #ffffff;
+	border-color: #1877F2;
+	font-size: 25px;
 }
 .vicon-facebook a:hover {
-  background-color: #1877F2;
-  color: #FFFFFF;
+	background-color: #1877F2;
+	color: #FFFFFF;
 }
 .vicon-facebook a:hover::before {
-  background-color: #1877F2;
-  color: #FFFFFF;
+	background-color: #1877F2;
+	color: #FFFFFF;
 }
 
 .vicon-feedly a::before {
-  content: "\e901";
-  color: #2BB24C;
-  border-color: #2BB24C;
-  font-size: 25px;
+	content: "\e901";
+	color: #2BB24C;
+	border-color: #2BB24C;
+	font-size: 25px;
 }
 
 .vicon-hatenabook a {
-  color: #00A4DE;
-  border-color: #00A4DE;
+	color: #00A4DE;
+	border-color: #00A4DE;
 }
 .vicon-hatenabook a::before {
-  content: "\e902";
-  color: #00A4DE;
-  border-color: #00A4DE;
-  font-size: 25px;
-  background-color: #ffffff;
+	content: "\e902";
+	color: #00A4DE;
+	border-color: #00A4DE;
+	font-size: 25px;
+	background-color: #ffffff;
 }
 .vicon-hatenabook a:hover {
-  background-color: #00A4DE;
-  color: #FFFFFF;
+	background-color: #00A4DE;
+	color: #FFFFFF;
 }
 .vicon-hatenabook a:hover::before {
-  background-color: #00A4DE;
-  color: #FFFFFF;
+	background-color: #00A4DE;
+	color: #FFFFFF;
 }
 
 .vicon-line a {
-  color: #00C300;
-  border-color: #00C300;
+	color: #00C300;
+	border-color: #00C300;
 }
 .vicon-line a::before {
-  content: "\e904";
-  color: #00C300;
-  border-color: #00C300;
-  font-size: 25px;
-  background-color: #ffffff;
+	content: "\e904";
+	color: #00C300;
+	border-color: #00C300;
+	font-size: 25px;
+	background-color: #ffffff;
 }
 .vicon-line a:hover {
-  background-color: #00C300;
-  color: #FFFFFF;
+	background-color: #00C300;
+	color: #FFFFFF;
 }
 .vicon-line a:hover::before {
-  background-color: #00C300;
-  color: #FFFFFF;
+	background-color: #00C300;
+	color: #FFFFFF;
 }
 
 .vicon-pinter a::before {
-  content: "\e905";
-  color: #BD081C;
-  border-color: #BD081C;
-  font-size: 25px;
+	content: "\e905";
+	color: #BD081C;
+	border-color: #BD081C;
+	font-size: 25px;
 }
 
 .vicon-pocket a {
-  color: #EF3F56;
-  border-color: #EF3F56;
+	color: #EF3F56;
+	border-color: #EF3F56;
 }
 .vicon-pocket a::before {
-  content: "\e906";
-  color: #EF3F56;
-  border-color: #EF3F56;
-  font-size: 25px;
-  background-color: #ffffff;
+	content: "\e906";
+	color: #EF3F56;
+	border-color: #EF3F56;
+	font-size: 25px;
+	background-color: #ffffff;
 }
 .vicon-pocket a:hover {
-  background-color: #EF3F56;
-  color: #FFFFFF;
+	background-color: #EF3F56;
+	color: #FFFFFF;
 }
 .vicon-pocket a:hover::before {
-  background-color: #EF3F56;
-  color: #FFFFFF;
+	background-color: #EF3F56;
+	color: #FFFFFF;
 }
 
 .vicon-twitter a {
-  color: #1DA1F2;
-  border-color: #1DA1F2;
+	color: #1DA1F2;
+	border-color: #1DA1F2;
 }
 .vicon-twitter a::before {
-  content: "\e907";
-  color: #1DA1F2;
-  border-color: #1DA1F2;
-  font-size: 25px;
-  background-color: #ffffff;
+	content: "\e907";
+	color: #1DA1F2;
+	border-color: #1DA1F2;
+	font-size: 25px;
+	background-color: #ffffff;
 }
 .vicon-twitter a:hover {
-  background-color: #1DA1F2;
-  color: #FFFFFF;
+	background-color: #1DA1F2;
+	color: #FFFFFF;
 }
 .vicon-twitter a:hover::before {
-  background-color: #1DA1F2;
-  color: #FFFFFF;
+	background-color: #1DA1F2;
+	color: #FFFFFF;
 }
 
 .vicon-facebook1 a::before {
-  content: "\ea90";
-  color: #1877F2;
-  border-color: #1877F2;
-  background-color: #ffffff;
-  font-size: 25px;
+	content: "\ea90";
+	color: #1877F2;
+	border-color: #1877F2;
+	background-color: #ffffff;
+	font-size: 25px;
 }
 .vicon-facebook2 a::before {
-  content: "\ea91";
-  color: #1877F2;
-  border-color: #1877F2;
-  background-color: #ffffff;
-  font-size: 25px;
+	content: "\ea91";
+	color: #1877F2;
+	border-color: #1877F2;
+	background-color: #ffffff;
+	font-size: 25px;
 }
 .vicon-pinter2 a::before {
-  content: "\ead2";
-  color: #BD081C;
-  border-color: #BD081C;
-  font-size: 25px;
+	content: "\ead2";
+	color: #BD081C;
+	border-color: #BD081C;
+	font-size: 25px;
 }
 
 /* Text Style
@@ -920,6 +927,39 @@ p.return {
 	text-align: right;
 	clear: both;
 }
+
+.return > a {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	displey: block;
+	font-size: 0;
+	border: 1px solid #3e3e3e;
+	border-radius: 50%;
+	background: #fff;
+	opacity: 0.7;
+	width: 60px;
+	height: 60px;
+	z-index: 10;
+}
+
+.return > a::before {
+	content: "";
+	margin: auto;
+	position: absolute;
+	top: 37%;
+	left: 33%;
+	width: 33%;
+	height: 33%;
+	border-top: 3px solid #3e3e3e;
+	border-left: 3px solid #3e3e3e;
+	transform: rotate(45deg);
+}
+
+.return > a:hover {
+	opacity: 0.9;
+}
+
 
 /* Newer | Older */
 
@@ -1593,75 +1633,6 @@ body.multi2-l div#utilities:after {
 	clear: both;
 }
 
-.create-entry a {
-	padding-left: 30px;
-	background-image: url(images/forum/start-topic-icon.png);
-	background-repeat: no-repeat;
-	background-position: 10px 3px;
-}
-
-.icon-comment {
-	background: url(images/forum/reply-icon.gif) no-repeat 0 30%;
-	padding-left: 15px;
-}
-
-.icon-entry {
-	background: url(images/forum/topic-icon.gif) no-repeat 2px 50%;
-	padding-left: 15px;
-}
-
-.icon-score {
-	background: url(images/forum/score-icon.gif) no-repeat 0 50%;
-	padding-left: 15px;
-}
-
-.entry-asset .asset-meta .byline,
-.entry-asset .asset-meta .entry-meta-comments,
-.entry-asset .asset-meta .entry-meta-trackbacks {
-	margin-right: 10px;
-}
-
-.entry-meta-comments {
-	background: url(images/forum/comment-icon.gif) no-repeat 0px 50%;
-	padding: 0 0 3px 18px;
-}
-
-a.scoring {
-	white-space: nowrap;
-	background: url(images/forum/scoring-stars.gif) no-repeat 0 -120px;
-	padding: 0 0 3px 18px;
-	line-height: 22px;
-	text-decoration: none;
-	cursor: default;
-}
-
-a.scoring-scorable {
-	background-position: 0 0;
-	text-decoration: default;
-	cursor: pointer;
-}
-
-a:hover.scoring-scorable {
-	background-position: 0 -40px;
-	text-decoration: underline;
-}
-
-a.scoring-pending,
-a:hover.scoring-pending {
-	background: url(images/forum/scoring-pending.gif) no-repeat;
-	cursor: wait;
-}
-
-a.scoring-scored,
-a:hover.scoring-scored {
-	background-position: 0 -80px;
-}
-
-.scoring-vote,
-#mt-community-blog .scoring-score-label {
-	display: none;
-}
-
 .img_L {
 	margin-right: 2%!important;
 	margin-top: 2%!important;
@@ -1683,66 +1654,6 @@ a:hover.scoring-scored {
 	display: none;
 }
 
-/* member-list
----------------*/
-
-body.member div.entry {
-	margin-left: 15px;
-	margin-right: 15px;
-}
-
-body.member .entry > .member {
-	margin: 1.5em 0 0.5em 0.5em;
-	float: left;
-	width: 45%;
-	height: 64px;
-	padding: 0 1px;
-}
-
-body.member .entry > .member p {
-	float: left;
-	width: 55px;
-	margin: 0 2px 2px 0;
-}
-
-body.member .entry > .member ul {
-	margin: 0 0.3em;
-	float: left;
-	list-style-type: none;
-}
-
-body.member p.topicPath {
-	clear: both;
-}
-
-/* profile-view
----------------*/
-
-body.profile h1 img {
-	vertical-align: top;
-}
-
-body.profile div.inline {
-	margin: 0;
-	position: relative;
-	left: 130px;
-	bottom: 40px;
-}
-
-body.profile div.inline p {
-	display: inline;
-}
-
-body.profile div.entry {
-	margin-top: -22px;
-}
-
-body.profile article.headline > h2.icon-comment,
-body.profile article.headline > h2.icon-entry,
-body.profile article.headline > h2.icon-score {
-	padding-left: 15px;
-}
-
 /* IE6 - なにがあってもカラム落ちを防ぐ
 ---------------*/
 
@@ -1751,6 +1662,4 @@ body.profile article.headline > h2.icon-score {
 #utilities div.others {
 	_overflow: hidden;
 }
-
-div.debug-panel { display: none; }
 
