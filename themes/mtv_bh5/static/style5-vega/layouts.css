@@ -122,6 +122,23 @@ body.al #footer {
 	margin-right: 0;
 }
 
+@media screen and (max-width:839px) {
+
+  pre, pre.code {
+	overflow: hidden;
+	white-space: pre-wrap;
+  }
+
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
+  }
+
+}
+
 @media screen and (max-width:480px) {
 
   body {
@@ -310,14 +327,6 @@ body.al #footer {
 	border-top: solid 10px #987641;
   }
 
-  .return > a {
-	right: 10px;
-	bottom: 10px;
-	opacity: 1;
-	width: 40px;
-	height: 40px;
-  }
-
   body.eye-h #header {
 	height: auto;
   }
@@ -438,15 +447,6 @@ body.al #footer {
 	display: block;
 	clear: both;
   }
-
-  .return > a {
-	right: 10px;
-	bottom: 10px;
-	opacity: 1;
-	width: 40px;
-	height: 40px;
-  }
-
 }
 
 @media screen and (min-width:840px) {

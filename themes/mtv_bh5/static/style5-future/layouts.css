@@ -104,6 +104,23 @@ body.eye-hb #globalNavi {
 	margin: 5px 0 8px;
 }
 
+@media screen and (max-width:839px) {
+
+  pre, pre.code {
+	overflow: hidden;
+	white-space: pre-wrap;
+  }
+
+  .return > a {
+	right: 10px;
+	bottom: 10px;
+	opacity: 1;
+	width: 40px;
+	height: 40px;
+  }
+
+}
+
 @media screen and (max-width:480px) {
 
   body {
@@ -346,14 +363,6 @@ body.eye-hb #globalNavi {
 	border-top: solid 10px #811;
   }
 
-  .return > a {
-	right: 10px;
-	bottom: 10px;
-	opacity: 1;
-	width: 40px;
-	height: 40px;
-  }
-
   body.eye-h #header {
 	position: static;
 	height: auto;
@@ -512,13 +521,6 @@ body.eye-hb #globalNavi {
 
   #utilities div.others section > div ul.feed {
 	margin: 0;
-  }
-  .return > a {
-	right: 10px;
-	bottom: 10px;
-	opacity: 1;
-	width: 40px;
-	height: 40px;
   }
 }
 

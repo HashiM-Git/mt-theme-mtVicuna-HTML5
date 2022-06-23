@@ -1,8 +1,29 @@
-$(document).ready(function(){
-  $('a[href^=http]').not('[href*="'+location.hostname+'"]').attr('target', '_blank').attr('rel', 'noopener nofollow').addClass("external");
-});
+$(function() {
 
-$(document).ready(function(){
+  $('a[href^=http]').not('[href*="'+location.hostname+'"]').attr('target', '_blank').attr('rel', 'noopener nofollow').addClass("external");
+
+  $(".code").each(function(i, elem) {
+    var classVal = $(elem).attr('class');
+    var classVals = classVal.split(' ');
+    for (var i = 0; i < classVals.length; i++) {
+        if( classVals[i].indexOf("lang-")){
+            let lines=$(elem).html().split("\n");
+            if (lines[lines.length-1].length === 0) {
+                lines.pop();
+            }
+            let mjblock = "";
+            lines.forEach(function(e) {
+                let mjlistr = "<code>"+ e +"</code>";
+                if(mjlistr == '<code></code>') {
+                  mjlistr = "<code> </code>";
+                }
+                mjblock += mjlistr;
+            });
+            $(elem).html(mjblock);
+        }
+    }
+  });
+
   window.onload = function(){
     setTimeout("scrollTo(0,1)", 100);
   }
@@ -19,4 +40,5 @@ $(document).ready(function(){
       $("#menu").hide();
     }
   });
+
 });
