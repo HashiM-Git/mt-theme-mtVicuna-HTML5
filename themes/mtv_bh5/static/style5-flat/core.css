@@ -1525,12 +1525,12 @@ body.multi2-l div#utilities:after {
 pre.code {
 	position: relative;
 	border: none;
+	margin: 0.7em 0;
+	line-height: 1.5;
+	padding: 0 0 0 29px;
 	font-size: 16px;
-	margin: 0.7em 0 27px 0;
-	line-height: 18px;
-	padding: 0 0 0 27px;
 	background: linear-gradient(#eaeaea 50%, #f5f5f5 50%);
-	background-size: 36px 36px;
+	background-size: 3em 3em;
 	overflow: auto hidden;
 	counter-reset: my-counter;
 }
@@ -1541,7 +1541,7 @@ pre.code code {
 	border-left: 2px solid #404545;
 	margin: 0 auto 0 0;
 	padding: 0 0 0 2px;
-	line-height: 18px;
+	line-height: 1.5;
 	width: 100%;
 }
 
@@ -1549,13 +1549,13 @@ pre.code code::before {
 	position: absolute;
 	left: 0;
 	height: 100%;
-	width: 20px;
-	padding: 0 2px;
+	width: 25px;
+	padding: 0 3px 0 0;
 	font-size: 90%;
 	color: #252525;
 	text-align: right;
 	word-wrap: break-word;
-	counter-increment: my-counter 1;
+	counter-increment: my-counter;
 	content: counter(my-counter, decimal);
 }
 
