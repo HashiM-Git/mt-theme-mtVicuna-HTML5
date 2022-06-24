@@ -1564,28 +1564,13 @@ body.multi2-l div#utilities:after {
 	display: none;
 }
 
-pre {
-	padding: 15px 20px;
-	border-top: 1px solid #cfe4e8;
-	border-left: 1px solid #cfe4e8;
-	color: #086dac;
-	background-color: #ebf1f2;
-	overflow: auto;
-	width: 90%;
-	_width: 95%; /* for IE6 */
-	
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-}
-
 pre.code {
 	position: relative;
 	font-size: 16px;
 	margin: 0.7em 0;
 	line-height: 1.5;
 	padding: 0 0 0 29px;
-	background: linear-gradient(#dbe1e2 50%, #ebf1f2 50%);
+	background: linear-gradient(#ebf1f2 50%, #dbe1e2 50%);
 	background-size: 3em 3em;
 	overflow: auto hidden;
 	counter-reset: my-counter;

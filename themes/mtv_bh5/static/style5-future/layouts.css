@@ -109,6 +109,11 @@ body.eye-hb #globalNavi {
   pre, pre.code {
 	overflow: hidden;
 	white-space: pre-wrap;
+	background: #ebf1f2;
+  }
+
+  pre.code code:nth-child(2n) {
+	background: #dae2e5;
   }
 
   .return > a {

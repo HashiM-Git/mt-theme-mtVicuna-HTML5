@@ -1774,7 +1774,7 @@ pre.code {
 	margin: 0.7em 0;
 	line-height: 1.5;
 	padding: 0 0 0 29px;
-	background: linear-gradient(#dae2e5 50%, #ebf1f2 50%);
+	background: linear-gradient(#ebf1f2 50%, #dae2e5 50%);
 	background-size: 3em 3em;
 	overflow: auto hidden;
 	counter-reset: my-counter;

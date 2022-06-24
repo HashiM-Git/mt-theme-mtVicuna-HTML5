@@ -116,6 +116,11 @@ body.al #footer {
   pre, pre.code {
 	overflow: hidden;
 	white-space: pre-wrap;
+	background: #f5f5f5;
+  }
+
+  pre.code code:nth-child(2n) {
+	background: #eaeaea;
   }
 
   .return > a {
