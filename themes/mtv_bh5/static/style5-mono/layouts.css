@@ -123,6 +123,10 @@ body.al #footer {
 	background: #eaeaea;
   }
 
+  .cpPre {
+	right: 6%;
+  }
+
   .return > a {
 	right: 10px;
 	bottom: 10px;

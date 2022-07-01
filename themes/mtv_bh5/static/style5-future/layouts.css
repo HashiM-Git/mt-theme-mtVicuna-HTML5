@@ -116,6 +116,10 @@ body.eye-hb #globalNavi {
 	background: #dae2e5;
   }
 
+  .cpPre {
+	right: 6%;
+  }
+
   .return > a {
 	right: 10px;
 	bottom: 10px;

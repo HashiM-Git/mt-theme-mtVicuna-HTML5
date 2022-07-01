@@ -77,7 +77,7 @@ for (var i = 0; i < btn.length; i++) {
 function copy_to_clipboard(value) {
     if(navigator.clipboard) {
         var copyText = value;
-        navigator.clipboard.writeText(copyText).then(function() {
+        navigator.clipboard.writeText(copyText).then(function(){
             alert('<__trans phrase="I copied it">');
         });
     } else {

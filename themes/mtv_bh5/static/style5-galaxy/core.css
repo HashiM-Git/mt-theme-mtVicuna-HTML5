@@ -1655,6 +1655,12 @@ body.multi2-l div#utilities:after {
 	display: none;
 }
 
+div.parePre {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
 pre.code {
 	position: relative;
 	font-size: 16px;
@@ -1669,7 +1675,7 @@ pre.code {
 
 pre.code code {
 	background-color: transparent;
-	display: block;
+	display: inline-block;
 	border-left: 2px solid #eae5af;
 	margin: 0 auto 0 0;
 	padding: 0 0 0 2px;
@@ -1689,6 +1695,26 @@ pre.code code::before {
 	word-wrap: break-word;
 	counter-increment: my-counter;
 	content: counter(my-counter, decimal);
+}
+
+.cpPre {
+	position: absolute;
+	top: 1%;
+	right: 7.5%;
+	padding: 2px 5px;
+	border-radius: 2px;
+	background: #eef;
+	color: #989;
+	border: none;
+	outline: none;
+	transition: 0.3s;
+	opacity: 0.8;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.cpPre:hover {
+	opacity: 1;
 }
 
 /* IE6 - なにがあってもカラム落ちを防ぐ
