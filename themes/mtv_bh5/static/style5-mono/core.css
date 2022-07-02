@@ -542,29 +542,83 @@ article.section > div.textBody h5,
   -moz-osx-font-smoothing: grayscale;
 }
 
-.vicon-lastfm a::before {
-  content: "\e903";
-  color: #D51007;
+/* ---- Web Font selection
+.vicon-facebook a::before {
+	content: "\e900";
+	color: #1877F2;
 }
-.vicon-github a::before {
-  content: "\e908";
-  color: #181717;
+.vicon-facebook1 a::before {
+	content: "\ea90";
+	color: #1877F2;
 }
-.vicon-quotes-right a::before {
-  content: "\e978";
+.vicon-facebook2 a::before {
+	content: "\ea91";
+	color: #1877F2;
+}
+.vicon-feedly::before {
+	content: "\e901";
+	color: #2BB24C;
+}
+.vicon-hatenabook a::before {
+	content: "\e902";
+	color: #00A4DE;
+}
+.vicon-lastfm::before {
+	content: "\e903";
+	color: #D51007;
+}
+.vicon-lastfm2::before {
+	content: "\eacc";
+	color: #D51007;
+}
+.vicon-line a::before {
+	content: "\e904";
+	#00C300;
+}
+.vicon-pinter::before {
+	content: "\e905";
+	color: #BD081C;
+}
+.vicon-pinter2::before {
+	content: "\ead2";
+	color: #BD081C;
+}
+.vicon-pocket a::before {
+	content: "\e906";
+	color: #EF3F56;
+}
+.vicon-twitter a::before {
+	content: "\e907";
+	color: #1DA1F2;
+}
+.vicon-github::before {
+	content: "\e908";
+	color: #181717;
+}
+.vicon-quotes-right::before {
+	content: "\e978";
+}
+.vicon-link button::before {
+	content: "\e9cb";
+}
+.vicon-clip button::before {
+	content: "\e9cd";
+}
+.vicon-share::after {
+	content: "\ea7d";
+}
+.vicon-new-tab::after {
+	content: "\ea7e";
 }
 .vicon-rss a::before {
-  content: "\ea9b";
-  color: #FFA500;
+	content: "\ea9b";
+	color: #FFA500;
 }
 .vicon-rss2 a::before {
-  content: "\ea9c";
-  color: #FFA500;
+	content: "\ea9c";
+	color: #FFA500;
 }
-.vicon-lastfm2 a::before {
-  content: "\eacc";
-  color: #D51007;
-}
+----------------------- */
 
 ul.info {
 	margin: 0 0 1em 0;
@@ -670,12 +724,6 @@ ul.snsbutton > li button:hover {
   font-size: 25px;
 }
 
-.vicon-feedly a { color: #2BB24C; }
-.vicon-feedly a::before {
-  content: "\e901";
-  font-size: 25px;
-}
-
 .vicon-hatenabook a { color: #00A4DE; }
 .vicon-hatenabook a::before {
   content: "\e902";
@@ -688,12 +736,6 @@ ul.snsbutton > li button:hover {
   font-size: 25px;
 }
 
-.vicon-pinter a { color: #BD081C; }
-.vicon-pinter a::before {
-  content: "\e905";
-  font-size: 25px;
-}
-
 .vicon-pocket a { color: #EF3F56; }
 .vicon-pocket a::before {
   content: "\e906";
@@ -703,24 +745,6 @@ ul.snsbutton > li button:hover {
 .vicon-twitter a { color: #1DA1F2; }
 .vicon-twitter a::before {
   content: "\e907";
-  font-size: 25px;
-}
-
-.vicon-facebook1 a { color: #1877F2; }
-.vicon-facebook1 a::before {
-  content: "\ea90";
-  font-size: 25px;
-}
-
-.vicon-facebook2 a { color: #1877F2; }
-.vicon-facebook2 a::before {
-  content: "\ea91";
-  font-size: 25px;
-}
-
-.vicon-pinter2 a { color: #BD081C; }
-.vicon-pinter2 a::before {
-  content: "\ead2";
   font-size: 25px;
 }
 
@@ -1274,47 +1298,6 @@ article.headline > ul li.textBody {
 	font-size: 100%;
 }
 
-div.entry article.headlbox {
-	margin: 0;
-	padding: 0;
-	display: table;
-	width: 100%;
-	font-size: 95%;
-	border-bottom: 1px solid #ddd;
-}
-
-div.entry article.headlbox:first-child {
-	margin-top: 1.8em;
-}
-
-article.headlbox ul {
-	margin: 0.5em 0.3em;
-	list-style: none;
-}
-
-div.entry-sect, p.ccount, div.lcomment {
-	margin: 0;
-	padding: 0.2em;
-	display: table-cell;
-	border-right: 1px solid #ddd;
-}
-
-.headlbox > div.entry-sect {
-}
-
-.headlbox > p.ccount {
-	text-align: center;
-	width: 50px;
-	vertical-align: middle;
-}
-
-.headlbox > div.lcomment {
-	width: 40%;
-	padding-left: 0.5em;
-	border-right: 0;
-	vertical-align: middle;
-}
-
 /* ul.thumb
 ---------------*/
 
@@ -1549,6 +1532,17 @@ body.multi2-l div#utilities:after {
 
 .hidden {
 	display: none;
+}
+
+.external::after {
+	font-family: 'vicunaicon' !important;
+	font-size: 12px;
+	line-height: 1;
+	content: "\ea7e";
+	padding-left: 2px;
+	padding-right: 2px;
+	text-decoration: none;
+	outline: 1px solid #fff;
 }
 
 div.parePre {
