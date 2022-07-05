@@ -297,9 +297,14 @@ body.eye-hb #globalNavi {
 	background: #f7f7f7;
   }
 
-  .individual #main .entry ul.info,
-  .archives #main .entry ul.info {
+  .individual #main .entry ul.info {
 	margin: 0;
+	border-left: none;
+  }
+
+  .system #main .entry ul.info,
+  .archives #main .entry ul.info {
+	margin: 0 -10px;
 	border-left: none;
   }
 
@@ -580,6 +585,11 @@ body.eye-c #content p.topicPath {
   body.single .entry ul.info {
 	margin-left: 0;
 	margin-right: 0;
+  }
+
+  body.single div.entry > ul.info {
+	margin-left: -20px;
+	margin-right: -20px;
   }
 
   body.single article.section > header > ul.info {

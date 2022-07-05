@@ -234,10 +234,14 @@ body.al #footer {
 	margin: 0 0 0 -5px;
   }
 
-  article.entry ul.info,
+  article.entry ul.info {
+	margin: 0 0 10px -5px;
+	padding: 0.3em 15px;
+  }
+
   .archives div.entry ul.info,
   .system div.entry ul.info {
-	margin: 0 0 10px -5px;
+	margin: 0 -15px 0.8em;
 	padding: 0.3em 15px;
   }
 

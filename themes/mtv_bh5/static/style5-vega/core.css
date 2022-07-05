@@ -682,10 +682,17 @@ ul.info > li a {
 
 /*body.individual ul.info */
 
-article.entry ul.info,
+article.entry ul.info {
+	margin: 0 0 0 -5px;
+	padding: 0.3em 0;
+	position: relative;
+	top: -1px;
+	background-color: #eee;
+}
+
 .archives div.entry ul.info,
 .system div.entry ul.info {
-	margin: 0 0 0 -5px;
+	margin: 0 -30px 0.8em;
 	padding: 0.3em 0;
 	position: relative;
 	top: -1px;

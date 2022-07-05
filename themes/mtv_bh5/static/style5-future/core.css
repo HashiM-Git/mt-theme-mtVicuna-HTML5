@@ -682,10 +682,13 @@ ul.info li a {
 	text-decoration: none;
 }
 
-article.entry ul.info,
+article.entry ul.info {
+	margin: 0 0 10px;
+}
+
 .archives div.entry ul.info,
 .system div.entry ul.info {
-	margin: 0 0 10px;
+	margin: 0 -20px 10px;
 }
 
 article.entry ul.info > li,
